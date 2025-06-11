@@ -56,7 +56,7 @@ const PopularProductsSection = () => {
       name: "Custom Team Jersey",
       price: 39.99,
       originalPrice: null,
-      image: "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
       rating: 4.8,
       reviews: 98,
       badge: "Trending",

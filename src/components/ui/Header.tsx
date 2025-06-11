@@ -56,17 +56,18 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="h-8 w-8 rounded bg-primary"></div>
-            <span className="text-xl font-bold">ChicStore</span>
+            <span className="text-xl font-bold">Aloma Tees</span>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            {navItems.map((item, index) => (
-              index < 2 && item.submenu.length > 0 ? (
+            {navItems.map((item) => (
+              item.submenu.length > 0 ? (
                 <HoverCard key={item.name} openDelay={100} closeDelay={100}>
                   <HoverCardTrigger asChild>
-                    <Button variant="ghost" className="text-sm font-medium hover:text-primary">
+                    <Button variant="ghost" className="text-sm font-medium hover:text-primary flex items-center space-x-1 transition-colors  group">
                       {item.name}
+                      <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
                     </Button>
                   </HoverCardTrigger>
                   <HoverCardContent className="w-56 p-0 bg-background border shadow-lg">

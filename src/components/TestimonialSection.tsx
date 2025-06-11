@@ -11,7 +11,7 @@ const testimonials = [
     role: "Fashion Blogger",
     rating: 5,
     quote: "Absolutely love the quality and style! The fabric feels premium and the fit is perfect. I&apos;ve ordered multiple times and they never disappoint.",
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+ avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
   },
   {
     id: 2,

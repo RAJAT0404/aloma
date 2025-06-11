@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
 
 const ShowAllProductsSection = () => {
   const featuredProducts = [
@@ -53,7 +52,7 @@ const ShowAllProductsSection = () => {
             <Card key={product.id} className="group cursor-pointer transition-all duration-300 hover:shadow-lg">
               <CardContent className="p-0">
                 <div className="relative overflow-hidden rounded-t-lg">
-                  <Image
+                  <img
                     src={product.image}
                     alt={product.name}
                     width={500}
