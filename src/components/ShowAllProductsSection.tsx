@@ -36,7 +36,7 @@ const ShowAllProductsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center space-y-8 mb-16">
           <div className="space-y-4">
-            <h2 className="text-3xl lg:text-4xl font-bold">Explore Best Sellers</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">Popular Products</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               The most loved products by our customers. Quality tested and customer approved.
             </p>
