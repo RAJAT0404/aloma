@@ -1,5 +1,3 @@
-'use client'
-
 import { Card, CardContent } from "@/components/ui/card";
 
 const CategoriesSection = () => {
@@ -40,20 +38,18 @@ const CategoriesSection = () => {
           {categories.map((category, index) => (
             <Card 
               key={index} 
-              className="group cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-105"
+              className="group cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-105 overflow-hidden"
             >
-              <CardContent className="p-0">
-                <div className="relative overflow-hidden rounded-t-lg">
-                  <img
-                    src={category.image}
-                    alt={category.name}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-lg font-semibold mb-2">{category.name}</h3>
-                  <p className="text-sm text-muted-foreground">{category.count}</p>
+              <CardContent className="p-0 relative h-80">
+                <img
+                  src={category.image}
+                  alt={category.name}
+                  className="w-full h-full object-fill transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                <div className="absolute inset-0 flex flex-col justify-end items-center text-center p-6">
+                  <h3 className="text-lg font-semibold mb-2 text-white">{category.name}</h3>
+                  <p className="text-sm text-white/90">{category.count}</p>
                 </div>
               </CardContent>
             </Card>

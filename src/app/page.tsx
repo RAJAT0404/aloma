@@ -6,6 +6,7 @@ import ShowAllProductsSection from "@/components/ShowAllProductsSection";
 import PopularProductsSection from "@/components/PopularProductsSection";
 import SatisfiedCustomersSection from "@/components/SatisfiedCustomersSection";
 import { TestimonialSection } from "@/components/TestimonialSection";
+import BrandsSection from "@/components/BrandsSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <HeroSection />
       <CategoriesSection />
       <ShowAllProductsSection />
+      <BrandsSection/>
       <PopularProductsSection />
       <SatisfiedCustomersSection />
       <TestimonialSection />
