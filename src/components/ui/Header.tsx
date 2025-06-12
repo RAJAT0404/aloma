@@ -18,22 +18,22 @@ const Header = () => {
   const navItems = [
     { 
       name: "Home", 
-      href: "#",
+      href: "/",
       submenu: []
     },
     { 
       name: "Shop", 
-      href: "#",
+      href: "/product",
       submenu: [
-        { name: "New Arrivals", href: "#" },
-        { name: "Best Sellers", href: "#" },
-        { name: "Sale Items", href: "#" },
-        { name: "Gift Cards", href: "#" }
+        { name: "New Arrivals", href: "/product/pro1" },
+        { name: "Best Sellers", href:  "/product/pro1" },
+        { name: "Sale Items", href:  "/product/pro1" },
+        { name: "Gift Cards", href: "/product/pro1" }
       ]
     },
     { 
       name: "Categories", 
-      href: "#",
+      href: "/",
       submenu: [
         { name: "T-Shirts", href: "#" },
         { name: "Hoodies & Sweatshirts", href: "#" },
