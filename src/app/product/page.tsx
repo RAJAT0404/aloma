@@ -8,6 +8,7 @@ import SatisfiedCustomersSection from "@/components/SatisfiedCustomersSection";
     return (
       <div className="min-h-screen bg-background">
         <ProductPageFilter/>
+        <TestimonialSection/>
         <SatisfiedCustomersSection/>
         <TestimonialSection/>
       </div>

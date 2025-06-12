@@ -35,11 +35,12 @@ const Header = () => {
       name: "Categories", 
       href: "/",
       submenu: [
-        { name: "T-Shirts", href: "#" },
-        { name: "Hoodies & Sweatshirts", href: "#" },
-        { name: "Hats & Caps", href: "#" },
-        { name: "Promotional Products", href: "#" },
-        { name: "Accessories", href: "#" }
+        { name: "T-Shirts", href: "/category" },
+        { name: "Hoodies & Sweatshirts", href: "/category" },
+        { name: "Hats & Caps", href: "/category" },
+        { name: "Jeans", href: "/category" },
+        { name: "Promotional Products", href: "/category" },
+        { name: "Accessories", href: "/category" }
       ]
     },
     { 
