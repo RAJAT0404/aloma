@@ -96,7 +96,7 @@ export default function ShowAllProductsSection() {
         </div>
 
         <div className="text-center mt-10">
-          <Button size="lg" variant='blue' className="text-lg px-8">
+          <Button size="lg" variant='blue' className="text-lg px-8" onClick={() => window.location.href = '/product'}>
             Shop All Products
           </Button>
         </div>
