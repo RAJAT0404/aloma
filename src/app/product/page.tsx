@@ -1,8 +1,6 @@
 'use client'
 
 import { Button } from "@/components/ui/button";
-import { Footer } from "@/components/ui/Footer";
-import Header from "@/components/ui/Header";
 import { Star, Heart, Share2, ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";

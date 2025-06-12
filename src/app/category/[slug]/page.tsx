@@ -27,7 +27,7 @@ interface Product {
   features: string[];
 }
 
-const categoryPage = () => {
+const CategoryPage = () => {
   const [selectedColor, setSelectedColor] = useState("#000000");
   const [selectedSize, setSelectedSize] = useState("M");
   const [quantity, setQuantity] = useState(1);
@@ -250,4 +250,4 @@ const categoryPage = () => {
   );
 };
 
-export default categoryPage;
+export default CategoryPage;
