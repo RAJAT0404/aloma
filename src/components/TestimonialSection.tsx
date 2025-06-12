@@ -3,6 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Star, Quote } from "lucide-react";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -76,9 +77,11 @@ export const TestimonialSection = () => {
                         </p>
                         
                         <div className="flex items-center gap-3">
-                          <img
-                            src={testimonial.avatar}
-                            alt={testimonial.name}
+                          <Image
+                            src={testimonial?.avatar}
+                            alt={testimonial?.name}
+                            width={48}
+                            height={48}
                             className="w-12 h-12 rounded-full object-cover"
                           />
                           <div>

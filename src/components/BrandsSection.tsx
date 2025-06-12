@@ -1,6 +1,6 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
 
 const BrandsSection = () => {
   const brands = [
@@ -63,10 +63,12 @@ const BrandsSection = () => {
               className="group cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-105 bg-background border-border"
             >
               <CardContent className="p-8 flex items-center justify-center h-32">
-                <img
-                  src={brand.logo}
+                <Image
+                  src={brand?.logo}
                   alt={brand.name}
-                  className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                  width={120}
+                  height={80}
+                  className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
                 />
               </CardContent>
             </Card>
@@ -77,7 +79,6 @@ const BrandsSection = () => {
           <Button 
             size="lg" 
             variant='blue'
-            // className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-all duration-300"
           >
             Shop All Brands
           </Button>

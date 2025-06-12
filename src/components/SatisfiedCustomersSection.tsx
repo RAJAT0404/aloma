@@ -1,6 +1,7 @@
 'use client'
 import { Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const SatisfiedCustomersSection = () => {
   const customerImages = [
@@ -100,9 +101,11 @@ const SatisfiedCustomersSection = () => {
                 ${index % 3 === 0 && index % 5 !== 0 ? 'row-span-1' : ''}
               `}
             >
-              <img
+              <Image
                 src={customer.image}
                 alt={`${customer.name} wearing ${customer.product}`}
+                width={500}
+                height={500}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               

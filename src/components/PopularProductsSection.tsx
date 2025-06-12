@@ -4,6 +4,7 @@ import { Star, ShoppingCart, Heart, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 
 const PopularProductsSection = () => {
   const products = [
@@ -106,11 +107,12 @@ const PopularProductsSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
             <Card key={product.id} className="group cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-2 overflow-hidden">
-              <div className="relative overflow-hidden">
-                <img
+              <div className="relative overflow-hidden aspect-square">
+                <Image
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 
                 {/* Badge */}
@@ -174,8 +176,8 @@ const PopularProductsSection = () => {
 
               <CardFooter className="p-6 pt-0">
                 <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                  <ShoppingCart className="h-4 w-4 mr-2" />
-                  Add to Cart
+                    <ShoppingCart className="h-4 w-4 mr-2" />
+                    Add to Cart
                 </Button>
               </CardFooter>
             </Card>

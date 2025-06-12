@@ -1,7 +1,9 @@
+'use client'
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Star } from "lucide-react";
+import Image from "next/image";
 
 const featuredProducts = [
   {
@@ -45,7 +47,6 @@ export default function ShowAllProductsSection() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
             Discover our hand-picked selection of premium quality products that our customers love
           </p>
-       
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
@@ -53,15 +54,15 @@ export default function ShowAllProductsSection() {
             <Card key={product.id} className="group cursor-pointer hover:shadow-xl transition-all duration-300 overflow-hidden">
               <CardContent className="p-0">
                 <div className="relative aspect-square overflow-hidden">
-                  <img
+                  <Image
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <Badge className="absolute top-4 left-4">{product.badge}</Badge>
                   <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="flex items-center gap-1 text-sm">
-                      <Star className="h-3 w-3 fill-primary text-primary" />
                       <span>{product.rating}</span>
                     </div>
                   </div>
@@ -74,7 +75,6 @@ export default function ShowAllProductsSection() {
                   
                   <div className="flex items-center gap-2 mb-3">
                     <div className="flex items-center gap-1">
-                      <Star className="h-4 w-4 fill-primary text-primary" />
                       <span className="text-sm">{product.rating}</span>
                       <span className="text-sm text-muted-foreground">({product.reviews})</span>
                     </div>

@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Shirt, HardHat, Watch, Briefcase } from "lucide-react";
+import Image from "next/image";
 
 const categories = [
   {
@@ -40,7 +41,7 @@ export default function CategoriesSection() {
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">Shop by Category</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explore our carefully curated categories to find exactly what you're looking for
+            Explore our carefully curated categories to find exactly what you&apos;re looking for
           </p>
         </div>
 
@@ -51,10 +52,11 @@ export default function CategoriesSection() {
               <Card key={category.id} className="group cursor-pointer hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <CardContent className="p-0">
                   <div className="relative aspect-square overflow-hidden">
-                    <img
+                    <Image
                       src={category.image}
                       alt={category.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-white">

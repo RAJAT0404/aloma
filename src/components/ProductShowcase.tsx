@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star } from "lucide-react";
+import Image from "next/image";
 
 const ProductShowcase = () => {
   const [selectedCategory, setSelectedCategory] = useState("T-Shirts");
@@ -133,9 +134,11 @@ const ProductShowcase = () => {
             <Card key={product.id} className="group cursor-pointer transition-all duration-300 hover:shadow-lg overflow-hidden">
               <CardContent className="p-0">
                 <div className="relative">
-                  <img
+                  <Image
                     src={product.image}
                     alt={product.name}
+                    width={500}
+                    height={500}
                     className="w-full h-64 object-cover"
                   />
                   <Badge 
