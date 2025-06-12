@@ -37,7 +37,6 @@ const Contact = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     console.log("Contact form submitted:", data);
@@ -70,37 +69,42 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="text-center mb-12">
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <div className="container mx-auto px-4 py-12">
+        {/* Hero Section */}
+        <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Contact Us
+            Let&apos;s Create Together
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Get in touch with our team. We&apos;re here to help with your custom apparel needs 
-            and answer any questions you may have.
+            Our team is ready to bring your custom apparel vision to life. Reach out and let&apos;s start the conversation.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <Card className="shadow-lg">
-            <CardHeader>
-              <CardTitle className="text-2xl">Send us a Message</CardTitle>
-            </CardHeader>
-            <CardContent>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Elegant Contact Form */}
+          <Card className="border-none shadow-xl rounded-2xl overflow-hidden">
+            <div className="bg-blue-400 p-6">
+              <CardHeader className="p-0">
+                <CardTitle className="text-2xl text-white">Send us a Message</CardTitle>
+              </CardHeader>
+            </div>
+            <CardContent className="p-8">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <FormField
                       control={form.control}
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Name *</FormLabel>
+                          <FormLabel className="text-foreground">Name *</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your full name" {...field} />
+                            <Input 
+                              placeholder="Your full name" 
+                              className="bg-muted/20 border-muted-foreground/30 focus-visible:ring-primary"
+                              {...field} 
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -111,9 +115,14 @@ const Contact = () => {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email *</FormLabel>
+                          <FormLabel className="text-foreground">Email *</FormLabel>
                           <FormControl>
-                            <Input type="email" placeholder="your@email.com" {...field} />
+                            <Input 
+                              type="email" 
+                              placeholder="your@email.com" 
+                              className="bg-muted/20 border-muted-foreground/30 focus-visible:ring-primary"
+                              {...field} 
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -126,9 +135,13 @@ const Contact = () => {
                     name="phone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Phone (Optional)</FormLabel>
+                        <FormLabel className="text-foreground">Phone (Optional)</FormLabel>
                         <FormControl>
-                          <Input placeholder="Your phone number" {...field} />
+                          <Input 
+                            placeholder="Your phone number" 
+                            className="bg-muted/20 border-muted-foreground/30 focus-visible:ring-primary"
+                            {...field} 
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -140,9 +153,13 @@ const Contact = () => {
                     name="subject"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Subject *</FormLabel>
+                        <FormLabel className="text-foreground">Subject *</FormLabel>
                         <FormControl>
-                          <Input placeholder="What is this regarding?" {...field} />
+                          <Input 
+                            placeholder="What is this regarding?" 
+                            className="bg-muted/20 border-muted-foreground/30 focus-visible:ring-primary"
+                            {...field} 
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -154,11 +171,11 @@ const Contact = () => {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Message *</FormLabel>
+                        <FormLabel className="text-foreground">Message *</FormLabel>
                         <FormControl>
                           <Textarea 
                             placeholder="Tell us more about your inquiry..."
-                            className="min-h-[120px]"
+                            className="min-h-[150px] bg-muted/20 border-muted-foreground/30 focus-visible:ring-primary"
                             {...field}
                           />
                         </FormControl>
@@ -169,9 +186,9 @@ const Contact = () => {
 
                   <Button 
                     type="submit" 
-                    className="w-full" 
-                    size="lg"
+                    className="w-full py-6 text-lg font-medium" 
                     disabled={isSubmitting}
+                  variant='blue'
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
@@ -183,27 +200,26 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-6">
             <div className="mb-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">
-                Get in Touch
+              <h2 className="text-3xl font-bold text-foreground mb-4">
+                Our Contact Details
               </h2>
               <p className="text-muted-foreground">
-                Ready to start your custom apparel project? We&apos;d love to hear from you. 
-                Reach out using any of the methods below, and our team will respond promptly.
+                Whether you have questions about our products or need help with an order, we&apos;re here to assist.
               </p>
             </div>
 
             {contactInfo.map((info, index) => (
-              <Card key={index} className="hover:shadow-md transition-shadow">
+              <Card key={index} className="border-none shadow-sm hover:shadow-md transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <info.icon className="h-6 w-6 text-primary" />
+                    <div className="bg-blue-400 p-3 rounded-full">
+                      <info.icon className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-2">
+                      <h3 className="font-semibold text-lg text-foreground mb-2">
                         {info.title}
                       </h3>
-                      <div className="space-y-1">
+                      <div className="space-y-2">
                         {info.details.map((detail, idx) => (
                           <p key={idx} className="text-muted-foreground">
                             {detail}
@@ -216,16 +232,16 @@ const Contact = () => {
               </Card>
             ))}
 
-            {/* Additional CTA */}
-            <Card className="bg-primary/5 border-primary/20">
+            {/* CTA Card */}
+            <Card className="bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20">
               <CardContent className="p-6 text-center">
-                <h3 className="font-semibold text-foreground mb-2">
-                  Need a Quick Quote?
+                <h3 className="font-semibold text-xl text-foreground mb-3">
+                  Need Immediate Assistance?
                 </h3>
-                <p className="text-muted-foreground mb-4">
-                  For fast quotes on bulk orders or custom designs, give us a call directly.
+                <p className="text-muted-foreground mb-5">
+                  Our customer service team is available during business hours to help with urgent inquiries.
                 </p>
-                <Button variant="outline" size="lg">
+                <Button     variant='blue' size="lg" className="w-full">
                   Call Now: (555) 123-4567
                 </Button>
               </CardContent>
@@ -234,6 +250,11 @@ const Contact = () => {
         </div>
 
         {/* FAQ Section */}
+        <div className="mt-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-3">
+              Common Questions
+            </h2>
         <div className="mt-16">
           <Card className="bg-muted/30">
             <CardContent className="p-8">
@@ -277,9 +298,8 @@ const Contact = () => {
             </CardContent>
           </Card>
         </div>
-      </div>
-    </div>
+      </div> </div> </div> </div>
   );
-};
+}
 
 export default Contact;
