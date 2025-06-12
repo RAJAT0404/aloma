@@ -45,7 +45,7 @@ const Header = () => {
     },
     { 
       name: "Contact", 
-      href: "#",
+      href: "/contact",
       submenu: []
     }
   ];
