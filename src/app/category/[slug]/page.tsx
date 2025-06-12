@@ -1,8 +1,6 @@
 'use client'
 
 import { Button } from "@/components/ui/button";
-import { Footer } from "@/components/ui/Footer";
-import Header from "@/components/ui/Header";
 import { Star, Heart, Share2, ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
@@ -83,7 +81,6 @@ const CategoryPage = () => {
 
   return (
     <>
-      <Header />
       <div className="container mx-auto px-4 py-8">
         <Button variant="ghost" className="mb-6">
           <ChevronLeft className="h-4 w-4 mr-2" />
@@ -244,8 +241,6 @@ const CategoryPage = () => {
           </Card>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 };
