@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Shirt, HardHat, Watch, Briefcase } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const categories = [
   {
@@ -73,7 +74,7 @@ export default function CategoriesSection() {
 
         <div className="text-center mt-12">
           <Button variant="blue" size="lg">
-            View All Categories
+            <Link href="/product">View All Categories</Link>
           </Button>
         </div>
       </div>
