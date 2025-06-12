@@ -118,7 +118,7 @@ const ProductShowcase = () => {
           {categories.map((category) => (
             <Button
               key={category}
-              variant={selectedCategory === category ? "default" : "ghost"}
+              variant={selectedCategory === category ? "blue" : "ghost"}
               onClick={() => setSelectedCategory(category)}
               className="text-sm"
             >
@@ -195,7 +195,7 @@ const ProductShowcase = () => {
 
         {/* CTA Button */}
         <div className="text-center">
-          <Button size="lg" className="px-8">
+          <Button size="lg" className="text-lg px-8 py-6 bg-blue-400 hover:bg-blue-500">
             Shop T-Shirts
           </Button>
         </div>

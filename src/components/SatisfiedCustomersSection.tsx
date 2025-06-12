@@ -133,7 +133,7 @@ const SatisfiedCustomersSection = () => {
             Join our community of satisfied customers and share your story
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button size="lg" variant='blue' className=" text-primary-foreground ">
               Share Your Photo
             </Button>
             <Button variant="outline" size="lg">

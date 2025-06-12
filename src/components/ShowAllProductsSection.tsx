@@ -1,85 +1,106 @@
-'use client'
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight, Star } from "lucide-react";
 
-const ShowAllProductsSection = () => {
-  const featuredProducts = [
-    {
-      id: 1,
-      name: "Custom Cotton T-Shirt",
-      price: "$19.99",
-      originalPrice: "$24.99",
-      image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      badge: "Best Seller"
-    },
-    {
-      id: 2,
-      name: "Premium Hoodie",
-      price: "$39.99",
-      originalPrice: "$49.99",
-      image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      badge: "New"
-    },
-    {
-      id: 3,
-      name: "Baseball Cap",
-      price: "$15.99",
-      originalPrice: "$19.99",
-      image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      badge: "Sale"
-    }
-  ];
+const featuredProducts = [
+  {
+    id: 1,
+    name: "Premium Cotton T-Shirt",
+    price: 29.99,
+    originalPrice: 39.99,
+    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    rating: 4.8,
+    reviews: 124,
+    badge: "Best Seller"
+  },
+  {
+    id: 2,
+    name: "Vintage Denim Jacket",
+    price: 89.99,
+    originalPrice: 119.99,
+    image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    rating: 4.9,
+    reviews: 89,
+    badge: "Limited Edition"
+  },
+  {
+    id: 3,
+    name: "Comfort Hoodie",
+    price: 54.99,
+    originalPrice: 69.99,
+    image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    rating: 4.7,
+    reviews: 203,
+    badge: "30% Off"
+  }
+];
 
+export default function ShowAllProductsSection() {
   return (
-    <section className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center space-y-8 mb-16">
-          <div className="space-y-4">
-            <h2 className="text-3xl lg:text-4xl font-bold">Popular Products</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              The most loved products by our customers. Quality tested and customer approved.
-            </p>
-          </div>
-          
-          <Button size="lg" className="text-lg px-8 py-6">
-            View All Products
-          </Button>
+    <section className="py-16 lg:py-24 bg-muted/30">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4">Featured Products</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+            Discover our hand-picked selection of premium quality products that our customers love
+          </p>
+       
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {featuredProducts.map((product) => (
-            <Card key={product.id} className="group cursor-pointer transition-all duration-300 hover:shadow-lg">
+            <Card key={product.id} className="group cursor-pointer hover:shadow-xl transition-all duration-300 overflow-hidden">
               <CardContent className="p-0">
-                <div className="relative overflow-hidden rounded-t-lg">
+                <div className="relative aspect-square overflow-hidden">
                   <img
                     src={product.image}
                     alt={product.name}
-                    width={500}
-                    height={256}
-                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-primary text-primary-foreground text-xs font-medium px-2 py-1 rounded">
-                      {product.badge}
-                    </span>
+                  <Badge className="absolute top-4 left-4">{product.badge}</Badge>
+                  <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="flex items-center gap-1 text-sm">
+                      <Star className="h-3 w-3 fill-primary text-primary" />
+                      <span>{product.rating}</span>
+                    </div>
                   </div>
                 </div>
+                
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
-                  <div className="flex items-center space-x-2 mb-4">
-                    <span className="text-xl font-bold text-primary">{product.price}</span>
-                    <span className="text-sm text-muted-foreground line-through">{product.originalPrice}</span>
+                  <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
+                    {product.name}
+                  </h3>
+                  
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="flex items-center gap-1">
+                      <Star className="h-4 w-4 fill-primary text-primary" />
+                      <span className="text-sm">{product.rating}</span>
+                      <span className="text-sm text-muted-foreground">({product.reviews})</span>
+                    </div>
                   </div>
-                  <Button className="w-full">Add to Cart</Button>
+                  
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xl font-bold">${product.price}</span>
+                      <span className="text-sm text-muted-foreground line-through">
+                        ${product.originalPrice}
+                      </span>
+                    </div>
+                    <Button value='destructive' size="sm">Add to Cart</Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
+
+        <div className="text-center mt-10">
+          <Button size="lg" variant='blue' className="text-lg px-8">
+            Shop All Products
+          </Button>
+        </div>
       </div>
     </section>
   );
 };
-
-export default ShowAllProductsSection;

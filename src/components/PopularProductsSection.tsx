@@ -183,7 +183,7 @@ const PopularProductsSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="px-8">
+          <Button variant="blue" size="lg" className="px-8">
             View All Products
           </Button>
         </div>

@@ -9,41 +9,41 @@ const BrandsSection = () => {
       logo: "https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png"
     },
     {
-      name: "Carhartt",
-      logo: "https://1000logos.net/wp-content/uploads/2020/09/Carhartt-Logo.png"
+      name: "Adidas",
+      logo: "https://logos-world.net/wp-content/uploads/2020/04/Adidas-Logo.png"
     },
     {
       name: "Under Armour",
       logo: "https://logos-world.net/wp-content/uploads/2020/04/Under-Armour-Logo.png"
     },
     {
-      name: "Champion",
-      logo: "https://logos-world.net/wp-content/uploads/2020/11/Champion-Logo.png"
-    },
-    {
-      name: "Stanley",
-      logo: "https://1000logos.net/wp-content/uploads/2020/09/Stanley-Logo.png"
-    },
-    {
-      name: "Travis Mathew",
-      logo: "https://cdn.freebiesupply.com/logos/large/2x/travis-mathew-logo-png-transparent.png"
+      name: "Nike",
+      logo: "https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png"
     },
     {
       name: "Adidas",
       logo: "https://logos-world.net/wp-content/uploads/2020/04/Adidas-Logo.png"
     },
     {
-      name: "New Era",
-      logo: "https://1000logos.net/wp-content/uploads/2017/05/New-Era-Logo.png"
+      name: "Under Armour",
+      logo: "https://logos-world.net/wp-content/uploads/2020/04/Under-Armour-Logo.png"
     },
     {
-      name: "OGIO",
-      logo: "https://logos-world.net/wp-content/uploads/2020/12/OGIO-Logo.png"
+      name: "Nike",
+      logo: "https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png"
     },
     {
-      name: "Richardson",
-      logo: "https://www.richardsonsports.com/wp-content/uploads/2019/07/richardson-logo-red.png"
-    }
+      name: "Adidas",
+      logo: "https://logos-world.net/wp-content/uploads/2020/04/Adidas-Logo.png"
+    },
+    {
+      name: "Under Armour",
+      logo: "https://logos-world.net/wp-content/uploads/2020/04/Under-Armour-Logo.png"
+    },
+    {
+      name: "Nike",
+      logo: "https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png"
+    },
   ];
 
   return (
@@ -76,7 +76,8 @@ const BrandsSection = () => {
         <div className="text-center">
           <Button 
             size="lg" 
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-all duration-300"
+            variant='blue'
+            // className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-all duration-300"
           >
             Shop All Brands
           </Button>
