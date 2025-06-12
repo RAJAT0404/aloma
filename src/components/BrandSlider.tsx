@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 const BrandsSlider = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -107,9 +108,11 @@ const BrandsSlider = () => {
                 key={`${brand.name}-${index}`}
                 className="flex-shrink-0 flex items-center justify-center h-16 w-32 grayscale hover:grayscale-0 transition-all duration-300"
               >
-                <img
+                <Image
                   src={brand.logo}
                   alt={brand.name}
+                  width={128}
+                  height={64}
                   className="max-w-full max-h-full object-contain"
                   loading="lazy"
                 />

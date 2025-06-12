@@ -6,8 +6,6 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
-
-
 const TShirts = () => {
   const router = useRouter();
 
@@ -56,14 +54,14 @@ const TShirts = () => {
     },
     {
       id: 7,
-      name: "Kids' T-Shirts",
+      name: "Kids&apos; T-Shirts",
       description: "Comfortable and fun t-shirts designed for children",
       image: "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
       count: "110+ Items"
     },
     {
       id: 8,
-      name: "Women's T-Shirts",
+      name: "Women&apos;s T-Shirts",
       description: "Stylish and comfortable tees designed specifically for women",
       image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
       count: "140+ Items"
@@ -142,7 +140,7 @@ const TShirts = () => {
         <div className="mt-16 text-center">
           <div className="bg-muted/30 rounded-2xl p-12">
             <h2 className="text-3xl font-bold text-foreground mb-4">
-              Can't Find What You're Looking For?
+              Can&apos;t Find What You&apos;re Looking For?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Browse our complete product collection or contact our team for custom design options.
