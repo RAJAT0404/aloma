@@ -22,13 +22,13 @@ const Header = () => {
       submenu: []
     },
     { 
-      name: "Shop", 
+      name: "Products", 
       href: "/product",
       submenu: [
-        { name: "New Arrivals", href: "/product/pro1" },
-        { name: "Best Sellers", href:  "/product/pro1" },
-        { name: "Sale Items", href:  "/product/pro1" },
-        { name: "Gift Cards", href: "/product/pro1" }
+        { name: "New Arrivals", href: "/product" },
+        { name: "Best Sellers", href:  "/product" },
+        { name: "Sale Items", href:  "/product" },
+        { name: "Gift Cards", href: "/product" }
       ]
     },
     { 

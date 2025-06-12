@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -25,8 +26,10 @@ const HeroSection = () => {
               <Button size="lg" className="text-lg px-8 py-6 bg-blue-400 hover:bg-blue-500">
                 Start Designing
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6">
-                Browse Products
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>
+                <Link href="/product">
+                  Browse Products
+                </Link>
               </Button>
             </div>
 
