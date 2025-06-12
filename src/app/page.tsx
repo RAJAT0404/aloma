@@ -11,7 +11,6 @@ import ProductShowcase from "@/components/ProductShowcase";
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <Header />
       <HeroSection />
       <CategoriesSection />
       <ShowAllProductsSection />
@@ -19,7 +18,6 @@ export default function Home() {
       <ProductShowcase/>
       <SatisfiedCustomersSection />
       <TestimonialSection />
-      <Footer />
     </div>
   );
 }

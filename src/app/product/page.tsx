@@ -58,8 +58,6 @@ const ProductPage = () => {
   };
 
   return (
-   <>
-   <Header/>
    <div className="container mx-auto px-4 py-8">
       <Button variant="ghost" className="mb-6">
         <ChevronLeft className="h-4 w-4 mr-2" />
@@ -206,10 +204,6 @@ const ProductPage = () => {
         </div>
       </div>
     </div>
-
-    <Footer/>
-   
-   </>
   );
 };
 
