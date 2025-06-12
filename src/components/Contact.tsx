@@ -41,7 +41,7 @@ const Contact = () => {
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     console.log("Contact form submitted:", data);
-    toast.success("Message sent successfully! We'll get back to you soon.");
+    toast.success("Message sent successfully! We&apos;ll get back to you soon.");
     form.reset();
     setIsSubmitting(false);
   };
@@ -78,7 +78,7 @@ const Contact = () => {
             Contact Us
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Get in touch with our team. We're here to help with your custom apparel needs 
+            Get in touch with our team. We&apos;re here to help with your custom apparel needs 
             and answer any questions you may have.
           </p>
         </div>
@@ -187,7 +187,7 @@ const Contact = () => {
                 Get in Touch
               </h2>
               <p className="text-muted-foreground">
-                Ready to start your custom apparel project? We'd love to hear from you. 
+                Ready to start your custom apparel project? We&apos;d love to hear from you. 
                 Reach out using any of the methods below, and our team will respond promptly.
               </p>
             </div>
@@ -243,7 +243,7 @@ const Contact = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <h4 className="font-semibold text-foreground mb-2">
-                    What's your minimum order quantity?
+                    What&apos;s your minimum order quantity?
                   </h4>
                   <p className="text-muted-foreground">
                     Our minimum order is typically 12 pieces, but this can vary depending on the product and customization.
