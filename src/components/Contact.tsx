@@ -84,7 +84,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Elegant Contact Form */}
           <Card className="border-none shadow-xl rounded-2xl overflow-hidden">
-            <div className="bg-blue-400 p-6">
+            <div className="bg-[#003C64] p-6">
               <CardHeader className="p-0">
                 <CardTitle className="text-2xl text-white">Send us a Message</CardTitle>
               </CardHeader>
@@ -212,7 +212,7 @@ const Contact = () => {
               <Card key={index} className="border-none shadow-sm hover:shadow-md transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-blue-400 p-3 rounded-full">
+                    <div className="bg-[#003C64] p-3 rounded-full">
                       <info.icon className="h-6 w-6 text-white" />
                     </div>
                     <div>

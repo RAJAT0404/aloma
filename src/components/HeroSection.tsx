@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 py-20 lg:py-32">
+    <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 py-10 lg:py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -23,7 +23,7 @@ const HeroSection = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-lg px-8 py-6 bg-blue-400 hover:bg-blue-500">
+              <Button size="lg" className="text-lg px-8 py-6 bg-[#003C64] hover:bg-blue-500">
                 Start Designing
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>

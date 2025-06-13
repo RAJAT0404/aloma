@@ -1,6 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import CategoriesSection from "@/components/CategoriesSection";
-import ShowAllProductsSection from "@/components/ShowAllProductsSection";
+// import ShowAllProductsSection from "@/components/ShowAllProductsSection";
 import SatisfiedCustomersSection from "@/components/SatisfiedCustomersSection";
 import { TestimonialSection } from "@/components/TestimonialSection";
 import BrandsSection from "@/components/BrandsSection";
@@ -11,8 +11,8 @@ export default function Home() {
     <div className="min-h-screen">
       <HeroSection />
       <CategoriesSection />
-      <ShowAllProductsSection />
       <BrandsSection/>
+      {/* <ShowAllProductsSection /> */}
       <ProductShowcase/>
       <SatisfiedCustomersSection />
       <TestimonialSection />

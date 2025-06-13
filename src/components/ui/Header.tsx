@@ -1,199 +1,10 @@
-// import { Search, ShoppingCart, Menu, User, ChevronDown } from "lucide-react";
-// import { Button } from "@/components/ui/button";
-// import { Input } from "@/components/ui/input";
-// import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-// import {
-//   DropdownMenu,
-//   DropdownMenuContent,
-//   DropdownMenuItem,
-//   DropdownMenuTrigger,
-// } from "@/components/ui/dropdown-menu";
-// import {
-//   HoverCard,
-//   HoverCardContent,
-//   HoverCardTrigger,
-// } from "@/components/ui/hover-card";
-
-// const Header = () => {
-//   const navItems = [
-//     { 
-//       name: "Home", 
-//       href: "/",
-//       submenu: []
-//     },
-//     { 
-//       name: "Products", 
-//       href: "/product",
-//       submenu: [
-//         { name: "New Arrivals", href: "/product" },
-//         { name: "Best Sellers", href:  "/product" },
-//         { name: "Sale Items", href:  "/product" },
-//         { name: "Gift Cards", href: "/product" }
-//       ]
-//     },
-//     { 
-//       name: "Categories", 
-//       href: "/",
-//       submenu: [
-//         { name: "T-Shirts", href: "/category" },
-//         { name: "Hoodies & Sweatshirts", href: "/category" },
-//         { name: "Hats & Caps", href: "/category" },
-//         { name: "Jeans", href: "/category" },
-//         { name: "Promotional Products", href: "/category" },
-//         { name: "Accessories", href: "/category" }
-//       ]
-//     },
-//     { 
-//       name: "Contact", 
-//       href: "/contact",
-//       submenu: []
-//     }
-//   ];
-
-//   return (
-//     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-//       <div className="container mx-auto px-4">
-//         <div className="flex h-16 items-center justify-between">
-//           {/* Logo */}
-//           <div className="flex items-center space-x-2">
-//             <div className="h-8 w-8 rounded bg-primary"></div>
-//             <span className="text-xl font-bold">Aloma Tees</span>
-//           </div>
-
-//           {/* Desktop Navigation */}
-//           <nav className="hidden md:flex items-center space-x-6">
-//             {navItems.map((item) => (
-//               item.submenu.length > 0 ? (
-//                 <HoverCard key={item.name} openDelay={100} closeDelay={100}>
-//                   <HoverCardTrigger asChild>
-//                     <Button variant="ghost" className="text-sm font-medium hover:text-primary flex items-center space-x-1 transition-colors  group">
-//                       {item.name}
-//                       <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
-//                     </Button>
-//                   </HoverCardTrigger>
-//                   <HoverCardContent className="w-56 p-0 bg-background border shadow-lg">
-//                     <div className="flex flex-col">
-//                       {item.submenu.map((subItem) => (
-//                         <a
-//                           key={subItem.name}
-//                           href={subItem.href}
-//                           className="px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground"
-//                         >
-//                           {subItem.name}
-//                         </a>
-//                       ))}
-//                     </div>
-//                   </HoverCardContent>
-//                 </HoverCard>
-//               ) : item.submenu.length > 0 ? (
-//                 <DropdownMenu key={item.name}>
-//                   <DropdownMenuTrigger asChild>
-//                     <button className="flex items-center space-x-1 text-sm font-medium transition-colors hover:text-primary group">
-//                       <span>{item.name}</span>
-//                       <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
-//                     </button>
-//                   </DropdownMenuTrigger>
-//                   <DropdownMenuContent align="start" className="w-56 bg-background border shadow-lg">
-//                     {item.submenu.map((subItem) => (
-//                       <DropdownMenuItem key={subItem.name} asChild>
-//                         <a
-//                           href={subItem.href}
-//                           className="w-full cursor-pointer hover:bg-accent hover:text-accent-foreground"
-//                         >
-//                           {subItem.name}
-//                         </a>
-//                       </DropdownMenuItem>
-//                     ))}
-//                   </DropdownMenuContent>
-//                 </DropdownMenu>
-//               ) : (
-//                 <a
-//                   key={item.name}
-//                   href={item.href}
-//                   className="text-sm font-medium transition-colors hover:text-primary"
-//                 >
-//                   {item.name}
-//                 </a>
-//               )
-//             ))}
-//           </nav>
-
-//           {/* Search Bar - Hidden on mobile */}
-//           <div className="hidden lg:flex items-center space-x-2 flex-1 max-w-sm mx-8">
-//             <div className="relative flex-1">
-//               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-//               <Input
-//                 placeholder="Search products..."
-//                 className="pl-10 bg-muted/50"
-//               />
-//             </div>
-//           </div>
-
-//           {/* Right side actions */}
-//           <div className="flex items-center space-x-2">
-//             {/* Search button for mobile */}
-//             <Button variant="ghost" size="icon" className="lg:hidden">
-//               <Search className="h-5 w-5" />
-//             </Button>
-            
-//             <Button variant="ghost" size="icon">
-//               <User className="h-5 w-5" />
-//             </Button>
-            
-//             <Button variant="ghost" size="icon" className="relative">
-//               <ShoppingCart className="h-5 w-5" />
-//               <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-primary text-xs text-primary-foreground flex items-center justify-center">
-//                 3
-//               </span>
-//             </Button>
-
-//             {/* Mobile menu */}
-//             <Sheet>
-//               <SheetTrigger asChild>
-//                 <Button variant="ghost" size="icon" className="md:hidden">
-//                   <Menu className="h-5 w-5" />
-//                 </Button>
-//               </SheetTrigger>
-//               <SheetContent side="right" className="bg-background">
-//                 <nav className="flex flex-col space-y-4 mt-8">
-//                   {navItems.map((item) => (
-//                     <div key={item.name}>
-//                       <a
-//                         href={item.href}
-//                         className="text-lg font-medium transition-colors hover:text-primary block py-2"
-//                       >
-//                         {item.name}
-//                       </a>
-//                       {item.submenu.length > 0 && (
-//                         <div className="ml-4 mt-2 space-y-2">
-//                           {item.submenu.map((subItem) => (
-//                             <a
-//                               key={subItem.name}
-//                               href={subItem.href}
-//                               className="text-sm text-muted-foreground hover:text-primary block py-1"
-//                             >
-//                               {subItem.name}
-//                             </a>
-//                           ))}
-//                         </div>
-//                       )}
-//                     </div>
-//                   ))}
-//                 </nav>
-//               </SheetContent>
-//             </Sheet>
-//           </div>
-//         </div>
-//       </div>
-//     </header>
-//   );
-// };
 'use client'
-// export default Header;
 import { Search, ShoppingCart, User, ChevronDown, Phone, Mail, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import Image from "next/image";
+import Logo from "../../../public/alamo-tees-logo.png"
 import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
@@ -218,7 +29,7 @@ const Header = () => {
     <header className="w-full">
       {/* Notice Banner */}
       {!isBannerHidden && (
-        <div className="bg-primary text-white py-4 px-8 text-sm text-center relative">
+        <div className="bg-[#003C64] text-white py-4 px-8 text-sm text-center relative">
           In-House Artists, State of the Art Screen Printing, Embroidery & Digital Printing
           <button 
             onClick={() => setIsBannerHidden(true)}
@@ -237,11 +48,14 @@ const Header = () => {
             {/* Logo and Mobile Menu */}
             <div className="flex items-center justify-between w-full md:w-auto">
               <div className="flex items-center space-x-2 flex-shrink-0">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-400 rounded flex items-center justify-center">
-                  <span className="text-white font-bold text-lg md:text-xl">A</span>
-                </div>
-                <div className="hidden sm:block">
-                  <div className="text-blue-400 font-bold text-base md:text-lg">ALAMO TEES </div>
+                <div className="flex items-center">
+                  <Image
+                    src={Logo}
+                    alt="Alamo Tees Logo"
+                    width={120}
+                    height={48}
+                    className="h-10 w-auto md:h-24"
+                  />
                 </div>
               </div>
 
@@ -261,7 +75,7 @@ const Header = () => {
                       />
                       <Button 
                         size="sm" 
-                        className="absolute right-1 top-1 h-8 w-8 p-0 bg-blue-400 hover:bg-black"
+                        className="absolute right-1 top-1 h-8 w-8 p-0 bg-[#003C64] hover:bg-black"
                       >
                         <Search className="h-4 w-4" />
                       </Button>
@@ -281,16 +95,16 @@ const Header = () => {
 
                     <div className="pt-6 border-t border-gray-200 space-y-6">
                       <Link href="tel:888-618-6870" className="flex items-center space-x-4 cursor-pointer">
-                        <Phone className="h-5 w-5 text-blue-400" />
+                        <Phone className="h-5 w-5 text-[#003C64]" />
                         <div>
-                          <div className="text-blue-400 font-semibold">NEED HELP?</div>
+                          <div className="text-[#003C64] font-semibold">NEED HELP?</div>
                           <div className="text-gray-600">888-618-6870</div>
                         </div>
                       </Link>
                       <Link href="mailto:sales@alamotees.com" className="flex items-center space-x-4 cursor-pointer">
-                        <Mail className="h-5 w-5 text-blue-400" />
+                        <Mail className="h-5 w-5 text-[#003C64]" />
                         <div>
-                          <div className="text-blue-400 font-semibold">EMAIL US</div>
+                          <div className="text-[#003C64] font-semibold">EMAIL US</div>
                           <div className="text-gray-600">sales@alamotees.com</div>
                         </div>
                       </Link>
@@ -340,17 +154,17 @@ const Header = () => {
             {/* Contact Info & Actions - Hidden on mobile */}
             <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
               <Link href="tel:888-618-6870" className="hidden lg:flex items-center space-x-2 text-sm cursor-pointer">
-                <Phone className="h-4 w-4 text-blue-400" />
+                <Phone className="h-4 w-4 text-[#003C64]" />
                 <div>
-                  <div className="text-blue-400 font-semibold">NEED HELP?</div>
+                  <div className="text-[#003C64] font-semibold">NEED HELP?</div>
                   <div className="text-gray-600">888-618-6870</div>
                 </div>
               </Link>
 
               <Link href="mailto:sales@alamotees.com" className="hidden lg:flex items-center space-x-2 text-sm cursor-pointer">
-                <Mail className="h-4 w-4 text-blue-400" />
+                <Mail className="h-4 w-4 text-[#003C64]" />
                 <div>
-                  <div className="text-blue-400 font-semibold">EMAIL US</div>
+                  <div className="text-[#003C64] font-semibold">EMAIL US</div>
                   <div className="text-gray-600">sales@alamotees.com</div>
                 </div>
               </Link>
@@ -361,7 +175,7 @@ const Header = () => {
                 </Button>
                 <Button variant="ghost" size="icon" className="relative">
                   <ShoppingCart className="h-5 w-5" />
-                  <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-blue-400 text-xs text-white flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-[#003C64] text-xs text-white flex items-center justify-center">
                     0
                   </span>
                 </Button>
@@ -374,7 +188,7 @@ const Header = () => {
       {/* Navigation Menu - Hidden on mobile */}
       <div className="hidden md:block bg-gray-50 border-b border-gray-200">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-12">
+          <div className="flex items-center justify-between h-24">
             <nav className="flex items-center space-x-4 lg:space-x-8">
               <Link href="/" className="text-sm font-medium text-gray-700 hover:text-[#0072BA] transition-colors">
                 Home
@@ -410,7 +224,7 @@ const Header = () => {
             </nav>
 
             <Button 
-              className="hidden lg:block bg-blue-400 hover:bg-blue-500 text-white px-6 py-2 font-semibold transition-all duration-200 transform hover:scale-105 active:scale-95"
+              className=" lg:block bg-[#003C64] hover:bg-blue-500 flex items-center space-x-2 text-white px-8 py-6 font-semibold transition-all duration-200 transform hover:scale-105 active:scale-95"
               onClick={() => window.location.href = '/design-lab'}
               aria-label="Go to Design Lab"
             >
