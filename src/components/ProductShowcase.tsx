@@ -1,24 +1,26 @@
 'use client'
 
-import { useState } from "react";
+// import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star } from "lucide-react";
 import Image from "next/image";
+import HeavyTshirt from "../../public/showcase/heaveytshirt.jpg"
+import ClassicT from "../../public/showcase/classic.png"
 
 const ProductShowcase = () => {
-  const [selectedCategory, setSelectedCategory] = useState("T-Shirts");
+  // const [selectedCategory, setSelectedCategory] = useState("T-Shirts");
 
-  const categories = ["T-Shirts", "Hoodies", "Hats", "Polos", "Promo Products"];
+  // const categories = ["T-Shirts", "Hoodies", "Hats", "Polos", "Promo Products"];
 
   const products = [
     {
       id: 1,
-      name: "RushOrderTees Classic Tee",
+      name: "Classic Tee",
       badge: "Top Seller",
       badgeColor: "bg-slate-800",
-      image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: ClassicT ,
       colors: [
         "#ffffff", "#000000", "#1e3a8a", "#1e40af", "#dc2626", "#7c2d12", 
         "#581c87", "#facc15", "#22c55e", "#10b981", "#ef4444", "#64748b"
@@ -51,7 +53,7 @@ const ProductShowcase = () => {
     },
     {
       id: 3,
-      name: "Bella + Canvas Tri-Blend T-Shirt",
+      name: "Bella + Canvas Bags",
       badge: "Top Seller",
       badgeColor: "bg-slate-800",
       image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
@@ -72,7 +74,7 @@ const ProductShowcase = () => {
       name: "Comfort Colors Heavyweight T-Shirt",
       badge: "Eco-Friendly",
       badgeColor: "bg-green-600",
-      image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image:HeavyTshirt,
       colors: [
         "#f1f5f9", "#fbbf24", "#f97316", "#ec4899", "#06b6d4", "#8b5cf6",
         "#dc2626", "#000000", "#f59e0b", "#10b981", "#3b82f6", "#8b5cf6"
@@ -115,7 +117,7 @@ const ProductShowcase = () => {
         </div>
 
         {/* Category Navigation */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        {/* <div className="flex flex-wrap justify-center gap-2 mb-12">
           {categories.map((category) => (
             <Button
               key={category}
@@ -126,7 +128,7 @@ const ProductShowcase = () => {
               {category}
             </Button>
           ))}
-        </div>
+        </div> */}
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">

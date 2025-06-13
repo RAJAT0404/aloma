@@ -1,48 +1,68 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import Bella from "../../public/Brands/Bella_Canvas_Logo.png"
+import Comfort from "../../public/Brands/comfort.png"
+import Travis from "../../public/Brands/travis.png"
+
+import Gildan from "../../public/Brands/gildan.png"
+import NextLevel from "../../public/Brands/Nextlevel.png"
+
+
 
 const BrandsSection = () => {
   const brands = [
     {
       name: "Nike",
-      logo: "https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png"
+      logo: "https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png",
+      objectCover:true,
     },
     {
       name: "Adidas",
-      logo: "https://logos-world.net/wp-content/uploads/2020/04/Adidas-Logo.png"
+      logo: "https://logos-world.net/wp-content/uploads/2020/04/Adidas-Logo.png",
+      objectCover:true,
     },
     {
       name: "Under Armour",
-      logo: "https://logos-world.net/wp-content/uploads/2020/04/Under-Armour-Logo.png"
+      logo: "https://logos-world.net/wp-content/uploads/2020/04/Under-Armour-Logo.png",
+      objectCover:true
     },
     {
-      name: "Nike",
-      logo: "https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png"
+      name: "Bella Canvas",
+      logo: Bella,
+      
+      objectCover:false
     },
     {
-      name: "Adidas",
-      logo: "https://logos-world.net/wp-content/uploads/2020/04/Adidas-Logo.png"
+      name: "Comfort",
+      logo: Comfort
+      ,
+      objectCover:false
+    },
+    {
+      name: "Travis",
+      logo: Travis,
+      objectCover:true
+    },
+    {
+      name: "Gildan",
+      logo: Gildan,
+      objectCover:false
+    },
+    {
+      name: "NextLevel ",
+      logo:NextLevel ,
+      objectCover:false
     },
     {
       name: "Under Armour",
-      logo: "https://logos-world.net/wp-content/uploads/2020/04/Under-Armour-Logo.png"
+      logo: "https://logos-world.net/wp-content/uploads/2020/04/Under-Armour-Logo.png",
+      objectCover:true
     },
     {
       name: "Nike",
-      logo: "https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png"
-    },
-    {
-      name: "Adidas",
-      logo: "https://logos-world.net/wp-content/uploads/2020/04/Adidas-Logo.png"
-    },
-    {
-      name: "Under Armour",
-      logo: "https://logos-world.net/wp-content/uploads/2020/04/Under-Armour-Logo.png"
-    },
-    {
-      name: "Nike",
-      logo: "https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png"
+      logo: "https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png",
+      objectCover:true
     },
   ];
 
@@ -68,7 +88,7 @@ const BrandsSection = () => {
                   alt={brand.name}
                   width={120}
                   height={80}
-                  className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                  className={`w-full h-full ${!brand.objectCover ? 'object-cover' : 'object-contain'} filter grayscale group-hover:grayscale-0 transition-all duration-300`}
                 />
               </CardContent>
             </Card>

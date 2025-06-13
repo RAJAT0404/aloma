@@ -3,6 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Shirt, HardHat, Watch, Briefcase } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import Cup from "../../public/cup.jpg"
+import Hoodie from "../../public/hoodie.png"
+import Tshirt from "../../public/tshirt.png"
+
 
 const categories = [
   {
@@ -10,21 +14,21 @@ const categories = [
     name: "T-Shirts",
     icon: Shirt,
     count: "120+ items",
-    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+    image: Tshirt
   },
   {
     id: 2,
     name: "Hoodies",
     icon: HardHat,
     count: "85+ items",
-    image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+    image: Hoodie
   },
   {
     id: 3,
     name: "Accessories",
     icon: Watch,
     count: "200+ items",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+    image: Cup
   },
   {
     id: 4,

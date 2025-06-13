@@ -11,6 +11,18 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        port: '',
+        pathname: '/images/2ahps9jc/production/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'unsplash.com',
+        port: '',
+        pathname: '/photos/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'logos-world.net',
         port: '',
         pathname: '/wp-content/uploads/**',
@@ -20,6 +32,12 @@ const nextConfig: NextConfig = {
         hostname: 'alamotees.com',
         port: '',
         pathname: '/wp-content/uploads/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.promoplace.com',
+        port: '',
+        pathname: '/ws/ws.dll/QPic/**',
       },
     ],
   },

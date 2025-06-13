@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import Image from "next/image";
-import Logo from "../../../public/alamo-tees-logo.png"
+import Logo from "../../../public/logo.png"
 import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
@@ -42,7 +42,7 @@ const Header = () => {
       )}
 
       {/* Main Header */}
-      <div className="bg-white border-b border-gray-200 py-4">
+      <div className="bg-white border-b border-gray-200 py-6">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
             {/* Logo and Mobile Menu */}
@@ -52,9 +52,10 @@ const Header = () => {
                   <Image
                     src={Logo}
                     alt="Alamo Tees Logo"
-                    width={120}
-                    height={48}
-                    className="h-10 w-auto md:h-24"
+                    width={250}
+                    height={60}
+                    className="w-[200px] h-[50px] object-contain"
+                    priority
                   />
                 </div>
               </div>
@@ -119,7 +120,7 @@ const Header = () => {
               <div className="relative w-full max-w-md rounded-full">
                 <Input
                   placeholder="Search for products, brands, and more..."
-                  className="pl-4 pr-12 h-10 rounded-full bg-gray-100 border-none focus-visible:ring-2 focus-visible:ring-blue-500 focus:bg-white focus:shadow-md transition-all"
+                  className="pl-4 pr-12 h-10 rounded-full bg-gray-100 border-none focus-visible:ring-2 focus-visible:ring-[#003C64] focus:bg-white focus:shadow-md transition-all"
                   onFocus={(e) => {
                     e.target.placeholder = "What are you looking for?";
                     e.target.parentElement?.classList.add('ring-2', 'ring-blue-500', 'bg-white', 'shadow-md');
@@ -132,7 +133,7 @@ const Header = () => {
                 <Button 
                   size="sm" 
                   variant="ghost"
-                  className="absolute right-1 top-1 h-8 w-8 p-0 text-gray-500 hover:text-blue-500 hover:bg-transparent"
+                  className="absolute right-1 top-1 h-8 w-8 p-0 text-gray-500 hover:text-[#003C64] hover:bg-transparent"
                 >
                   <Search className="h-4 w-4" />
                 </Button>
@@ -188,15 +189,15 @@ const Header = () => {
       {/* Navigation Menu - Hidden on mobile */}
       <div className="hidden md:block bg-gray-50 border-b border-gray-200">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-24">
+          <div className="flex items-center justify-between h-28">
             <nav className="flex items-center space-x-4 lg:space-x-8">
-              <Link href="/" className="text-sm font-medium text-gray-700 hover:text-[#0072BA] transition-colors">
+              <Link href="/" className="text-lg font-medium text-gray-700 hover:text-[#0072BA] transition-colors">
                 Home
               </Link>
               
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <button className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors group">
+                  <button className="flex items-center space-x-1 text-lg font-medium text-gray-700 hover:text-gray-700 transition-colors group">
                     <span>Products</span>
                     <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
                   </button>
@@ -216,7 +217,7 @@ const Header = () => {
                 <Link
                   key={item}
                   href="#"
-                  className="text-sm font-medium text-gray-700 hover:text-[#0072BA] transition-colors"
+                  className="text-lg font-medium text-gray-700 hover:text-[#0072BA] transition-colors"
                 >
                   {item}
                 </Link>
@@ -224,12 +225,12 @@ const Header = () => {
             </nav>
 
             <Button 
-              className=" lg:block bg-[#003C64] hover:bg-blue-500 flex items-center space-x-2 text-white px-8 py-6 font-semibold transition-all duration-200 transform hover:scale-105 active:scale-95"
-              onClick={() => window.location.href = '/design-lab'}
-              aria-label="Go to Design Lab"
-            >
-              DESIGN LAB
-            </Button>
+  className="relative bg-[#003C64] hover:bg-[#1a5a8a] text-white px-10 py-8 text-xl font-bold transition-all duration-300 transform hover:scale-105 active:scale-95 border-transparent hover:border-white shadow-lg hover:shadow-xl rounded-2xl"
+  aria-label="Go to Design Lab"
+>
+  <span className="relative z-10">DESIGN LAB</span>
+  <span className="absolute inset-0 rounded-2xl bg-transparent hover:bg-white/10 transition-opacity duration-300"></span>
+</Button>
           </div>
         </div>
       </div>
