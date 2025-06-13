@@ -2,78 +2,90 @@
 import { Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Social1 from "../../public/social/social1.jpg"
+import Social2 from "../../public/social/social2.jpg"
+import Social3 from "../../public/social/social3.jpg"
+import Social4 from "../../public/social/social4.jpg"
+import Social5 from "../../public/social/social5.jpg"
+import Social6 from "../../public/social/social6.jpg"
+import Social7 from "../../public/social/social7.jpg"
+import Social8 from "../../public/social/social8.jpg"
+import Social9 from "../../public/social/social9.jpg"
+import Social10 from "../../public/social/social10.jpg"
+import Social11 from "../../public/social/social11.jpg"
+import Social12 from "../../public/social/social12.jpg"
 
 const SatisfiedCustomersSection = () => {
   const customerImages = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: Social1,
       name: "Alex Johnson",
       product: "Custom Team Jersey"
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: Social2,
       name: "Sarah Wilson",
       product: "Personalized Hoodie"
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: Social3,
       name: "Mike Chen",
       product: "Corporate Polo"
     },
     {
       id: 4,
-      image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: Social4,
       name: "Emma Davis",
       product: "Custom T-Shirt"
     },
     {
       id: 5,
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: Social5,
       name: "James Rodriguez",
       product: "Event Sweatshirt"
     },
     {
       id: 6,
-      image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: Social6,
       name: "Lisa Thompson",
       product: "Branded Cap"
     },
     {
       id: 7,
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: Social7,
       name: "David Kim",
       product: "Custom Jacket"
     },
     {
       id: 8,
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: Social8,
       name: "Maria Garcia",
       product: "Team Uniform"
     },
     {
       id: 9,
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: Social9,
       name: "Ryan Miller",
       product: "Custom Hoodie"
     },
     {
       id: 10,
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: Social10,
       name: "Nina Patel",
       product: "Promotional Shirt"
     },
     {
       id: 11,
-      image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: Social11,
       name: "Tom Anderson",
       product: "Sport Jersey"
     },
     {
       id: 12,
-      image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: Social12,
       name: "Sophie Brown",
       product: "Custom Tote"
     }
@@ -119,8 +131,8 @@ const SatisfiedCustomersSection = () => {
                 </div>
                 
                 <div className="text-white">
-                  <p className="font-semibold text-sm mb-1">{customer.name}</p>
-                  <p className="text-xs text-white/80 mb-3">{customer.product}</p>
+                  {/* <p className="font-semibold text-sm mb-1">{customer.name}</p>
+                  <p className="text-xs text-white/80 mb-3">{customer.product}</p> */}
                   <Button variant="secondary" size="sm" className="w-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border-white/30">
                     <Eye className="h-4 w-4 mr-2" />
                    View
