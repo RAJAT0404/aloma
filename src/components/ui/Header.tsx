@@ -42,7 +42,7 @@ const Header = () => {
     <header className="w-full">
       {/* Notice Banner */}
       {!isBannerHidden && (
-        <div className="bg-gradient-to-r from-[#003C64] to-[#0072BA] text-white py-1.5 px-10 text-center relative overflow-hidden">
+        <div className="bg-gradient-to-r from-[#003C64] to-[#0072BA]  text-white py-1.5 px-10 text-center relative overflow-hidden">
           <div className="max-w-6xl mx-auto flex items-center justify-center">
             <div className="animate-pulse flex space-x-1.5">
               <div className="h-1.5 w-1.5 bg-white rounded-full"></div>
@@ -161,7 +161,7 @@ const Header = () => {
                         href="tel:888-618-6870"
                         className="flex items-center space-x-4 cursor-pointer"
                       >
-                        <Phone className="h-5 w-5 text-[#003C64]" />
+                        <Phone className="h-5 w-5 text-[#003C64] pr-[5px]" />
                         <div>
                           <div className="text-[#003C64] font-semibold">
                             NEED HELP?
@@ -173,9 +173,9 @@ const Header = () => {
                         href="mailto:sales@alamotees.com"
                         className="flex items-center space-x-4 cursor-pointer"
                       >
-                        <Mail className="h-5 w-5 text-[#003C64]" />
+                        <Mail className="h-5 w-5 text-[#003C64] pr-[5px]" />
                         <div>
-                          <div className="text-[#003C64] font-semibold">
+                          <div className="text-[#003C64] font-semibold ">
                             EMAIL US
                           </div>
                           <div className="text-gray-600">

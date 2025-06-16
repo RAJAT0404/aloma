@@ -200,8 +200,11 @@ const ProductShowcase = () => {
 
         {/* CTA Button */}
         <div className="text-center">
-          <Button size="lg" className="text-lg px-8 py-6 bg-[#003C64] hover:bg-blue-500">
-            Shop T-Shirts
+          <Button 
+            size="lg" 
+            variant='blue'
+          >
+            View All Products
           </Button>
         </div>
       </div>

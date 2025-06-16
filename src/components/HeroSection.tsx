@@ -24,7 +24,8 @@ const HeroSection = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-lg px-8 py-6 bg-[#003C64] hover:bg-blue-500">
+              <Button size="lg" className="text-lg px-8 py-6  bg-gradient-to-r from-[#003C64] to-[#0072BA] transition-all
+                duration-200  active:scale-98 border-1 border-white/20">
                 Start Designing
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>

@@ -8,7 +8,7 @@ export const Footer = () => {
     <footer className="bg-muted/50 border-t">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         {/* Newsletter Section */}
-        <div className="bg-[#003C64] rounded-2xl p-8 mb-12">
+        <div className="bg-gradient-to-r from-[#003C64] to-[#0072BA] rounded-2xl p-8 mb-12">
           <div className="text-center text-primary-foreground">
             <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
             <p className="mb-6 opacity-90">
