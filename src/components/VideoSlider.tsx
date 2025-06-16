@@ -136,6 +136,7 @@ const VideoSlider = () => {
           />
         ))}
       </div>
+      
 
       {/* Progress Bar */}
       <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20 z-20">
