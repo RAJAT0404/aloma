@@ -194,7 +194,7 @@ const Header = () => {
               <div className="relative w-full max-w-md rounded-full">
                 <Input
                   placeholder="Search for products, brands, and more..."
-                  className="pl-4 pr-12 h-10 rounded-full bg-gray-100 border-none focus-visible:ring-2 focus-visible:ring-[#003C64] focus:bg-white focus:shadow-md transition-all"
+                  className="pl-4 pr-12 h-10 rounded-full bg-gray-100 border-none focus-visible:ring-0 focus-visible:ring-[#003C64] focus:bg-white focus:shadow-md transition-all"
                   onFocus={(e) => {
                     e.target.placeholder = "What are you looking for?";
                     e.target.parentElement?.classList.add(
@@ -278,7 +278,7 @@ const Header = () => {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="flex w-full max-w-max items-center  text-[#003C64] font-semibold text-sm cursor-pointer gap-1"
+                  className="flex w-full max-w-max items-center hover:bg-transparent  text-[#003C64] font-semibold text-sm cursor-pointer gap-1"
                 >
                   <User className="h-6 w-6" />
                   <span className="hidden lg:inline ">My Account</span>
@@ -287,7 +287,7 @@ const Header = () => {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="relative w-full max-w-max  flex items-center text-[#003C64] font-semibold text-sm cursor-pointer gap-1"
+                  className="relative w-full max-w-max hover:bg-transparent  flex items-center text-[#003C64] font-semibold text-sm cursor-pointer gap-1"
                 >
                   <ShoppingCart className="h-5 w-5" />
                   <span className="hidden lg:inline">Cart</span>
@@ -346,7 +346,7 @@ const Header = () => {
             </nav>
 
             <Button
-              className="relative bg-gradient-to-r from-[#003C64] to-[#0072BA] text-white px-4 py-4 text-sm font-medium transition-all
+              className="relative bg-gradient-to-r from-[#003C64] to-[#0072BA] text-white px-4 py-3 text-[14px] font-medium transition-all
                 duration-200  active:scale-98 border-1 border-white/20 hover:border-white/40 shadow-md rounded-lg"
               aria-label="Go to Design Lab"
             >
