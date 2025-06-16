@@ -1,14 +1,13 @@
 'use client'
 
 import { Button } from "@/components/ui/button";
-import { Star, Heart, Share2, ChevronLeft } from "lucide-react";
+import { Star, ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import Link from "next/link";
 
 
@@ -30,7 +29,6 @@ interface Product {
 const ProductItem = () => {
     const [selectedColor, setSelectedColor] = useState("#000000");
     const [selectedSize, setSelectedSize] = useState("M");
-    const [quantity, setQuantity] = useState(1);
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
     const [scale, setScale] = useState(1);
     const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -119,9 +117,9 @@ const ProductItem = () => {
       );
     };
   
-    const handleQuantityChange = (newQuantity: number) => {
-      setQuantity(Math.max(1, newQuantity));
-    };
+    // const handleQuantityChange = (newQuantity: number) => {
+    //   setQuantity(Math.max(1, newQuantity));
+    // };
 
     const handleImageSelect = (index: number) => {
       setSelectedImageIndex(index);
@@ -140,10 +138,32 @@ const ProductItem = () => {
           </Button>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Product Images */}
-            <Card>
-              <CardContent className="p-4 space-y-4">
+            <div>
+              <CardContent className="p-4 space-y-4 flex  justify-center items-center gap-2">
+              <div className="flex justify-between items-center  w-[130px]">
+                  <div className="grid grid-cols-1 gap-2 flex-2 ">
+                    {product?.images.map((image, index) => (
+                      <button 
+                        key={index} 
+                        className={`relative w-[100px] h-[100px] rounded-md overflow-hidden border-2 transition-all ${
+                          selectedImageIndex === index ? "border-primary" : "border-transparent"
+                        }`}
+                      >
+                        <Image
+                          onClick={() => handleImageSelect(index)}
+                          src={image}
+                          alt={`${product.name} ${index + 1}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+
                 <div 
-                  className="relative aspect-square w-full rounded-lg overflow-hidden"
+                  className="relative aspect-square w-[400px] rounded-lg overflow-hidden"
                   ref={imageRef}
                   onMouseDown={handleMouseDown}
                   onMouseMove={handleMouseMove}
@@ -152,7 +172,7 @@ const ProductItem = () => {
                   onDoubleClick={handleDoubleClick}
                 >
                   <div
-                    className="w-full h-full"
+                    className="w-[400px] h-[600px]"
                     style={{
                       transform: `scale(${scale}) translate(${position.x}px, ${position.y}px)`,
                       transformOrigin: 'center center',
@@ -168,32 +188,13 @@ const ProductItem = () => {
                     />
                   </div>
                 </div>
-                <div className="flex justify-between items-center">
-                  <div className="grid grid-cols-3 gap-2 flex-1">
-                    {product?.images.map((image, index) => (
-                      <button 
-                        key={index} 
-                        className={`relative aspect-square rounded-md overflow-hidden border-2 transition-all ${
-                          selectedImageIndex === index ? "border-primary" : "border-transparent"
-                        }`}
-                      >
-                        <Image
-                          onClick={() => handleImageSelect(index)}
-                          src={image}
-                          alt={`${product.name} ${index + 1}`}
-                          fill
-                          className="object-cover"
-                        />
-                      </button>
-                    ))}
-                  </div>
-                </div>
+              
               </CardContent>
-            </Card>
+            </div>
 
             {/* Rest of the component remains the same */}
             {/* Product Details */}
-            <Card>
+            <div>
               <CardHeader>
                 <CardTitle className="text-3xl">{product.name}</CardTitle>
                 {renderStars(product.rating)}
@@ -252,7 +253,7 @@ const ProductItem = () => {
                   </div>
   
                   {/* Quantity */}
-                  <div>
+                  {/* <div>
                     <Label>Quantity</Label>
                     <div className="flex items-center gap-4 mt-2">
                       <div className="flex items-center border rounded-md w-fit">
@@ -282,22 +283,20 @@ const ProductItem = () => {
                         {quantity > 1 ? `${quantity} items` : `${quantity} item`}
                       </span>
                     </div>
-                  </div>
+                  </div> */}
   
                   {/* Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button size="lg" variant='blue' className="flex-1">
                        Design Lab
                     </Button>
-                    <Button variant="outline" size="lg" className="flex-1">
-                      Buy Now
-                    </Button>
-                    <Button variant="ghost" size="lg" className="px-3">
+                
+                    {/* <Button variant="ghost" size="lg" className="px-3">
                       <Heart className="h-5 w-5" />
                     </Button>
                     <Button variant="ghost" size="lg" className="px-3">
                       <Share2 className="h-5 w-5" />
-                    </Button>
+                    </Button> */}
                   </div>
   
                   {/* Features */}
@@ -315,7 +314,7 @@ const ProductItem = () => {
                   </div>
                 </div>
               </CardContent>
-            </Card>
+            </div>
           </div>
         </div>
       </>
