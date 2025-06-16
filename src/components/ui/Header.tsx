@@ -190,11 +190,11 @@ const Header = () => {
             </div>
 
             {/* Search Bar - Hidden on mobile */}
-            <div className="hidden md:block flex-1 max-w-md mx-4">
+            <div className="hidden md:block flex-1 max-w-md mx-2">
               <div className="relative w-full max-w-md rounded-full">
                 <Input
                   placeholder="Search for products, brands, and more..."
-                  className="pl-4 pr-12 h-10 rounded-full bg-gray-100 border-none focus-visible:ring-0 focus-visible:ring-[#003C64] focus:bg-white focus:shadow-md transition-all"
+                  className="pl-4 pr-12 h-8 rounded-full bg-gray-100 border-none  focus:bg-white focus:shadow-sm transition-all"
                   onFocus={(e) => {
                     e.target.placeholder = "What are you looking for?";
                     e.target.parentElement?.classList.add(
@@ -218,7 +218,7 @@ const Header = () => {
                 <Button
                   size="sm"
                   variant="ghost"
-                  className="absolute right-1 top-1 h-8 w-8 p-0 text-gray-500 hover:text-[#003C64] hover:bg-transparent"
+                  className="absolute right-1 top-1 h-6 w-6 p-0 text-gray-500 hover:text-[#003C64] hover:bg-transparent"
                 >
                   <Search className="h-4 w-4" />
                 </Button>
@@ -252,9 +252,9 @@ const Header = () => {
               {/* Phone Contact - Visible on md+ */}
               <Link
                 href="tel:888-618-6870"
-                className="hidden lg:flex items-center  text-sm cursor-pointer"
+                className="hidden lg:flex items-start  text-sm cursor-pointer"
               >
-                <Phone className="h-4 w-4 text-[#003C64]" />
+                <Phone className="h-4 w-4 mt-[3px] pr-[5px] text-[#003C64]" />
                 <div>
                   <div className="text-[#003C64] font-semibold">NEED HELP?</div>
                   <div className="text-gray-600">888-618-6870</div>
@@ -264,9 +264,9 @@ const Header = () => {
               {/* Email Contact - Visible on lg+ */}
               <Link
                 href="mailto:sales@alamotees.com"
-                className="hidden lg:flex items-center text-sm cursor-pointer"
+                className="hidden lg:flex items-start text-sm cursor-pointer"
               >
-                <Mail className="h-4 w-4 text-[#003C64]" />
+                <Mail className="h-4 w-4 mt-[2px] pr-[5px] text-[#003C64]" />
                 <div>
                   <div className="text-[#003C64] font-semibold">EMAIL US</div>
                   <div className="text-gray-600">sales@alamotees.com</div>
@@ -291,7 +291,7 @@ const Header = () => {
                 >
                   <ShoppingCart className="h-5 w-5" />
                   <span className="hidden lg:inline">Cart</span>
-                  <span className="absolute -top-[5px] -left-[10px] h-5 w-5 rounded-full bg-[#003C64] text-xs text-white flex items-center justify-center">
+                  <span className="absolute -top-[5px] -left-[10px] h-4 w-4 rounded-full bg-[#003C64] text-[8px] text-white flex items-center justify-center">
   0
 </span>
                 </Button>
