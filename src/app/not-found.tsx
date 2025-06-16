@@ -18,6 +18,7 @@ export default function NotFound() {
         </CardContent>
         <CardFooter>
           <Button variant='blue' asChild className="w-full">
+            
             <Link href="/">Return Home</Link>
           </Button>
         </CardFooter>
