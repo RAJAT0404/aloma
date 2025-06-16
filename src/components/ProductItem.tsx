@@ -252,51 +252,16 @@ const ProductItem = () => {
                     </div>
                   </div>
   
-                  {/* Quantity */}
-                  {/* <div>
-                    <Label>Quantity</Label>
-                    <div className="flex items-center gap-4 mt-2">
-                      <div className="flex items-center border rounded-md w-fit">
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={() => handleQuantityChange(quantity - 1)}
-                        >
-                          -
-                        </Button>
-                        <Input
-                          type="number"
-                          min="1"
-                          value={quantity}
-                          onChange={(e) => handleQuantityChange(Number(e.target.value))}
-                          className="w-16 text-center border-0 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                        />
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={() => handleQuantityChange(quantity + 1)}
-                        >
-                          +
-                        </Button>
-                      </div>
-                      <span className="text-sm text-muted-foreground">
-                        {quantity > 1 ? `${quantity} items` : `${quantity} item`}
-                      </span>
-                    </div>
-                  </div> */}
-  
                   {/* Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button size="lg" variant='blue' className="flex-1">
-                       Design Lab
-                    </Button>
-                
-                    {/* <Button variant="ghost" size="lg" className="px-3">
-                      <Heart className="h-5 w-5" />
-                    </Button>
-                    <Button variant="ghost" size="lg" className="px-3">
-                      <Share2 className="h-5 w-5" />
-                    </Button> */}
+                  <Button
+                className="relative bg-gradient-to-r from-[#003C64] to-[#0072BA] text-white px-6 py-6 text-lg font-bold transition-all
+                duration-200  active:scale-98 border-2 border-white/20 hover:border-white/40 shadow-md rounded-lg"
+                aria-label="Go to Design Lab"
+              >
+                <span className="relative z-10">DESIGN LAB</span>
+                <span className="absolute inset-0 rounded-lg bg-white/0 hover:bg-white/5 transition-all duration-300"></span>
+              </Button>
                   </div>
   
                   {/* Features */}
