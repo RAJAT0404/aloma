@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import Bella from "../../public/Brands/Bella_Canvas_Logo.png"
-import Comfort from "../../public/Brands/comfort.png"
-import Travis from "../../public/Brands/travis.png"
-
-import Gildan from "../../public/Brands/gildan.png"
-import NextLevel from "../../public/Brands/Nextlevel.png"
+import armour from "../../public/Brands/Under-Armour-Logo.svg"
+import Nike from "../../public/Brands/Nike-Logo.svg"
+import Adidas from "../../public/Brands/Adidas-Logo.svg"
+import Img3 from "../../public/Brands/image 3.svg"
+import Img4 from "../../public/Brands/image 4.svg"
+import Img5 from "../../public/Brands/image 5.svg"
 
 
 
@@ -14,60 +14,59 @@ const BrandsSection = () => {
   const brands = [
     {
       name: "Nike",
-      logo: "https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png",
-      objectCover:true,
+      logo: Nike,
+      objectCover:false
     },
     {
       name: "Adidas",
-      logo: "https://logos-world.net/wp-content/uploads/2020/04/Adidas-Logo.png",
-      objectCover:true,
+      logo:Adidas,
+      objectCover:false
     },
     {
       name: "Under Armour",
-      logo: "https://logos-world.net/wp-content/uploads/2020/04/Under-Armour-Logo.png",
-      objectCover:true
+      logo: armour,
+      objectCover:false
     },
     {
       name: "Bella Canvas",
-      logo: Bella,
+      logo:Img3,
       
       objectCover:false
     },
     {
       name: "Comfort",
-      logo: Comfort
-      ,
+      logo: Img4,
       objectCover:false
     },
     {
       name: "Travis",
-      logo: Travis,
-      objectCover:true
+      logo: Img5,
+      objectCover:false
     },
     {
       name: "Gildan",
-      logo: Gildan,
+      logo: Img3,
       objectCover:false
     },
     {
       name: "NextLevel ",
-      logo:NextLevel ,
+      logo: Img4,
       objectCover:false
     },
     {
       name: "Under Armour",
       logo: "https://logos-world.net/wp-content/uploads/2020/04/Under-Armour-Logo.png",
-      objectCover:true
+      objectCover:false
     },
     {
       name: "Nike",
       logo: "https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png",
-      objectCover:true
+      objectCover:false
     },
   ];
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-[#F1F1F1]">
       <div className="container mx-auto px-4">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Brands You Love</h2>
@@ -88,7 +87,7 @@ const BrandsSection = () => {
                   alt={brand.name}
                   width={120}
                   height={80}
-                  className={`w-full h-full ${!brand.objectCover ? 'object-cover' : 'object-contain'} filter grayscale group-hover:grayscale-0 transition-all duration-300`}
+                  className={`w-full h-full ${!brand.objectCover ? 'object-contain' : 'object-contain'} filter grayscale group-hover:grayscale-0 transition-all duration-300`}
                 />
               </CardContent>
             </Card>
