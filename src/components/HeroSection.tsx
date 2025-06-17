@@ -3,12 +3,13 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import Hero from "../../public/hero.png"
+import Hero from "../../public/Banner.png"
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 py-10 lg:py-12">
-      <div className="container mx-auto px-4">
+    // <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 py-10 lg:py-12">
+    <section className="relative overflow-hidden" style={{background: 'linear-gradient(180deg, #F0F9FF 0%, #C7E3F7 100%)'}}>
+      <div className="container mx-auto px-4 py-10 lg:py-12 lg:pb-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
@@ -24,8 +25,8 @@ const HeroSection = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-lg px-8 py-6  bg-gradient-to-r from-[#003C64] to-[#0072BA] transition-all
-                duration-200  active:scale-98 border-1 border-white/20">
+              <Button size="lg" variant='blue' className="text-lg px-8 py-6 transition-all
+                duration-500  active:scale-98 border-1 border-white/20">
                 Start Designing
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>
@@ -36,7 +37,7 @@ const HeroSection = () => {
             </div>
 
             {/* Trust indicators */}
-            <div className="flex items-center space-x-8 text-sm text-muted-foreground">
+            {/* <div className="flex items-center space-x-8 text-sm text-muted-foreground">
               <div className="flex items-center space-x-2">
                 <div className="h-2 w-2 rounded-full bg-green-500"></div>
                 <span>Free Shipping</span>
@@ -49,7 +50,7 @@ const HeroSection = () => {
                 <div className="h-2 w-2 rounded-full bg-green-500"></div>
                 <span>Quality Guaranteed</span>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Image */}

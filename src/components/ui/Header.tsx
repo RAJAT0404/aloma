@@ -45,9 +45,9 @@ const Header = () => {
         <div className="bg-gradient-to-r from-[#003C64] to-[#0072BA]  text-white py-1.5 px-10 text-center relative overflow-hidden">
           <div className="max-w-6xl mx-auto flex items-center justify-center">
             <div className="animate-pulse flex space-x-1.5">
-              <div className="h-1.5 w-1.5 bg-white rounded-full"></div>
-              <div className="h-1.5 w-1.5 bg-white rounded-full"></div>
-              <div className="h-1.5 w-1.5 bg-white rounded-full"></div>
+              <div className="h-1.5 w-1.5 bg-white rounded-full hidden sm:block"></div>
+              <div className="h-1.5 w-1.5 bg-white rounded-full hidden sm:block"></div>
+              <div className="h-1.5 w-1.5 bg-white rounded-full hidden sm:block"></div>
             </div>
             <p className="text-[12px] md:text-[12px] font-medium tracking-wide mx-3">
               <span className="font-md">PREMIUM QUALITY:</span> In-House
@@ -55,9 +55,9 @@ const Header = () => {
               Printing
             </p>
             <div className="animate-pulse flex space-x-1.5">
-              <div className="h-1.5 w-1.5 bg-white rounded-full"></div>
-              <div className="h-1.5 w-1.5 bg-white rounded-full"></div>
-              <div className="h-1.5 w-1.5 bg-white rounded-full"></div>
+              <div className="h-1.5 w-1.5 bg-white rounded-full hidden sm:block"></div>
+              <div className="h-1.5 w-1.5 bg-white rounded-full hidden sm:block"></div>
+              <div className="h-1.5 w-1.5 bg-white rounded-full hidden sm:block"></div>
             </div>
           </div>
           <button
@@ -183,6 +183,7 @@ const Header = () => {
                           </div>
                         </div>
                       </Link>
+
                     </div>
                   </div>
                 </SheetContent>
@@ -254,7 +255,7 @@ const Header = () => {
                 href="tel:888-618-6870"
                 className="hidden lg:flex items-start  text-sm cursor-pointer"
               >
-                <Phone className="h-4 w-4 mt-[3px] pr-[5px] text-[#003C64]" />
+                <Phone className="h-6 w-6 mt-[1px] pr-[5px] text-[#003C64]" />
                 <div>
                   <div className="text-[#003C64] font-semibold">NEED HELP?</div>
                   <div className="text-gray-600">888-618-6870</div>
@@ -266,7 +267,7 @@ const Header = () => {
                 href="mailto:sales@alamotees.com"
                 className="hidden lg:flex items-start text-sm cursor-pointer"
               >
-                <Mail className="h-4 w-4 mt-[2px] pr-[5px] text-[#003C64]" />
+                <Mail className="h-6 w-6 mt-[0px] pr-[5px] text-[#003C64]" />
                 <div>
                   <div className="text-[#003C64] font-semibold">EMAIL US</div>
                   <div className="text-gray-600">sales@alamotees.com</div>
@@ -345,9 +346,9 @@ const Header = () => {
               )}
             </nav>
 
-            <Button
-              className="relative bg-gradient-to-r from-[#003C64] to-[#0072BA] text-white px-4 py-3 text-[14px] font-medium transition-all
-                duration-200  active:scale-98 border-1 border-white/20 hover:border-white/40 shadow-md rounded-lg"
+            <Button variant='blue'
+              className="relative  text-white px-4 py-3 text-[14px] font-medium transition-all
+                duration-100  active:scale-98 border-1 border-white/20 hover:border-white/40 shadow-md rounded-lg"
               aria-label="Go to Design Lab"
             >
               <span className="relative z-10">DESIGN LAB</span>
