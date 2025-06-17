@@ -252,6 +252,7 @@ const Header = () => {
               {/* Phone Contact - Visible on md+ */}
               <Link
                 href="tel:888-618-6870"
+                
                 className="hidden lg:flex items-start  text-sm cursor-pointer"
               >
                 <Phone className="h-4 w-4 mt-[3px] pr-[5px] text-[#003C64]" />
