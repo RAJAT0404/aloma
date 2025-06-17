@@ -44,14 +44,7 @@ const Header = () => {
     { name: "Contact", url: "/contact" },
     {
       name: "Templates",
-      url: "/templates",
-      submenu: [
-        { name: "T-Shirts", url: "/product" },
-        { name: "Hoodies & Sweatshirts", url: "/hoodies" },
-        { name: "Hats & Caps", url: "/hats" },
-        { name: "Promotional Products", url: "/promotional" },
-        { name: "Accessories", url: "/accessories" },
-      ],
+      url: "/templates"
     },
   ];
 
