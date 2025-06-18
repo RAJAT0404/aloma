@@ -14,19 +14,17 @@ import { useState } from "react";
 import Image from "next/image";
 import Logo from "../../../public/logo.svg";
 import Link from "next/link";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import MegaMenu from "../MegaMenu/mega-menu";
 import { useRef } from "react";
+import { set } from "date-fns";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isBannerHidden, setIsBannerHidden] = useState(false);
   const [megaMenu, setMegaMenu] = useState(false);
-  
+  const [activeTab ,setActiveTab]=useState('')
+
   const menus = [
     { name: "Home", url: "/" },
     {
@@ -44,30 +42,20 @@ const Header = () => {
     { name: "Contact", url: "/contact" },
     {
       name: "Templates",
-      url: "/templates"
+      url: "/templates",
+      submenu: [
+        { name: "T-Shirtsss", url: "/product" },
+        { name: "Hoodies & Sweatshirts", url: "/hoodies" },
+        { name: "Hats & Caps", url: "/hats" },
+        { name: "Promotional Products", url: "/promotional" },
+        { name: "Accessories", url: "/accessories" },
+      ],
     },
   ];
 
-
-  console.log(megaMenu)
+  console.log(megaMenu);
 
   const menuRef = useRef<HTMLDivElement>(null);
-
-  // useEffect(() => {
-  //   function handleClickOutside(event: MouseEvent) {
-  //     const menu = document.getElementById("Megamenu");
-  //     if (menu && !menu.contains(event.target as Node)) {
-  //       setMegaMenu(false);
-  //     }
-  //   }
-
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleClickOutside);
-  //   };
-  // }, [setMegaMenu]);
-
-
 
   return (
     <>
@@ -104,7 +92,7 @@ const Header = () => {
         )}
 
         {/* Main Header */}
-        <div className="bg-white border-b border-gray-200 py-1.5">
+        <div className="bg-white border-b border-gray-200 py-1.5 ">
           <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-2">
               {/* Logo and Mobile Menu */}
@@ -123,15 +111,17 @@ const Header = () => {
                 </div>
 
                 {/* Mobile Menu Button */}
-                <Sheet>
-                  <SheetTrigger asChild className="md:hidden">
+
+                <div >
+                <Sheet > 
+                  <SheetTrigger asChild className="md:hidden ">
                     <Button variant="ghost" size="icon">
                       <Menu className="h-5 w-5" />
                     </Button>
                   </SheetTrigger>
                   <SheetContent
                     side="left"
-                    className="w-[300px] sm:w-[400px] p-6"
+                    className="w-[300px] sm:w-[400px] p-6 overflow-y-scroll"
                   >
                     <div className="mt-8 space-y-8">
                       <div className="relative">
@@ -150,31 +140,52 @@ const Header = () => {
                       <nav className="flex flex-col space-y-6">
                         {menus?.map((item) => {
                           return item.submenu ? (
-                            <div key={item.name} className="space-y-2">
-                              <button
-                                onClick={() => setIsOpen(!isOpen)}
-                                className="flex items-center justify-between w-full text-lg font-medium  text-gray-700 hover:text-[#0072BA] py-2"
-                              >
-                                <span>{item.name}</span>
-                                <ChevronDown
-                                  className={`h-4 w-4 ml-2 transition-transform ${
-                                    isOpen ? "rotate-180" : ""
-                                  }`}
-                                />
-                              </button>
-                              {isOpen && (
-                                <div className="pl-4 space-y-2">
-                                  {item.submenu.map((subItem) => (
-                                    <a
-                                      key={subItem.name}
-                                      href={subItem.url}
-                                      className="block text-gray-700 hover:text-[#0072BA] py-1"
-                                    >
-                                      {subItem.name}
-                                    </a>
-                                  ))}
+                            <div>
+                              <div key={item.name} className="space-y-2">
+                                {!item.name.includes("Categories") ? (
+                                  <button
+                                    onClick={() => setIsOpen(!isOpen)}
+                                    className="flex items-center justify-between w-full text-lg font-medium  text-gray-700 hover:text-[#0072BA] py-2"
+                                  >
+                                    <span>{item.name}</span>
+                                    <ChevronDown
+                                      className={`h-4 w-4 ml-2 transition-transform ${
+                                        isOpen ? "rotate-180" : ""
+                                      }`}
+                                    />
+                                  </button>
+
+                                ) : (
+                                <div>
+                                    <button
+                                    onClick={() => setMegaMenu(!megaMenu)}
+                                    className="flex items-center justify-between w-full text-lg font-medium  text-gray-700 hover:text-[#0072BA] py-2"
+                                  >
+                                    <span>{item.name}</span>
+                                    <ChevronDown
+                                      className={`h-4 w-4 ml-2 transition-transform ${
+                                        megaMenu ? "rotate-180" : ""
+                                      }`}
+                                    />
+                                  </button>
+                                       {megaMenu &&    <MegaMenu />}
                                 </div>
-                              )}
+                                )}
+                                {isOpen && (
+                                  <div className="pl-4 space-y-2">
+                                    {item.submenu.map((subItem) => (
+                                      <a
+                                        key={subItem.name}
+                                        href={subItem.url}
+                                        className="block text-gray-700 hover:text-[#0072BA] py-1"
+                                      >
+                                        {subItem.name}
+                                      </a>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                      
                             </div>
                           ) : (
                             <a
@@ -219,6 +230,8 @@ const Header = () => {
                     </div>
                   </SheetContent>
                 </Sheet>
+                </div>
+              
               </div>
 
               {/* Search Bar - Hidden on mobile */}
@@ -341,8 +354,6 @@ const Header = () => {
             <div className="flex items-center justify-between h-14">
               <nav className="flex items-center space-x-4 lg:space-x-8">
                 {menus.map((item) => {
-              
-
                   return item.submenu ? (
                     <div key={item.name} className="relative">
                       {item.name.includes("Categories") ? (
@@ -356,58 +367,56 @@ const Header = () => {
                           }}
                         >
                           {item.name}
-                            <ChevronDown
-                              className={`h-4 w-4 transition-transform ${
-                                megaMenu ? "rotate-180" : ""
-                              }`}
-                            />
+                          <ChevronDown
+                            className={`h-4 w-4 transition-transform ${
+                              megaMenu ? "rotate-180" : ""
+                            }`}
+                          />
                         </Button>
                       ) : (
-                        <Button
-                          variant="ghost"
-                          className={`text-sm font-medium text-gray-700 transition-colors flex items-center gap-1 hover:bg-transparent hover:text-[#0072BA] ${
-                            isOpen ? "text-[#0072BA]" : ""
-                          }`}
-                          onClick={() => {
-                            // Close other submenus
-                            const otherMenus = menus.filter(
-                              (menu) => menu.submenu && menu.name !== item.name
-                            );
-
-                            otherMenus.forEach((menu) => {
-                              const menuState = document.getElementById(
-                                `menu-state-${menu.name}`
-                              );
-                              menuState?.setAttribute("data-open", "false");
-                            });
-
-                            setIsOpen((prev) => !prev);
+                        <div 
+                          className="relative"
+                          onMouseEnter={() => {
+                            setMegaMenu(false); // Close mega menu if open
+                            setIsOpen(true);
+                            setActiveTab(item.name); // Track which menu is open by its name
+                          }}
+                          onMouseLeave={() => {
+                            setIsOpen(false);
+                            setActiveTab('');
                           }}
                         >
-                          {item.name}
+                          <Button
+                            variant="ghost"
+                            className={`text-sm font-medium text-gray-700 transition-colors flex items-center gap-1 hover:bg-transparent hover:text-[#0072BA] ${
+                              activeTab === item.name ? "text-[#0072BA]" : ""
+                            }`}
+                          >
+                            {item.name}
                             <ChevronDown
                               className={`h-4 w-4 transition-transform ${
-                                isOpen ? "rotate-180" : ""
+                                activeTab  === item.name ? "rotate-180" : ""
                               }`}
                             />
-                        </Button>
-                      )}
+                          </Button>
 
-                      {isOpen && (
-                        <div className="absolute w-64 bg-white border border-gray-100 shadow-xl z-50 rounded-lg overflow-hidden">
-                          {item.submenu.map((subItem) => (
-                            <Link
-                              key={subItem.name}
-                              href={subItem.url}
-                              className="w-full px-6 py-3 text-gray-700 hover:bg-[#0072BA]/5 hover:text-[#0072BA] transition-colors duration-200 border-b border-gray-100 last:border-b-0 flex items-center"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              <span className="w-2 h-2 rounded-full bg-[#0072BA] mr-3"></span>
-                              {subItem.name}
-                            </Link>
-                          ))}
+                          {activeTab  === item.name && (
+                            <div className="absolute w-64 bg-white border border-gray-100 shadow-xl z-50 rounded-lg overflow-hidden">
+                              {item.submenu.map((subItem) => (
+                                <Link
+                                  key={subItem.name}
+                                  href={subItem.url}
+                                  className="w-full px-6 py-3 text-gray-700 hover:bg-[#0072BA]/5 hover:text-[#0072BA] transition-colors duration-200 border-b border-gray-100 last:border-b-0 flex items-center"
+                                >
+                                  <span className="w-2 h-2 rounded-full bg-[#0072BA] mr-3"></span>
+                                  {subItem.name}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
                         </div>
                       )}
+
                     </div>
                   ) : (
                     <Link
@@ -438,8 +447,8 @@ const Header = () => {
             </div>
             {megaMenu && (
               <div
-              id="Megamenu"
-                className="w-full max-w-[1504px] mx-auto absolute top-33 z-[12] bg-white left-1/2 -translate-x-1/2"
+                id="Megamenu"
+                className="w-full max-w-[1504px] mx-auto absolute top-35 z-[12] bg-white left-1/2 -translate-x-1/2"
                 ref={menuRef}
               >
                 <MegaMenu />
