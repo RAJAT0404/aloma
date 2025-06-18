@@ -167,7 +167,7 @@ const Header = () => {
                                       }`}
                                     />
                                   </button>
-                                       {megaMenu &&    <MegaMenu />}
+                                       {megaMenu &&    <MegaMenu  megaMenu={megaMenu} setMegaMenu={setMegaMenu}  />}
                                 </div>
                                 )}
                                 {isOpen && (
@@ -298,7 +298,7 @@ const Header = () => {
                   href="tel:888-618-6870"
                   className="hidden lg:flex items-start  text-sm cursor-pointer"
                 >
-                  <Phone className="h-6 w-6 mt-[1px] pr-[5px] text-[#003C64]" />
+                  <Phone className="h-6 w-6 mt-[0px] pr-[5px] text-[#003C64]" />
                   <div>
                     <div className="text-[#003C64] font-semibold">
                       NEED HELP?
@@ -450,7 +450,7 @@ const Header = () => {
                 className="w-full max-w-[1504px] mx-auto absolute top-35 z-[12] bg-white left-1/2 -translate-x-1/2"
                 ref={menuRef}
               >
-                <MegaMenu />
+                <MegaMenu megaMenu={megaMenu} setMegaMenu={setMegaMenu} />
               </div>
             )}
           </div>

@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 
@@ -48,24 +48,11 @@ const menuCategories = [
       },
       {
         title: "BOTTOMS",
-        items: [
-          "Pants",
-          "Shorts",
-          "Denim",
-          "Skirts",
-          "Youth",
-        ],
+        items: ["Pants", "Shorts", "Denim", "Skirts", "Youth"],
       },
       {
         title: "HEADWEAR",
-        items: [
-          "Caps",
-          "Hats",
-          "Beanies",
-          "Visors",
-          "Bandannas",
-          "Youth",
-        ],
+        items: ["Caps", "Hats", "Beanies", "Visors", "Bandannas", "Youth"],
       },
       {
         title: "MORE",
@@ -83,281 +70,455 @@ const menuCategories = [
     ],
   },
   {
-  name: "Awards",
-  menu: [
-    {
-      title: "TROPHIES",
-      items: [
-        "Acrylic Trophies",
-        "Crystal Trophies",
-        "Glass Trophies",
-        "Marble Trophies",
-        "Metal Trophies",
-        "Wood Trophies",
-      ],
-    },
-    {
-      title: "PLAQUES",
-      items: [
-        "Acrylic Plaques",
-        "Crystal Plaques",
-        "Glass Plaques",
-        "Marble Plaques",
-        "Metal Plaques",
-        "Wood Plaques",
-      ],
-    },
-    {
-      title: "EMBLEMS, PINS, & MEDALS",
-      items: [
-        "Emblems",
-        "Medals",
-        "Pins",
-        "Ribbons",
-      ],
-    },
-    {
-      title: "PAPER WEIGHTS",
-      items: [
-        "Acrylic Paper Weights",
-        "Crystal Paper Weights",
-        "Glass Paper Weights",
-        "Marble Paper Weights",
-        "Metal Paper Weights",
-        "Wood Paper Weights",
-      ],
-    },
-    {
-      title: "VASES",
-      items: [
-        "Crystal Vases",
-        "Glass Vases",
-        "Marble Vases",
-        "Metal Vases",
-      ],
-    },
-    {
-      title: "GOLF",
-      items: [
-        "Acrylic",
-        "Crystal",
-        "Glass",
-        "Marble",
-        "Metal",
-        "Wood",
-      ],
-    },
-  ],
-},
-{
-  name: "Bags",
-  menu: [
-    {
-      title: "TOTE BAGS",
-      items: [
-        "Shopping",
-        "Trade Shows",
-        "Cotton",
-        "Fashion",
-      ],
-    },
-    {
-      title: "BACKPACKS",
-      items: [
-        "Zipper Closure",
-        "Drawstring",
-        "Sling",
-        "Button Closure",
-      ],
-    },
-    {
-      title: "OFFICE & SCHOOL",
-      items: [
-        "Backpacks",
-        "Computer Bags",
-        "Lunch Bags",
-        "Messenger Bags",
-        "Briefcases & Attaches",
-      ],
-    },
-    {
-      title: "OUTDOOR & FITNESS",
-      items: [
-        "Coolers",
-        "Gym Bags",
-        "Duffle Bags",
-        "Picnic Baskets",
-      ],
-    },
-    {
-      title: "TRAVEL",
-      items: [
-        "Carryon Bags",
-        "TSA Approved",
-        "Suitcases",
-        "Toiletries",
-        "Garment Bags",
-        "Fanny Packs",
-      ],
-    },
-    {
-      title: "SHOP BY MATERIAL",
-      items: [
-        "Paper Bags",
-        "Plastic Bags",
-        "Recycled Material",
-      ],
-    },
-    
-  ],
-  
-},
-{
-  "name": "Drinkware",
-  "menu": [
+    name: "Awards",
+    menu: [
       {
-          "title": "TRAVEL",
-          "items": [
-              "Travel Mugs",
-              "Tumblers",
-              "Thermos",
-              "Beverage Insulators",
-              "BPA Free Bottles",
-              "Water Bottles"
-          ]
+        title: "TROPHIES",
+        items: [
+          "Acrylic Trophies",
+          "Crystal Trophies",
+          "Glass Trophies",
+          "Marble Trophies",
+          "Metal Trophies",
+          "Wood Trophies",
+        ],
       },
       {
-          "title": "HOME & OFFICE",
-          "items": [
-              "Mugs",
-              "Tumblers",
-              "Paper Cups",
-              "Plastic Cups",
-              "Thermos",
-              "Tea Cups",
-              "Coasters",
-              "Caraffes"
-          ]
+        title: "PLAQUES",
+        items: [
+          "Acrylic Plaques",
+          "Crystal Plaques",
+          "Glass Plaques",
+          "Marble Plaques",
+          "Metal Plaques",
+          "Wood Plaques",
+        ],
       },
       {
-          "title": "BEER & WINE",
-          "items": [
-              "Wine Glasses",
-              "Beer Steins",
-              "Shot Glasses",
-              "Beverage Insulators",
-              "Openers"
-          ]
+        title: "EMBLEMS, PINS, & MEDALS",
+        items: ["Emblems", "Medals", "Pins", "Ribbons"],
       },
       {
-          "title": "RESTAURANT/BAR",
-          "items": [
-              "Plastic Cups",
-              "Glasses",
-              "Wine Glasses",
-              "Beer Steins",
-              "Shot Glasses",
-              "Coasters",
-              "Caraffes",
-              "Openers"
-          ]
+        title: "PAPER WEIGHTS",
+        items: [
+          "Acrylic Paper Weights",
+          "Crystal Paper Weights",
+          "Glass Paper Weights",
+          "Marble Paper Weights",
+          "Metal Paper Weights",
+          "Wood Paper Weights",
+        ],
       },
       {
-          "title": "SPORTS & OUTDOORS",
-          "items": [
-              "Plastic Cups",
-              "Styrofoam Cups",
-              "Beverage Insulators",
-              "BPA Free Bottles",
-              "Thermos",
-              "Tumblers",
-              "Water Bottles"
-          ]
+        title: "VASES",
+        items: ["Crystal Vases", "Glass Vases", "Marble Vases", "Metal Vases"],
       },
       {
-          "title": "STRAWS",
-          "items": [
-              "Plastic",
-              "Paper",
-              "Reusable"
-          ]
-      }
-  ]
-},
-{
-  "name": "Fun",
-  "menu": [
+        title: "GOLF",
+        items: ["Acrylic", "Crystal", "Glass", "Marble", "Metal", "Wood"],
+      },
+    ],
+  },
+  {
+    name: "Bags",
+    menu: [
       {
-          "title": "CAMPING/OUTDOORS",
-          "items": [
-              "Coolers",
-              "Chairs",
-              "Blankets",
-              "Umbrellas",
-              "Towels",
-              "Binoculars",
-              "Compasses",
-              "Fishing Coolers"
-          ]
+        title: "TOTE BAGS",
+        items: ["Shopping", "Trade Shows", "Cotton", "Fashion"],
       },
       {
-          "title": "TEAM SPIRIT",
-          "items": [
-              "Stadium Cushions",
-              "Stadium Chairs",
-              "Fans",
-              "Foam Hands",
-              "Megaphones",
-              "Noise Makers",
-              "Pom Poms"
-          ]
+        title: "BACKPACKS",
+        items: ["Zipper Closure", "Drawstring", "Sling", "Button Closure"],
       },
       {
-          "title": "BALLS",
-          "items": [
-              "Footballs",
-              "Basketballs",
-              "Baseballs",
-              "Soccer Balls",
-              "Golf Balls",
-              "Hockey Pucks"
-          ]
+        title: "OFFICE & SCHOOL",
+        items: [
+          "Backpacks",
+          "Computer Bags",
+          "Lunch Bags",
+          "Messenger Bags",
+          "Briefcases & Attaches",
+        ],
       },
       {
-          "title": "TOYS & GAMES",
-          "items": [
-              "Flyers",
-              "Puzzles",
-              "Stuffed Animals",
-              "Kites",
-              "Tattoos",
-              "Yo-Yos",
-              "Airplanes",
-              "Games"
-          ]
+        title: "OUTDOOR & FITNESS",
+        items: ["Coolers", "Gym Bags", "Duffle Bags", "Picnic Baskets"],
       },
       {
-          "title": "GOLF ITEMS",
-          "items": [
-              "Golf Balls",
-              "Ball Markers",
-              "Clips",
-              "Clubs & Putters",
-              "Event Flags & Banners",
-              "Golf Apparel",
-              "Golf Bags",
-              "Shoe Bags"
-          ]
-      }
-  ]
-}
+        title: "TRAVEL",
+        items: [
+          "Carryon Bags",
+          "TSA Approved",
+          "Suitcases",
+          "Toiletries",
+          "Garment Bags",
+          "Fanny Packs",
+        ],
+      },
+      {
+        title: "SHOP BY MATERIAL",
+        items: ["Paper Bags", "Plastic Bags", "Recycled Material"],
+      },
+    ],
+  },
+  {
+    name: "Drinkware",
+    menu: [
+      {
+        title: "TRAVEL",
+        items: [
+          "Travel Mugs",
+          "Tumblers",
+          "Thermos",
+          "Beverage Insulators",
+          "BPA Free Bottles",
+          "Water Bottles",
+        ],
+      },
+      {
+        title: "HOME & OFFICE",
+        items: [
+          "Mugs",
+          "Tumblers",
+          "Paper Cups",
+          "Plastic Cups",
+          "Thermos",
+          "Tea Cups",
+          "Coasters",
+          "Caraffes",
+        ],
+      },
+      {
+        title: "BEER & WINE",
+        items: [
+          "Wine Glasses",
+          "Beer Steins",
+          "Shot Glasses",
+          "Beverage Insulators",
+          "Openers",
+        ],
+      },
+      {
+        title: "RESTAURANT/BAR",
+        items: [
+          "Plastic Cups",
+          "Glasses",
+          "Wine Glasses",
+          "Beer Steins",
+          "Shot Glasses",
+          "Coasters",
+          "Caraffes",
+          "Openers",
+        ],
+      },
+      {
+        title: "SPORTS & OUTDOORS",
+        items: [
+          "Plastic Cups",
+          "Styrofoam Cups",
+          "Beverage Insulators",
+          "BPA Free Bottles",
+          "Thermos",
+          "Tumblers",
+          "Water Bottles",
+        ],
+      },
+      {
+        title: "STRAWS",
+        items: ["Plastic", "Paper", "Reusable"],
+      },
+    ],
+  },
+  {
+    name: "Fun",
+    menu: [
+      {
+        title: "CAMPING/OUTDOORS",
+        items: [
+          "Coolers",
+          "Chairs",
+          "Blankets",
+          "Umbrellas",
+          "Towels",
+          "Binoculars",
+          "Compasses",
+          "Fishing Coolers",
+        ],
+      },
+      {
+        title: "TEAM SPIRIT",
+        items: [
+          "Stadium Cushions",
+          "Stadium Chairs",
+          "Fans",
+          "Foam Hands",
+          "Megaphones",
+          "Noise Makers",
+          "Pom Poms",
+        ],
+      },
+      {
+        title: "BALLS",
+        items: [
+          "Footballs",
+          "Basketballs",
+          "Baseballs",
+          "Soccer Balls",
+          "Golf Balls",
+          "Hockey Pucks",
+        ],
+      },
+      {
+        title: "TOYS & GAMES",
+        items: [
+          "Flyers",
+          "Puzzles",
+          "Stuffed Animals",
+          "Kites",
+          "Tattoos",
+          "Yo-Yos",
+          "Airplanes",
+          "Games",
+        ],
+      },
+      {
+        title: "GOLF ITEMS",
+        items: [
+          "Golf Balls",
+          "Ball Markers",
+          "Clips",
+          "Clubs & Putters",
+          "Event Flags & Banners",
+          "Golf Apparel",
+          "Golf Bags",
+          "Shoe Bags",
+        ],
+      },
+    ],
+  },
+  {
+    name: "Headwear",
+    menu: [
+      {
+        title: "CAPS",
+        items: [
+          "Fitted Caps",
+          "Adjustable Caps",
+          "Camouflage Caps",
+          "Cotton Twill / Canvas",
+        ],
+      },
+      {
+        title: "HATS",
+        items: ["Hard Hats", "Sun Hats", "Fedora", "Golf", "Cowboy Hats"],
+      },
+      {
+        title: "BEANIES",
+        items: [
+          "Beanies with Poms",
+          "Beanies with Cuffs",
+          "Beanies with Lights",
+          "Camouflage Beanies",
+        ],
+      },
+      {
+        title: "MORE",
+        items: ["Visors", "Safety", "Bandannas"],
+      },
+    ],
+  },
+  {
+    name: "Health",
+    menu: [
+      {
+        title: "FIRST AID",
+        items: [
+          "First Aid Kits",
+          "Sunscreen",
+          "Heat/Cold Packs",
+          "Pill Boxes",
+          "Pill Cutters",
+          "Thermometers",
+        ],
+      },
+      {
+        title: "PPE",
+        items: [
+          "Masks",
+          "Latex Gloves",
+          "Latex-Free Gloves",
+          "Hand Sanitizer",
+          "Face Shields",
+          "Gators",
+          "Floor Decals",
+          "No Touch Tools",
+        ],
+      },
+      {
+        title: "SELFCARE",
+        items: [
+          "Lip Balm",
+          "Sunglasses",
+          "Fitness",
+          "Pedometers",
+          "Candles",
+          "Spa Kits",
+          "Awareness",
+        ],
+      },
+    ],
+  },
+  {
+    name: "Office",
+    menu: [
+      {
+        title: "DESK ITEMS",
+        items: [
+          "Note Pads",
+          "Sticky Notes",
+          "Business Card Holders",
+          "Journals",
+          "Caddies/Holders",
+          "Scissors",
+          "Staplers/Staple Removers",
+          "Calculators",
+        ],
+      },
+      {
+        title: "ORGANIZATIONAL TOOLS",
+        items: [
+          "Binders",
+          "Folders",
+          "Labels",
+          "Memo Boards",
+          "Magnets",
+          "Calendars",
+          "Clipboards",
+        ],
+      },
+      {
+        title: "TRADESHOWS & EVENTS",
+        items: [
+          "Badge Holders",
+          "Lanyards",
+          "Name Badges",
+          "Reels",
+          "Displays",
+          "Table Coverings",
+          "Awards",
+          "Buttons",
+        ],
+      },
+      {
+        title: "WRITING",
+        items: ["Pens", "Pencils", "Erasers", "Highlighters", "Markers"],
+      },
+      {
+        title: "STRESS BALLS",
+        items: [
+          "Shapes",
+          "Sports",
+          "Seasonal",
+          "Cars & Trucks",
+          "People",
+          "Custom",
+        ],
+      },
+    ],
+  },
+  {
+    name: "Tech",
+    menu: [
+      {
+        title: "EQUIPMENT",
+        items: [
+          "Flash Drives",
+          "Cables",
+          "Cords",
+          "USB Hubs",
+          "Adapters",
+          "Screen Cleaner",
+          "Webcam Covers",
+        ],
+      },
+      {
+        title: "CHARGERS",
+        items: [
+          "Power Banks",
+          "Car Chargers",
+          "Wall Chargers",
+          "Wireless Chargers",
+        ],
+      },
+      {
+        title: "DESKTOP",
+        items: [
+          "Mouse",
+          "Speakers",
+          "Phone Stands",
+          "Mouse Pads",
+          "Wrist Rests",
+        ],
+      },
+      {
+        title: "ACCESSORIES",
+        items: [
+          "Cell Phone Accessories",
+          "Phone Cases",
+          "Tablet Cases",
+          "Laptop Sleeves",
+          "Computer Bags",
+          "Headphones",
+          "Blue Light Blocking Glasses",
+        ],
+      },
+    ],
+  },
+  {
+    name: "Writing",
+    menu: [
+      {
+        title: "PENS",
+        items: [
+          "Ballpoint Pens",
+          "Click Pens",
+          "Stick Pens",
+          "Twist Pens",
+          "Roller Ball Pens",
+          "Gel Pens",
+          "Hi-Tech Pens",
+        ],
+      },
+      {
+        title: "PENCILS",
+        items: ["#2 Pencils", "Mechanical Pencils", "Colored Pencils"],
+      },
+      {
+        title: "MORE",
+        items: [
+          "Journals",
+          "Note Pads",
+          "Highlighters",
+          "Erasers",
+          "Markers",
+          "Chalk",
+          "Crayons",
+          "Gift Sets",
+          "Sharpeners",
+        ],
+      },
+    ],
+  },
 ];
 
-export default function MegaMenu() {
+export default function MegaMenu({setMegaMenu }: { megaMenu: boolean, setMegaMenu: (value: boolean) => void }) {
+  const menuRef = useRef<HTMLDivElement>(null);
+
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [firstLoad, setFirstLoad] = useState(true);
 
   const isMobile = useIsMobile();
+  // console.log(megaMenu)
 
   useEffect(() => {
     if (firstLoad && menuCategories.length > 0) {
@@ -369,10 +530,10 @@ export default function MegaMenu() {
   return (
     <>
       {!isMobile ? (
-        <div className=" w-full bg-[#F3F4F6] text-[#667085]">
-          <div className="flex items-center w-full max-w-[1504px] border-b">
+        <div ref={menuRef} className=" w-full bg-[#F3F4F6] text-[#667085]">
+          <div className="flex items-center justify-between w-full max-w-max border-b">
             {menuCategories.map((category) => (
-              <div key={category.name} className="">
+              <div key={category.name} className=" flex items-center justify-between">
                 <button
                   onClick={() => {
                     if (firstLoad) setFirstLoad(false);
@@ -380,7 +541,7 @@ export default function MegaMenu() {
                       activeMenu === category.name ? null : category.name
                     );
                   }}
-                  className={`flex cursor-pointer items-center gap-1 font-medium text-[16px] leading-[20px] hover:bg-[#003C74] hover:text-white transition-colors duration-300 py-[18px] px-[32px] ${
+                  className={`flex cursor-pointer items-center gap-1 font-medium text-[16px] leading-[20px] hover:bg-[#003C74] hover:text-white transition-colors duration-300 py-[18px] md:py-[16px] lg:py-[32px] px-[24px] md:px-[16px] 2xl:px-[32px] ${
                     activeMenu === category.name
                       ? "bg-[#003C64] text-white"
                       : ""
@@ -419,7 +580,14 @@ export default function MegaMenu() {
                               key={idx}
                               className="mt-4 text-[14px] lg:text-[16px] leading-[20px] text-[#000D16] hover:text-blue-600 hover:underline cursor-pointer"
                             >
-                              <Link href={"#"}> {item} </Link>
+                              <Link
+                                href={"/"}
+                                onClick={() =>
+                                  setTimeout(() => setMegaMenu(false), 20)
+                                }
+                              >
+                                {item}
+                              </Link>
                             </li>
                           ))}
                         </ul>
