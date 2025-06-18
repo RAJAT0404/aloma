@@ -426,89 +426,55 @@ const menuCategories = [
       },
     ],
   },
-  {
-    name: "Tech",
-    menu: [
-      {
-        title: "EQUIPMENT",
-        items: [
-          "Flash Drives",
-          "Cables",
-          "Cords",
-          "USB Hubs",
-          "Adapters",
-          "Screen Cleaner",
-          "Webcam Covers",
-        ],
-      },
-      {
-        title: "CHARGERS",
-        items: [
-          "Power Banks",
-          "Car Chargers",
-          "Wall Chargers",
-          "Wireless Chargers",
-        ],
-      },
-      {
-        title: "DESKTOP",
-        items: [
-          "Mouse",
-          "Speakers",
-          "Phone Stands",
-          "Mouse Pads",
-          "Wrist Rests",
-        ],
-      },
-      {
-        title: "ACCESSORIES",
-        items: [
-          "Cell Phone Accessories",
-          "Phone Cases",
-          "Tablet Cases",
-          "Laptop Sleeves",
-          "Computer Bags",
-          "Headphones",
-          "Blue Light Blocking Glasses",
-        ],
-      },
-    ],
-  },
-  {
-    name: "Writing",
-    menu: [
-      {
-        title: "PENS",
-        items: [
-          "Ballpoint Pens",
-          "Click Pens",
-          "Stick Pens",
-          "Twist Pens",
-          "Roller Ball Pens",
-          "Gel Pens",
-          "Hi-Tech Pens",
-        ],
-      },
-      {
-        title: "PENCILS",
-        items: ["#2 Pencils", "Mechanical Pencils", "Colored Pencils"],
-      },
-      {
-        title: "MORE",
-        items: [
-          "Journals",
-          "Note Pads",
-          "Highlighters",
-          "Erasers",
-          "Markers",
-          "Chalk",
-          "Crayons",
-          "Gift Sets",
-          "Sharpeners",
-        ],
-      },
-    ],
-  },
+  // {
+  //   name: "Tech",
+  //   menu: [
+  //     {
+  //       title: "EQUIPMENT",
+  //       items: [
+  //         "Flash Drives",
+  //         "Cables",
+  //         "Cords",
+  //         "USB Hubs",
+  //         "Adapters",
+  //         "Screen Cleaner",
+  //         "Webcam Covers",
+  //       ],
+  //     },
+  //     {
+  //       title: "CHARGERS",
+  //       items: [
+  //         "Power Banks",
+  //         "Car Chargers",
+  //         "Wall Chargers",
+  //         "Wireless Chargers",
+  //       ],
+  //     },
+  //     {
+  //       title: "DESKTOP",
+  //       items: [
+  //         "Mouse",
+  //         "Speakers",
+  //         "Phone Stands",
+  //         "Mouse Pads",
+  //         "Wrist Rests",
+  //       ],
+  //     },
+  //     {
+  //       title: "ACCESSORIES",
+  //       items: [
+  //         "Cell Phone Accessories",
+  //         "Phone Cases",
+  //         "Tablet Cases",
+  //         "Laptop Sleeves",
+  //         "Computer Bags",
+  //         "Headphones",
+  //         "Blue Light Blocking Glasses",
+  //       ],
+  //     },
+  //   ],
+  // },
+ 
 ];
 
 export default function MegaMenu({setMegaMenu }: { megaMenu: boolean, setMegaMenu: (value: boolean) => void }) {
@@ -541,7 +507,8 @@ export default function MegaMenu({setMegaMenu }: { megaMenu: boolean, setMegaMen
                       activeMenu === category.name ? null : category.name
                     );
                   }}
-                  className={`flex cursor-pointer items-center gap-1 font-medium text-[16px] leading-[20px] hover:bg-[#003C74] hover:text-white transition-colors duration-300 py-[18px] md:py-[16px] lg:py-[32px] px-[24px] md:px-[16px] 2xl:px-[32px] ${
+
+                  className={`flex cursor-pointer items-center gap-1 font-medium text-[12px] md:text-[12px] lg:text-[14px] 2xl:text-[16px] leading-[20px] hover:bg-[#003C74] hover:text-white transition-colors duration-300 py-[12px] px-[16px] md:py-[12px] md:px-[20px] lg:py-[18px] lg:px-[24px] 2xl:px-[32px] ${
                     activeMenu === category.name
                       ? "bg-[#003C64] text-white"
                       : ""
