@@ -21,7 +21,7 @@ const menuCategories = [
         ],
       },
       {
-        title: "OFFICE WEAR",
+        title: "OFFICEWEAR",
         items: [
           "Short Sleeve Polos",
           "Long Sleeve Polos",
@@ -34,46 +34,7 @@ const menuCategories = [
         ],
       },
       {
-        title: "OFFICE WEAR2",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
-      },
-      {
-        title: "OFFICE WEAR3",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
-      },
-      {
-        title: "OFFICE WEAR4",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
-      },
-      {
-        title: "OUTER WEAR",
+        title: "OUTERWEAR",
         items: [
           "Jackets / Coats",
           "Hoodies",
@@ -84,114 +45,36 @@ const menuCategories = [
           "Vests",
           "Youth",
         ],
-      },
-    ],
-  },
-  {
-    name: "Apparel2",
-    menu: [
-      {
-        title: "T-SHIRTS",
-        items: [
-          "Short Sleeve T-Shirts",
-          "Long Sleeve T-Shirts",
-          "Tank Tops",
-          "Fitted T-Shirts",
-          "Camo T-Shirts",
-          "Youth T-Shirts",
-        ],
-      },
-      {
-        title: "OFFICE WEAR",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
-      },
-      {
-        title: "OFFICE WEAR2",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
-      },
-      {
-        title: "OFFICE WEAR3",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
-      },
-      {
-        title: "OFFICE WEAR4",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
-      },
-      {
-        title: "OUTER WEAR",
-        items: [
-          "Jackets / Coats",
-          "Hoodies",
-          "Fleece",
-          "Pullovers",
-          "Sweats",
-          "Sweaters",
-          "Vests",
-          "Youth",
-        ],
-      },
-    ],
-  },
-  {
-    name: "Accessories",
-    menu: [
-      {
-        title: "HEAD WEAR",
-        items: ["Caps", "Hats", "Beanies", "Visors", "Bandannas", "Youth"],
       },
       {
         title: "BOTTOMS",
-        items: ["Pants", "Shorts", "Denim", "Skirts", "Youth"],
+        items: [
+          "Pants",
+          "Shorts",
+          "Denim",
+          "Skirts",
+          "Youth",
+        ],
       },
-    ],
-  },
-  {
-    name: "More",
-    menu: [
+      {
+        title: "HEADWEAR",
+        items: [
+          "Caps",
+          "Hats",
+          "Beanies",
+          "Visors",
+          "Bandannas",
+          "Youth",
+        ],
+      },
       {
         title: "MORE",
         items: [
           "Sunglasses",
-          "Active wear",
+          "Activewear",
           "Aprons",
           "Gloves",
-          "Infant wear",
+          "Infantwear",
           "Dresses",
           "Watches",
           "Shoes",
@@ -200,342 +83,207 @@ const menuCategories = [
     ],
   },
   {
-    name: "Apparel3",
-    menu: [
+  name: "Awards",
+  menu: [
+    {
+      title: "TROPHIES",
+      items: [
+        "Acrylic Trophies",
+        "Crystal Trophies",
+        "Glass Trophies",
+        "Marble Trophies",
+        "Metal Trophies",
+        "Wood Trophies",
+      ],
+    },
+    {
+      title: "PLAQUES",
+      items: [
+        "Acrylic Plaques",
+        "Crystal Plaques",
+        "Glass Plaques",
+        "Marble Plaques",
+        "Metal Plaques",
+        "Wood Plaques",
+      ],
+    },
+    {
+      title: "EMBLEMS, PINS, & MEDALS",
+      items: [
+        "Emblems",
+        "Medals",
+        "Pins",
+        "Ribbons",
+      ],
+    },
+    {
+      title: "PAPER WEIGHTS",
+      items: [
+        "Acrylic Paper Weights",
+        "Crystal Paper Weights",
+        "Glass Paper Weights",
+        "Marble Paper Weights",
+        "Metal Paper Weights",
+        "Wood Paper Weights",
+      ],
+    },
+    {
+      title: "VASES",
+      items: [
+        "Crystal Vases",
+        "Glass Vases",
+        "Marble Vases",
+        "Metal Vases",
+      ],
+    },
+    {
+      title: "GOLF",
+      items: [
+        "Acrylic",
+        "Crystal",
+        "Glass",
+        "Marble",
+        "Metal",
+        "Wood",
+      ],
+    },
+  ],
+},
+{
+  name: "Bags",
+  menu: [
+    {
+      title: "TOTE BAGS",
+      items: [
+        "Shopping",
+        "Trade Shows",
+        "Cotton",
+        "Fashion",
+      ],
+    },
+    {
+      title: "BACKPACKS",
+      items: [
+        "Zipper Closure",
+        "Drawstring",
+        "Sling",
+        "Button Closure",
+      ],
+    },
+    {
+      title: "OFFICE & SCHOOL",
+      items: [
+        "Backpacks",
+        "Computer Bags",
+        "Lunch Bags",
+        "Messenger Bags",
+        "Briefcases & Attaches",
+      ],
+    },
+    {
+      title: "OUTDOOR & FITNESS",
+      items: [
+        "Coolers",
+        "Gym Bags",
+        "Duffle Bags",
+        "Picnic Baskets",
+      ],
+    },
+    {
+      title: "TRAVEL",
+      items: [
+        "Carryon Bags",
+        "TSA Approved",
+        "Suitcases",
+        "Toiletries",
+        "Garment Bags",
+        "Fanny Packs",
+      ],
+    },
+    {
+      title: "SHOP BY MATERIAL",
+      items: [
+        "Paper Bags",
+        "Plastic Bags",
+        "Recycled Material",
+      ],
+    },
+    
+  ],
+  
+},
+{
+  "name": "Drinkware",
+  "menu": [
       {
-        title: "T-SHIRTS",
-        items: [
-          "Short Sleeve T-Shirts",
-          "Long Sleeve T-Shirts",
-          "Tank Tops",
-          "Fitted T-Shirts",
-          "Camo T-Shirts",
-          "Youth T-Shirts",
-        ],
+          "title": "TRAVEL",
+          "items": [
+              "Travel Mugs",
+              "Tumblers",
+              "Thermos",
+              "Beverage Insulators",
+              "BPA Free Bottles",
+              "Water Bottles"
+          ]
       },
       {
-        title: "OFFICE WEAR",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
+          "title": "HOME & OFFICE",
+          "items": [
+              "Mugs",
+              "Tumblers",
+              "Paper Cups",
+              "Plastic Cups",
+              "Thermos",
+              "Tea Cups",
+              "Coasters",
+              "Caraffes"
+          ]
       },
       {
-        title: "OFFICE WEAR2",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
+          "title": "BEER & WINE",
+          "items": [
+              "Wine Glasses",
+              "Beer Steins",
+              "Shot Glasses",
+              "Beverage Insulators",
+              "Openers"
+          ]
       },
       {
-        title: "OFFICE WEAR3",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
+          "title": "RESTAURANT/BAR",
+          "items": [
+              "Plastic Cups",
+              "Glasses",
+              "Wine Glasses",
+              "Beer Steins",
+              "Shot Glasses",
+              "Coasters",
+              "Caraffes",
+              "Openers"
+          ]
       },
       {
-        title: "OFFICE WEAR4",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
+          "title": "SPORTS & OUTDOORS",
+          "items": [
+              "Plastic Cups",
+              "Styrofoam Cups",
+              "Beverage Insulators",
+              "BPA Free Bottles",
+              "Thermos",
+              "Tumblers",
+              "Water Bottles"
+          ]
       },
       {
-        title: "OUTER WEAR",
-        items: [
-          "Jackets / Coats",
-          "Hoodies",
-          "Fleece",
-          "Pullovers",
-          "Sweats",
-          "Sweaters",
-          "Vests",
-          "Youth",
-        ],
-      },
-    ],
-  },
-  {
-    name: "Apparel41",
-    menu: [
-      {
-        title: "T-SHIRTS",
-        items: [
-          "Short Sleeve T-Shirts",
-          "Long Sleeve T-Shirts",
-          "Tank Tops",
-          "Fitted T-Shirts",
-          "Camo T-Shirts",
-          "Youth T-Shirts",
-        ],
-      },
-      {
-        title: "OFFICE WEAR",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
-      },
-      {
-        title: "OFFICE WEAR2",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
-      },
-      {
-        title: "OFFICE WEAR3",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
-      },
-      {
-        title: "OFFICE WEAR4",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
-      },
-      {
-        title: "OUTER WEAR",
-        items: [
-          "Jackets / Coats",
-          "Hoodies",
-          "Fleece",
-          "Pullovers",
-          "Sweats",
-          "Sweaters",
-          "Vests",
-          "Youth",
-        ],
-      },
-    ],
-  },
-  {
-    name: "Apparel55",
-    menu: [
-      {
-        title: "T-SHIRTS",
-        items: [
-          "Short Sleeve T-Shirts",
-          "Long Sleeve T-Shirts",
-          "Tank Tops",
-          "Fitted T-Shirts",
-          "Camo T-Shirts",
-          "Youth T-Shirts",
-        ],
-      },
-      {
-        title: "OFFICE WEAR",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
-      },
-      {
-        title: "OFFICE WEAR2",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
-      },
-      {
-        title: "OFFICE WEAR3",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
-      },
-      {
-        title: "OFFICE WEAR4",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
-      },
-      {
-        title: "OUTER WEAR",
-        items: [
-          "Jackets / Coats",
-          "Hoodies",
-          "Fleece",
-          "Pullovers",
-          "Sweats",
-          "Sweaters",
-          "Vests",
-          "Youth",
-        ],
-      },
-    ],
-  },
-  {
-    name: "Accessories2",
-    menu: [
-      {
-        title: "HEAD WEAR",
-        items: ["Caps", "Hats", "Beanies", "Visors", "Bandannas", "Youth"],
-      },
-      {
-        title: "BOTTOMS",
-        items: ["Pants", "Shorts", "Denim", "Skirts", "Youth"],
-      },
-    ],
-  },
-  {
-    name: "Apparel5",
-    menu: [
-      {
-        title: "T-SHIRTS",
-        items: [
-          "Short Sleeve T-Shirts",
-          "Long Sleeve T-Shirts",
-          "Tank Tops",
-          "Fitted T-Shirts",
-          "Camo T-Shirts",
-          "Youth T-Shirts",
-        ],
-      },
-      {
-        title: "OFFICE WEAR",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
-      },
-      {
-        title: "OFFICE WEAR2",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
-      },
-      {
-        title: "OFFICE WEAR3",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
-      },
-      {
-        title: "OFFICE WEAR4",
-        items: [
-          "Short Sleeve Polos",
-          "Long Sleeve Polos",
-          "Youth Polos",
-          "Short Sleeve Dress Shirts",
-          "Long Sleeve Dress Shirts",
-          "Denim Shirts",
-          "Twill Shirts",
-          "Youth Dress Shirts",
-        ],
-      },
-      {
-        title: "OUTER WEAR",
-        items: [
-          "Jackets / Coats",
-          "Hoodies",
-          "Fleece",
-          "Pullovers",
-          "Sweats",
-          "Sweaters",
-          "Vests",
-          "Youth",
-        ],
-      },
-    ],
-  },
+          "title": "STRAWS",
+          "items": [
+              "Plastic",
+              "Paper",
+              "Reusable"
+          ]
+      }
+  ]
+}
 ];
 
 export default function MegaMenu() {
