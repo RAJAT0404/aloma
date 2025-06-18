@@ -90,7 +90,7 @@ const Header = () => {
         )}
 
         {/* Main Header */}
-        <div className="bg-white border-b border-gray-200 py-1.5 ">
+        <div className="bg-white border-b border-gray-200 py-3 ">
           <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-2">
               {/* Logo and Mobile Menu */}
@@ -433,10 +433,10 @@ const Header = () => {
               </nav>
 
               <Button
-                variant="secondary"
-                className="relative text-[#003C64] px-[24px] py-[10px] text-[18px] leading-[100%] font-medium bg-white
+                // variant="secondary"
+                className="relative text-[#003C64] px-5 py-2 text-[14px] leading-[100%] font-medium bg-white
   transition-all duration-300 ease-in-out active:scale-98 
-  border border-[#003C64] shadow-md rounded-[12px] hover:border-[#003C64] hover:bg-[#003C64] hover:text-white my-2"
+  border border-[#003C64]  rounded-[12px] hover:border-[#003C64] hover:bg-[#003C64] hover:text-white my-2"
                 aria-label="Go to Design Lab"
               >
                 <span className="relative z-10">DESIGN LAB</span>

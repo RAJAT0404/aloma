@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import Logo from "../../../public/logo.svg"
+import Image from "next/image";
 
 export const Footer = () => {
   return (
@@ -30,7 +32,11 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold">Aloma Tees</h3>
+            {/* <h3 className="text-xl font-bold">Aloma Tees</h3> */}
+            
+            <Image src={Logo} width={200} height={150} alt="Alamo Tees Logo" className="h-10 w-auto mb-4" />
+
+
             <p className="text-muted-foreground">
               Premium quality apparel and accessories for the modern lifestyle. 
               Express yourself with our curated collection.
@@ -118,8 +124,8 @@ export const Footer = () => {
         <Separator className="my-8" />
 
         {/* Bottom Footer */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
+        <div className="flex flex-col sm:flex-row justify-end items-center gap-4 relative">
+          <p className="text-sm text-muted-foreground lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2">
             © 2025 Aloma Tees. All rights reserved.
           </p>
           <div className="flex gap-6">
