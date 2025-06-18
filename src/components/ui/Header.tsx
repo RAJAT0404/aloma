@@ -17,7 +17,6 @@ import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import MegaMenu from "../MegaMenu/mega-menu";
 import { useRef } from "react";
-import { set } from "date-fns";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
