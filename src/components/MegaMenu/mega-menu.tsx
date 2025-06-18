@@ -283,6 +283,73 @@ const menuCategories = [
           ]
       }
   ]
+},
+{
+  "name": "Fun",
+  "menu": [
+      {
+          "title": "CAMPING/OUTDOORS",
+          "items": [
+              "Coolers",
+              "Chairs",
+              "Blankets",
+              "Umbrellas",
+              "Towels",
+              "Binoculars",
+              "Compasses",
+              "Fishing Coolers"
+          ]
+      },
+      {
+          "title": "TEAM SPIRIT",
+          "items": [
+              "Stadium Cushions",
+              "Stadium Chairs",
+              "Fans",
+              "Foam Hands",
+              "Megaphones",
+              "Noise Makers",
+              "Pom Poms"
+          ]
+      },
+      {
+          "title": "BALLS",
+          "items": [
+              "Footballs",
+              "Basketballs",
+              "Baseballs",
+              "Soccer Balls",
+              "Golf Balls",
+              "Hockey Pucks"
+          ]
+      },
+      {
+          "title": "TOYS & GAMES",
+          "items": [
+              "Flyers",
+              "Puzzles",
+              "Stuffed Animals",
+              "Kites",
+              "Tattoos",
+              "Yo-Yos",
+              "Airplanes",
+              "Games"
+          ]
+      },
+      {
+          "title": "GOLF ITEMS",
+          "items": [
+              "Golf Balls",
+              "Ball Markers",
+              "Clips",
+              "Clubs & Putters",
+              "Event Flags & Banners",
+              "Golf Apparel",
+              "Golf Bags",
+              "Shoe Bags"
+          ]
+      }
+  ]
 }
 ];
 
