@@ -52,7 +52,6 @@ const Header = () => {
     },
   ];
 
-  console.log(megaMenu);
 
   const menuRef = useRef<HTMLDivElement>(null);
 

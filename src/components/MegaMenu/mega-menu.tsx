@@ -484,7 +484,7 @@ export default function MegaMenu({setMegaMenu }: { megaMenu: boolean, setMegaMen
   const [firstLoad, setFirstLoad] = useState(true);
 
   const isMobile = useIsMobile();
-  // console.log(megaMenu)
+
 
   useEffect(() => {
     if (firstLoad && menuCategories.length > 0) {
@@ -597,15 +597,15 @@ export default function MegaMenu({setMegaMenu }: { megaMenu: boolean, setMegaMen
 
                 {activeMenu === category.name && (
                   <div
-                    className={`  w-full  bg-white flex flex-row flex-wrap items-start p-4  ${
+                    className={`  w-full  bg-white flex flex-col flex-wrap items-start p-2  ${
                       category.menu.length === 6
                         ? "justify-between gap-2"
-                        : "justify-start gap-[150px]"
+                        : "justify-start gap-2"
                     }`}
                   >
                     {category.menu.map((section, index) => (
                       <div key={index} className="max-w-max ">
-                        <h4 className="font-semibold  text-[12px]  leading-[16px]  py-2 text-[#000D16] pb-1 uppercase mb-8px relative inline-block">
+                        <h4 className="font-semibold  text-[14px]  leading-[16px]  py-4 text-[#000D16] pb-1 uppercase mb-8px relative inline-block">
                           {section.title}
                           <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#000D16]"></span>
                         </h4>
@@ -614,7 +614,7 @@ export default function MegaMenu({setMegaMenu }: { megaMenu: boolean, setMegaMen
                           {section.items.map((item, idx) => (
                             <li
                               key={idx}
-                              className="mt-2 text-[12px] leading-[16px] text-[#000D16] hover:text-blue-600 hover:underline cursor-pointer"
+                              className="mt-2.5 text-[12px] leading-[16px] text-[#000D16] hover:text-blue-600 hover:underline cursor-pointer"
                             >
                               <Link href={"/"}> {item} </Link>
                             </li>
