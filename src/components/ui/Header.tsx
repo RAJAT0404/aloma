@@ -138,8 +138,8 @@ const Header = () => {
                       <nav className="flex flex-col space-y-6">
                         {menus?.map((item) => {
                           return item.submenu ? (
-                            <div>
-                              <div key={item.name} className="space-y-2">
+                            <div key={item.name}>
+                              <div  className="space-y-2">
                                 {!item.name.includes("Categories") ? (
                                   <button
                                     onClick={() => setIsOpen(!isOpen)}
@@ -166,7 +166,7 @@ const Header = () => {
                                       }`}
                                     />
                                   </button>
-                                       {megaMenu &&    <MegaMenu  megaMenu={megaMenu} setMegaMenu={setMegaMenu}  />}
+                                       {megaMenu  &&     <MegaMenu  megaMenu={megaMenu} setMegaMenu={setMegaMenu}  />}
                                 </div>
                                 )}
                                 {isOpen && (
@@ -287,7 +287,7 @@ const Header = () => {
                       ))}
                     </div>
                   </div>
-                </div>
+                </div>  
               </div>
 
               {/* Contact Info & Actions - Hidden on mobile */}
@@ -356,13 +356,13 @@ const Header = () => {
                     <div key={item.name} className="relative">
                       {item.name.includes("Categories") ? (
                         <Button
+
                           variant="ghost"
                           className={`text-sm font-medium text-gray-700 transition-colors flex items-center gap-1 hover:bg-transparent hover:text-[#0072BA] ${
                             megaMenu ? "text-[#0072BA]" : ""
                           }`}
-                          onClick={() => {
-                            setMegaMenu(!megaMenu);
-                          }}
+                            onMouseEnter={()=>(setMegaMenu(true))}
+                            
                         >
                           {item.name}
                           <ChevronDown
@@ -433,10 +433,9 @@ const Header = () => {
               </nav>
 
               <Button
-                // variant="secondary"
                 className="relative text-[#003C64] px-5 py-2 text-[14px] leading-[100%] font-medium bg-white
-  transition-all duration-300 ease-in-out active:scale-98 
-  border border-[#003C64]  rounded-[12px] hover:border-[#003C64] hover:bg-[#003C64] hover:text-white my-2"
+           transition-all duration-300 ease-in-out active:scale-98 
+           border border-[#003C64]  rounded-[12px] hover:border-[#003C64] hover:bg-[#003C64] hover:text-white my-2"
                 aria-label="Go to Design Lab"
               >
                 <span className="relative z-10">DESIGN LAB</span>
@@ -446,7 +445,7 @@ const Header = () => {
             {megaMenu && (
               <div
                 id="Megamenu"
-                className="w-full max-w-[1504px] mx-auto absolute top-35 z-[12] bg-white left-1/2 -translate-x-1/2"
+                className="w-full max-w-[1504px] mx-auto absolute top-36  lg:top-38 z-[12] bg-white left-1/2 -translate-x-1/2"
                 ref={menuRef}
               >
                 <MegaMenu megaMenu={megaMenu} setMegaMenu={setMegaMenu} />

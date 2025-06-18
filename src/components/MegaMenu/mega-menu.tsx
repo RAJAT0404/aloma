@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState,useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 
@@ -478,7 +478,7 @@ const menuCategories = [
 ];
 
 export default function MegaMenu({setMegaMenu }: { megaMenu: boolean, setMegaMenu: (value: boolean) => void }) {
-  const menuRef = useRef<HTMLDivElement>(null);
+
 
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [firstLoad, setFirstLoad] = useState(true);
@@ -496,8 +496,8 @@ export default function MegaMenu({setMegaMenu }: { megaMenu: boolean, setMegaMen
   return (
     <>
       {!isMobile ? (
-        <div ref={menuRef} className=" w-full bg-[#F3F4F6] text-[#667085]">
-          <div className="flex items-center justify-between w-full max-w-max border-b">
+        <div  className=" w-full bg-[#F3F4F6] text-[#667085]"   onMouseLeave={()=>(setMegaMenu(!MegaMenu))} >
+          <div className="flex items-center justify-between w-full max-w-max " >
             {menuCategories.map((category) => (
               <div key={category.name} className=" flex items-center justify-between">
                 <button
@@ -527,13 +527,13 @@ export default function MegaMenu({setMegaMenu }: { megaMenu: boolean, setMegaMen
                 </button>
 
                 {activeMenu === category.name && (
-                  <div
+                  <div 
                     className={`absolute left-1/2 -translate-x-1/2 top-full z-50 w-full max-w-[1504px] bg-white border-b border-l border-r shadow-lg flex flex-row flex-wrap items-start p-[16px_32px_32px_32px] rounded-b-[16px] ${
                       category.menu.length === 6
                         ? "justify-between gap-2"
                         : "justify-start gap-[150px]"
                     }`}
-                  >
+                  > 
                     {category.menu.map((section, index) => (
                       <div key={index} className="max-w-max ">
                         <h4 className="font-semibold  text-[14px] lg:text-[16px] leading-[20px]  py-[14px] text-[#000D16] mb-2 pb-1 uppercase mb-8px relative inline-block">
