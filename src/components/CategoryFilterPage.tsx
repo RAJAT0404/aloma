@@ -1,3 +1,20 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 "use client";
 import { useState, useMemo } from "react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -21,8 +38,7 @@ import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { Search, ChevronDown, Filter } from "lucide-react";
 import Image from "next/image";
-import productsData from "@/lib/product.json";
-import BestSellersSection from "@/components/BestSellersSection/BestSellersSection";
+import productsData from "@/lib/category.json";
 
 import {
   Drawer,
@@ -32,7 +48,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 
-const ProductPageFilter = () => {
+const CategoryFilterPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
@@ -78,13 +94,7 @@ const ProductPageFilter = () => {
           product.price <= 50) ||
         (priceRange === "over-50" && product.price > 50);
 
-      return (
-        matchesSearch &&
-        matchesCategory &&
-        matchesColor &&
-        matchesSize &&
-        matchesPrice
-      );
+      return matchesSearch && matchesCategory && matchesColor && matchesSize && matchesPrice;
     });
 
     // Sort products
@@ -102,14 +112,7 @@ const ProductPageFilter = () => {
     });
 
     return filtered;
-  }, [
-    searchTerm,
-    selectedCategories,
-    selectedColors,
-    selectedSizes,
-    priceRange,
-    sortBy,
-  ]);
+  }, [searchTerm, selectedCategories, selectedColors, selectedSizes, priceRange, sortBy]);
 
   const handleCategoryChange = (category: string, checked: boolean) => {
     setSelectedCategories((prev) =>
@@ -147,7 +150,7 @@ const ProductPageFilter = () => {
               {/* Header */}
               <div className="mb-8">
                 <h2 className="text-[24px] leading-[32px] font-[700] text-foreground mb-2.25">
-                  Custom Apparel & Promo Products
+                  Catgorized Products
                 </h2>
                 <p className="font-lato font-normal text-[14px] leading-[100%] mb-8 text-muted-foreground">
   Find the perfect products for your needs
@@ -199,7 +202,7 @@ const ProductPageFilter = () => {
                 </CollapsibleTrigger>
                 <CollapsibleContent className="space-y-2 pt-2">
                   {categories.map((category) => (
-                    <div key={category} className="flex items-center space-x-3.5 mb-3.5">
+                    <div key={category} className="flex items-center space-x-3.5 mb-3">
                       <Checkbox
                         id={category}
                         checked={selectedCategories.includes(category)}
@@ -223,7 +226,7 @@ const ProductPageFilter = () => {
                 </CollapsibleTrigger>
                 <CollapsibleContent className="space-y-2 pt-2">
                   {colors.map((color) => (
-                    <div key={color} className="flex items-center space-x-3.5 mb-3.5">
+                    <div key={color} className="flex items-center space-x-3.5 mb-3">
                       <Checkbox
                         id={color}
                         checked={selectedColors.includes(color)}
@@ -247,7 +250,7 @@ const ProductPageFilter = () => {
                 </CollapsibleTrigger>
                 <CollapsibleContent className="space-y-2 pt-2">
                   {sizes.map((size) => (
-                    <div key={size} className="flex items-center space-x-3.5 mb-3.5">
+                    <div key={size} className="flex items-center space-x-3.5 mb-3">
                       <Checkbox
                         id={size}
                         checked={selectedSizes.includes(size)}
@@ -352,7 +355,7 @@ const ProductPageFilter = () => {
                         {categories.map((category) => (
                           <div
                             key={category}
-                            className="flex items-center space-x-3.5 mb-3.5"
+                            className="flex items-center space-x-3.5 mb-3"
                           >
                             <Checkbox
                               id={category}
@@ -385,7 +388,7 @@ const ProductPageFilter = () => {
                         {colors.map((color) => (
                           <div
                             key={color}
-                            className="flex items-center space-x-3.5 mb-3.5"
+                            className="flex items-center space-x-3.5 mb-3"
                           >
                             <Checkbox
                               id={color}
@@ -437,11 +440,10 @@ const ProductPageFilter = () => {
 
           {/* Main Content */}
           <div className="flex-1">
-            <BestSellersSection />
             {/* Results Header */}
             <div className="flex items-center justify-between mb-6">
-              <p className="text-black font-lato font-semibold text-[20px] leading-none">
-                Showing {filteredProducts.length} of {productsData.length}{" "}
+            <p className="text-black font-lato font-semibold text-[20px] leading-none">
+                Showing {filteredProducts.length} of {productsData?.length}{" "}
                 products
               </p>
             </div>
@@ -455,7 +457,7 @@ const ProductPageFilter = () => {
                 >
                   <CardContent className="p-0 rounded-t-[20px] overflow-hidden">
                     <div className="relative overflow-hidden">
-                      <Link href="/product/pro1">
+                      <Link href="#">
                         <Image
                           src={product.image}
                           alt={product.name}
@@ -472,42 +474,21 @@ const ProductPageFilter = () => {
                     </div>
 
                     <div className="p-4 space-y-3">
-                    <h3 className="font-bold text-[18px] leading-[24px] text-foreground mb-[14px] line-clamp-2">
-  {product.name}
-</h3>
+                      <h3 className="font-bold text-[18px] text-[#000D16] leading-[24px] line-clamp-2 mb-3">
+                        {product.name}
+                      </h3>
 
-
-<p className="font-normal text-[12px] leading-[16px] mb-[20px] text-[#737373] line-clamp-2">
-  {product.description}
-</p>
-
-
-
-                      {/* Colors */}
-                      <div className="flex flex-wrap gap-1">
-                        {product.colors.slice(0, 6).map((color, index) => (
-                          <div
-                            key={index}
-                            className="w-4 h-4 rounded-full border border-gray-200"
-                            style={{ backgroundColor: color.toLowerCase() }}
-                            title={color}
-                          />
-                        ))}
-                        {product.colors.length > 6 && (
-                          <span className="text-xs text-muted-foreground">
-                            +{product.colors.length - 6}
-                          </span>
-                        )}
-                      </div>
+                      {/* <p className="text-xs text-muted-foreground line-clamp-2">
+                        {product.description}
+                      </p> */}
 
                       {/* Sizes */}
-                      <div className="font-bold text-[12px] leading-[18px]  text-[#000000]">
-  Sizes: {product.sizes.join(", ")}
-</div>
-
+                      <div className="text-[12px] font-[700] leading-[18px] text-black mb-3">
+                        Sizes: {product.sizes.join(", ")}
+                      </div>
 
                       {/* Rating */}
-                      <div className="flex items-center space-x-3.5 ">
+                      <div className="flex items-center space-x-3.5 mb-4">
                         <div className="flex">
                           {[...Array(5)].map((_, index) => (
                             <span
@@ -528,13 +509,12 @@ const ProductPageFilter = () => {
                       </div>
 
                       {/* Price */}
-                      <div className="-space-y-4 flex flex-row justify-between items-start">
-                      <div className="font-bold flex flex-row justify-between items-center text-[20px] leading-[28px] text-foreground mt-2.5">
-  ${product.price.toFixed(2)}
-</div>
-
+                      <div className="space-y-1 flex flex-row justify-between items-center">
+                        <div className="font-bold text-[24px] leading-[30px] text-foreground" style={{ fontWeight: 700 }}>
+                          ${product.price.toFixed(2)}
+                        </div>
                         <Button
-                          className="relative text-[#003C64] px-4  text-[14px] leading-[18px] font-medium bg-white
+                          className="relative text-[#003C64] px-4 py-2.25 text-[14px] leading-[18px] font-medium bg-white
                                transition-all duration-300 ease-in-out active:scale-98 
                                     border border-[#003C64]  rounded-[8px] hover:border-[#003C64] hover:bg-[#003C64] hover:text-white my-2"
                           aria-label="Go to Design Lab"
@@ -543,10 +523,6 @@ const ProductPageFilter = () => {
                           <span className="absolute inset-0 rounded-[12px] bg-transparent hover:bg-[#003C64]/5 transition-all duration-300 ease-in-out"></span>
                         </Button>
                       </div>
-
-                      {/* <div className="text-xs text-muted-foreground">
-                          {product.minOrder}
-                        </div> */}
                     </div>
                   </CardContent>
                 </Card>
@@ -575,4 +551,4 @@ const ProductPageFilter = () => {
   );
 };
 
-export default ProductPageFilter;
+export default CategoryFilterPage;

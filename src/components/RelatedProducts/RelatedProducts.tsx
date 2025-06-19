@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import productsData from '@/lib/data.json';
+import productsData from '@/lib/product.json';
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";

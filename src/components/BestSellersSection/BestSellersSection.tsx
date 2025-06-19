@@ -25,13 +25,6 @@ const BestSellersSection = () => {
             alt="Best Sellers" 
             className="w-[304px] h-[304px] object-cover rounded-[20px]"
           />
-            {/* <Image
-            src="https://plus.unsplash.com/premium_photo-1690820318702-06867bb1405e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTU3fHxtZW4lMjB3ZWFyaW5nJTIwd2hpdGUlMjB0JTIwc2hpcnR8ZW58MHx8MHx8fDA%3D" 
-            alt="Best Sellers" 
-            height={304}
-            width={304}
-            className="w-[304px] h-[304px] object-cover rounded-[20px]"
-          /> */}
         </div>
       </div>
     </section>

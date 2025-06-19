@@ -117,19 +117,7 @@ const ProductShowcase = () => {
           </p>
         </div>
 
-        {/* Category Navigation */}
-        {/* <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {categories.map((category) => (
-            <Button
-              key={category}
-              variant={selectedCategory === category ? "blue" : "ghost"}
-              onClick={() => setSelectedCategory(category)}
-              className="text-sm"
-            >
-              {category}
-            </Button>
-          ))}
-        </div> */}
+
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -202,7 +190,7 @@ const ProductShowcase = () => {
         {/* CTA Button */}
         <div className="text-center">
         <Button variant="blue" size="lg">
-            <Link href="/product">View All Categories</Link>
+            <Link href="/product">View All Products</Link>
           </Button>
         </div>
       </div>

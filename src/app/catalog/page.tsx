@@ -1,13 +1,12 @@
-import BrandsSlider from "@/components/BrandSlider";
-import Tshirts from "@/components/TShirts";
+
+import CategoryFilterPage from "@/components/CategoryFilterPage";
 
 const CategoryPage = () => {
   return (
     <>
   
-      <div className="py-[100px] container mx-auto px-4">
-      <Tshirts />
-      <BrandsSlider />
+      <div className=" container mx-auto">
+        <CategoryFilterPage/>
    
     </div>
    
