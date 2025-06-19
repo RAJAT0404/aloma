@@ -39,6 +39,7 @@ const ProductPageFilter = () => {
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState<string>("all");
   const [sortBy, setSortBy] = useState<string>("name");
+  // const [showFilters, setShowFilters] = useState(false);
 
   // Extract unique values for filters
   const categories = Array.from(
@@ -380,20 +381,20 @@ const ProductPageFilter = () => {
 
             {/* Products Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {filteredProducts.map((product) => (
+              {filteredProducts?.map((product) => (
                 <Card
                   key={product.id}
-                  className="group cursor-pointer transition-all duration-300 hover:shadow-lg"
+                  className="group cursor-pointer transition-all duration-300 hover:shadow-lg rounded-[20px]"
                 >
-                  <CardContent className="p-0">
+                  <CardContent className="p-0 rounded-t-[20px] overflow-hidden" >
                     <div className="relative overflow-hidden">
                       <Link href="/product/pro1">
                         <Image
                           src={product.image}
                           alt={product.name}
-                          width={400}
-                          height={192}
-                          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                          width={285}
+                          height={220}
+                          className="w-full h-[220px] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:rounded-t-[20px] rounded-t-[20px]"
                         />
                       </Link>
                       {product.badge && (

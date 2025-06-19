@@ -29,7 +29,7 @@ const RelatedProducts = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-800 mb-2">
-            Shop Similar Styles
+            Related Products
           </h2>
         </div>
 
@@ -67,18 +67,18 @@ const RelatedProducts = () => {
                 >
                    <Card
                   key={product.id}
-                  className="group cursor-pointer mt-4 transition-all duration-300 hover:shadow-lg"
+                  className="group rounded-t-[20px] overflow-hidden cursor-pointer mt-4 transition-all duration-300 hover:shadow-lg"
                 >
-                  <CardContent className="p-0">
+                  <CardContent className="p-0 rounded-t-[20px] overflow-hidden">
                     <div className="relative overflow-hidden">
                       <Link href="/product/pro1">
                         <Image
                           src={product.image}
                           alt={product.name}
                           width={400}
-                          height={192}
-                          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                        />
+                          height={220}
+                          className="w-full h-[220px] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:rounded-t-[20px] rounded-t-[20px]"
+                       />
                       </Link>
                       {product.badge && (
                         <Badge className="absolute top-2 right-2 bg-primary text-primary-foreground">
