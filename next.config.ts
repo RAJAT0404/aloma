@@ -39,6 +39,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/ws/ws.dll/QPic/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'media.istockphoto.com',
+        port: '',
+        pathname: '/id/**',
+      },
     ],
   },
 };

@@ -38,7 +38,6 @@ const Header = () => {
       ],
     },
     { name: "Categories", url: "/categories", submenu: [] },
-    { name: "Contact", url: "/contact" },
     {
       name: "Templates",
       url: "/templates",
@@ -50,6 +49,8 @@ const Header = () => {
         { name: "Accessories", url: "/accessories" },
       ],
     },
+    { name: "Contact", url: "/contact" },
+   
   ];
 
 

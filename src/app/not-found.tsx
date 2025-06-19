@@ -6,8 +6,8 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <main className="grid min-h-screen place-items-center bg-background p-4">
-      <div className="w-full max-w-full space-y-4 min-h-screen flex flex-col items-center justify-center">
+    <main className="grid h-[70vh] place-items-center bg-background p-4">
+      <div className="w-full max-w-full space-y-4 flex flex-col items-center justify-center">
         <CardHeader className="space-y-2 w-full max-w-full ">
           <CardTitle className="text-center text-2xl font-bold">
             404 - Page Not Found
