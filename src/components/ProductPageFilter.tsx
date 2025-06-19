@@ -342,7 +342,7 @@ const ProductPageFilter = () => {
 
                   {/* Categories */}
                   <div className="min-w-[200px] flex-shrink-0 snap-start">
-                    <Label className="text-sm font-medium">Categories</Label>
+                    <Label className="text-sm font-medium">Products</Label>
                     <Collapsible defaultOpen>
                       <CollapsibleTrigger className="flex w-full items-center justify-between py-2 font-medium text-sm">
                         Categories
