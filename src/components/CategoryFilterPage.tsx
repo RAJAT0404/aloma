@@ -150,7 +150,7 @@ const CategoryFilterPage = () => {
               {/* Header */}
               <div className="mb-8">
                 <h2 className="text-[24px] leading-[32px] font-[700] text-foreground mb-2.25">
-                  Catgorized Products
+                  Categorized T-shirts
                 </h2>
                 <p className="font-lato font-normal text-[14px] leading-[100%] mb-8 text-muted-foreground">
   Find the perfect products for your needs
