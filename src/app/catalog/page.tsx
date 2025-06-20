@@ -1,17 +1,15 @@
+import React from "react";
+// import ProductPageFilter from "@/components/ProductPageFilter";
+import CatalogPage from '@/components/CatalogPage/CatalogPage'
 
-import CategoryFilterPage from "@/components/CategoryFilterPage";
-
-const CategoryPage = () => {
-  return (
-    <>
+  const Products = () => {
+    return (
+      <div className="min-h-screen bg-background">
+        {/* <ProductPageFilter/> */}
+        <CatalogPage />
+    
+      </div>
+    );
+  };
   
-      <div className=" container mx-auto">
-        <CategoryFilterPage/>
-   
-    </div>
-   
-    </>
-  );
-};
-
-export default CategoryPage;
+  export default Products;

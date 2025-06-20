@@ -30,27 +30,12 @@ const HeroSection = () => {
                 Start Designing
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>
-                <Link href="/product">
+                <Link href="/products">
                   Browse Products
                 </Link>
               </Button>
             </div>
 
-            {/* Trust indicators */}
-            {/* <div className="flex items-center space-x-8 text-sm text-muted-foreground">
-              <div className="flex items-center space-x-2">
-                <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                <span>Free Shipping</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                <span>24/7 Support</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                <span>Quality Guaranteed</span>
-              </div>
-            </div> */}
           </div>
 
           {/* Right Image */}
@@ -67,7 +52,6 @@ const HeroSection = () => {
                 className="w-full h-[500px] object-contain"
                 priority
               />
-              {/* <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div> */}
             </div>
             
             {/* Floating elements */}

@@ -1,20 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 "use client";
 import { useState, useMemo } from "react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -38,7 +21,8 @@ import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { Search, ChevronDown, Filter } from "lucide-react";
 import Image from "next/image";
-import productsData from "@/lib/category.json";
+import CategoryData from "@/lib/category.json";
+import productData from "@/lib/product.json";
 
 import {
   Drawer,
@@ -47,14 +31,26 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import BestSellersSection from "./BestSeller/BestSellersSection";
 
-const CategoryFilterPage = () => {
+const CategoryFilterPage = ({ slug }: { slug: string }) => {
+
+
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
   const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState<string>("all");
   const [sortBy, setSortBy] = useState<string>("name");
+
+
+  const productsData = slug === "tshirts" 
+    ? CategoryData 
+    : slug === "products" 
+      ? productData 
+      : productData.filter(product => product.category.toLowerCase() === slug?.replace('-', '').toLowerCase())
+
+  
 
   // Extract unique values for filters
   const categories = Array.from(
@@ -94,7 +90,13 @@ const CategoryFilterPage = () => {
           product.price <= 50) ||
         (priceRange === "over-50" && product.price > 50);
 
-      return matchesSearch && matchesCategory && matchesColor && matchesSize && matchesPrice;
+      return (
+        matchesSearch &&
+        matchesCategory &&
+        matchesColor &&
+        matchesSize &&
+        matchesPrice
+      );
     });
 
     // Sort products
@@ -112,7 +114,14 @@ const CategoryFilterPage = () => {
     });
 
     return filtered;
-  }, [searchTerm, selectedCategories, selectedColors, selectedSizes, priceRange, sortBy]);
+  }, [
+    searchTerm,
+    selectedCategories,
+    selectedColors,
+    selectedSizes,
+    priceRange,
+    sortBy,
+  ]);
 
   const handleCategoryChange = (category: string, checked: boolean) => {
     setSelectedCategories((prev) =>
@@ -149,19 +158,20 @@ const CategoryFilterPage = () => {
             <div className="sticky top-4 space-y-6">
               {/* Header */}
               <div className="mb-8">
-                <h2 className="text-[24px] leading-[32px] font-[700] text-foreground mb-2.25">
-                  Categorized T-shirts
-                </h2>
+          <h1 className={`${slug !== "products" ? "text-[48px] leading-[56px]" : "text-[24px] leading-[32px]"} font-[700] text-foreground mb-5`}>
+            {slug === "products" ? 'Custom Apparel & Promo Products' : 
+             slug === "tshirts" ? 'T-shirts' :
+             slug === "hoodies" ? 'Hoodies' : 'Accessories'}
+          </h1>
                 <p className="font-lato font-normal text-[14px] leading-[100%] mb-8 text-muted-foreground">
-  Find the perfect products for your needs
-</p>
-
+                  Find the perfect products for your needs
+                </p>
               </div>
               {/* Search */}
-              <div className="space-y-2"> 
-              <Label className="font-semibold text-[16px] leading-[100%] mb-[14px]">
-  Search Products
-</Label>
+              <div className="space-y-2">
+                <Label className="font-semibold text-[16px] leading-[100%] mb-[14px]">
+                  Search Products
+                </Label>
 
                 <div className="relative">
                   <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
@@ -176,7 +186,10 @@ const CategoryFilterPage = () => {
 
               {/* Sort */}
               <div className="space-y-2 w-full">
-                <Label className="font-semibold text-[16px] leading-[100%] mb-[14px]">Sort By</Label>
+             
+                <Label className="font-semibold text-[16px] leading-[100%] mb-[14px]">
+                  Sort By
+                </Label>
                 <Select value={sortBy} onValueChange={setSortBy}>
                   <SelectTrigger className="w-full">
                     <SelectValue />
@@ -202,7 +215,10 @@ const CategoryFilterPage = () => {
                 </CollapsibleTrigger>
                 <CollapsibleContent className="space-y-2 pt-2">
                   {categories.map((category) => (
-                    <div key={category} className="flex items-center space-x-3.5 mb-3">
+                    <div
+                      key={category}
+                      className="flex items-center space-x-3.5 mb-3"
+                    >
                       <Checkbox
                         id={category}
                         checked={selectedCategories.includes(category)}
@@ -210,7 +226,10 @@ const CategoryFilterPage = () => {
                           handleCategoryChange(category, checked as boolean)
                         }
                       />
-                      <Label htmlFor={category} className="font-lato font-normal text-[14px] leading-[100%] text-black/80">
+                      <Label
+                        htmlFor={category}
+                        className="font-lato font-normal text-[14px] leading-[100%] text-black/80"
+                      >
                         {category}
                       </Label>
                     </div>
@@ -226,7 +245,10 @@ const CategoryFilterPage = () => {
                 </CollapsibleTrigger>
                 <CollapsibleContent className="space-y-2 pt-2">
                   {colors.map((color) => (
-                    <div key={color} className="flex items-center space-x-3.5 mb-3">
+                    <div
+                      key={color}
+                      className="flex items-center space-x-3.5 mb-3"
+                    >
                       <Checkbox
                         id={color}
                         checked={selectedColors.includes(color)}
@@ -234,7 +256,10 @@ const CategoryFilterPage = () => {
                           handleColorChange(color, checked as boolean)
                         }
                       />
-                      <Label htmlFor={color} className="font-lato font-normal text-[14px] leading-[100%] text-black/80">
+                      <Label
+                        htmlFor={color}
+                        className="font-lato font-normal text-[14px] leading-[100%] text-black/80"
+                      >
                         {color}
                       </Label>
                     </div>
@@ -250,7 +275,10 @@ const CategoryFilterPage = () => {
                 </CollapsibleTrigger>
                 <CollapsibleContent className="space-y-2 pt-2">
                   {sizes.map((size) => (
-                    <div key={size} className="flex items-center space-x-3.5 mb-3">
+                    <div
+                      key={size}
+                      className="flex items-center space-x-3.5 mb-3"
+                    >
                       <Checkbox
                         id={size}
                         checked={selectedSizes.includes(size)}
@@ -258,7 +286,10 @@ const CategoryFilterPage = () => {
                           handleSizeChange(size, checked as boolean)
                         }
                       />
-                      <Label htmlFor={size} className="font-lato font-normal text-[14px] leading-[100%] text-black/80">
+                      <Label
+                        htmlFor={size}
+                        className="font-lato font-normal text-[14px] leading-[100%] text-black/80"
+                      >
                         {size}
                       </Label>
                     </div>
@@ -440,9 +471,10 @@ const CategoryFilterPage = () => {
 
           {/* Main Content */}
           <div className="flex-1">
+     { slug == "products" ?  <BestSellersSection/> : ''}
             {/* Results Header */}
             <div className="flex items-center justify-between mb-6">
-            <p className="text-black font-lato font-semibold text-[20px] leading-none">
+              <p className="text-black font-lato font-semibold text-[20px] leading-none">
                 Showing {filteredProducts.length} of {productsData?.length}{" "}
                 products
               </p>
@@ -457,7 +489,7 @@ const CategoryFilterPage = () => {
                 >
                   <CardContent className="p-0 rounded-t-[20px] overflow-hidden">
                     <div className="relative overflow-hidden">
-                      <Link href="#">
+                      <Link href="/catalog/premium-Cotton-T-Shirt?color=01">
                         <Image
                           src={product.image}
                           alt={product.name}
@@ -510,7 +542,10 @@ const CategoryFilterPage = () => {
 
                       {/* Price */}
                       <div className="space-y-1 flex flex-row justify-between items-center">
-                        <div className="font-bold text-[24px] leading-[30px] text-foreground" style={{ fontWeight: 700 }}>
+                        <div
+                          className="font-bold text-[24px] leading-[30px] text-foreground"
+                          style={{ fontWeight: 700 }}
+                        >
                           ${product.price.toFixed(2)}
                         </div>
                         <Button

@@ -17,7 +17,6 @@ export const Footer = () => {
               Subscribe to our newsletter and be the first to know about new arrivals and exclusive offers
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              
               <Input
                 placeholder="Enter your email"
                 className="bg-primary-foreground text-foreground"

@@ -30,7 +30,7 @@
       "id": 3,
       "name": "Short Sleeve T-Shirts",
       "description": "Cozy fleece hoodie with front pocket, perfect for casual wear and team uniforms.",
-      "category": "Hoodies",
+      "category": "Short Sleeve T-Shirts",
       "image": "https://media.istockphoto.com/id/1358422711/photo/navy%093d-hq-rendered-t-shirt-with-detailed-and-texture-color.webp?a=1&b=1&s=612x612&w=0&k=20&c=__sz02cstVXoWggJGjxbBIifzDE7xy0CKusTfTxgYdE=",
         "colors": ["Black", "Gray", "Navy", "Red", "Green", "Purple"],
       "sizes": ["S", "M", "L", "XL", "2XL"],
@@ -120,19 +120,6 @@
     },
     {
       "id": 10,
-      "name": "Z Beanie Hat",
-      "description": "Warm knit beanie for cold weather, available in multiple colors.",
-      "category": "Hats",
-      "image": "https://images.unsplash.com/photo-1521369909029-2afed882baee?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      "colors": ["Black", "Gray", "Navy", "Red", "Green", "Purple"],
-      "sizes": ["One Size"],
-      "price": 12.99,
-      "rating": 4.5,
-      "reviews": 189,
-      "minOrder": "No minimum"
-    },
-    {
-      "id": 11,
       "name": "Quarter-Zip Pullover",
       "description": "Stylish quarter-zip pullover for professional and casual occasions.",
       "category": "Youth T-Shirts",
@@ -144,19 +131,7 @@
       "reviews": 367,
       "badge": "Premium",
       "minOrder": "6 pieces"
-    },
-    {
-      "id": 12,
-      "name": "z Promotional Tote Bag",
-      "description": "Durable canvas toote bag perfect for trade shows and promotional events.",
-      "category": "Bags",
-      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      "colors": ["Natural", "Black", "Navy", "Red"],
-      "sizes": ["Standard"],
-      "price": 8.99,
-      "rating": 4.4,
-      "reviews": 512,
-      "minOrder": "25 pieces"
     }
+
   ]
   

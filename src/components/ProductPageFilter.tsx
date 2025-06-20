@@ -22,7 +22,7 @@ import Link from "next/link";
 import { Search, ChevronDown, Filter } from "lucide-react";
 import Image from "next/image";
 import productsData from "@/lib/product.json";
-import BestSellersSection from "@/components/BestSellersSection/BestSellersSection";
+import BestSellersSection from "./BestSeller/BestSellersSection";
 
 import {
   Drawer,
@@ -342,7 +342,7 @@ const ProductPageFilter = () => {
 
                   {/* Categories */}
                   <div className="min-w-[200px] flex-shrink-0 snap-start">
-                    <Label className="text-sm font-medium">Products</Label>
+                    <Label className="text-sm font-medium">Categories</Label>
                     <Collapsible defaultOpen>
                       <CollapsibleTrigger className="flex w-full items-center justify-between py-2 font-medium text-sm">
                         Categories
