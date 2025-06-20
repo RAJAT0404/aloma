@@ -53,8 +53,8 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="py-12 md:py-20 lg:py-24 bg-muted/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 md:py-20 lg:py-24 b">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-8 md:mb-12 lg:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">Frequently Asked Questions</h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">

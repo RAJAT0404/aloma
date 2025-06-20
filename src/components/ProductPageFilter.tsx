@@ -191,7 +191,7 @@ const ProductPageFilter = () => {
                 </Select>
               </div>
 
-              {/* Categories */}
+              {/* Categories
               <Collapsible defaultOpen>
                 <CollapsibleTrigger className="flex w-full items-center justify-between py-2 font-medium">
                   Categories
@@ -213,7 +213,7 @@ const ProductPageFilter = () => {
                     </div>
                   ))}
                 </CollapsibleContent>
-              </Collapsible>
+              </Collapsible> */}
 
               {/* Colors */}
               <Collapsible defaultOpen>

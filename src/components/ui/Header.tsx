@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import Image from "next/image";
-import Logo from "../../../public/logo.svg";
+import Logo from "../../../public/footerlogo.png";
 import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import MegaMenu from "../MegaMenu/mega-menu";
