@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
-import Logo from "../../../public/logo.svg"
+import Logo from "../../../public/footerlogo.png"
 import Image from "next/image";
 
 export const Footer = () => {
