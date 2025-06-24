@@ -2,37 +2,13 @@
 import { useState, useMemo } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-// import { Input } from "@/components/ui/input";
-// import { Button } from "@/components/ui/button";
-// import { Checkbox } from "@/components/ui/checkbox";
-// import {
-//   Select,
-//   SelectContent,
-//   SelectItem,
-//   SelectTrigger,
-//   SelectValue,
-// } from "@/components/ui/select";
-// import {
-//   Collapsible,
-//   CollapsibleContent,
-//   CollapsibleTrigger,
-// } from "@/components/ui/collapsible";
-// import { Label } from "@/components/ui/label";
+
 import Link from "next/link";
-// import { Search, ChevronDown, Filter } from "lucide-react";
 import Image from "next/image";
 import productData from "@/lib/category.json";
 import BestSellersSection from "@/components/BestSeller/BestSellersSection";
 
-// import {
-//   Drawer,
-//   DrawerContent,
-//   DrawerHeader,
-//   DrawerTitle,
-//   DrawerTrigger,
-// } from "@/components/ui/drawer";
 import TShirtCategoriesGrid from "../TShirtCategoriesGrid/TShirtCategoriesGrid";
-import FaqSection from "../FaqSection";
 
 const CategoryComponent = () => {
 
@@ -40,7 +16,7 @@ const CategoryComponent = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
-  console.log(selectedColors )
+  console.info(selectedColors )
 
     // Sidebar categories matching the image
     const sidebarSections = [
@@ -90,40 +66,7 @@ const CategoryComponent = () => {
       ];
 
 
-        // Main categories for the top section
-  const mainCategories = [
-    { name: "T-Shirts", count: 245 },
-    { name: "Sweatshirts & Hoodies", count: 89 },
-    { name: "Polo Shirts", count: 67 },
-    { name: "Hats", count: 123 },
-    { name: "Promotional Products", count: 345 },
-    { name: "Jackets", count: 78 },
-    { name: "Bags", count: 156 },
-    { name: "New Products", count: 23 },
-    { name: "Activewear", count: 234 },
-    { name: "Athleisure Wear", count: 145 },
-    { name: "Safety", count: 67 }
-  ];
-
-
-
   const productsData= productData?.slice(0,4)
-
-
-    // Filter products based on search and selected category
-    // const filteredProducts = useMemo(() => {
-    //     let filtered = productsData.filter(product => {
-    //       const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    //                           product.description.toLowerCase().includes(searchTerm.toLowerCase());
-          
-    //       const matchesCategory = selectedCategory === "all" || 
-    //                             product.category.toLowerCase().includes(selectedCategory.toLowerCase());
-    
-    //       return matchesSearch && matchesCategory;
-    //     });
-    
-    //     return filtered;
-    //   }, [searchTerm, selectedCategory]);
     
       const handleCategoryClick = (categoryName: string) => {
         setSelectedCategory(categoryName.toLowerCase());
@@ -131,17 +74,11 @@ const CategoryComponent = () => {
 
 
 
-  const handleColorChange = (color: string, checked: boolean) => {
-    setSelectedColors((prev) =>
-      checked ? [...prev, color] : prev.filter((c) => c !== color)
-    );
-  };
-
-
 
   return (
     <div className="min-h-screen bg-background relative">
-      <div className="container mx-auto px-4 pt-[24px] lg:pt-[59px] pb-[120px] relative">
+     
+      <div className="container mx-auto px-4 pt-[24px] lg:pt-[29px] pb-[120px] relative">
         <div className="flex gap-8 flex-col lg:flex-row">
           {/* Sidebar Filters */}
           <div className="hidden lg:flex w-64 flex-shrink-0">
@@ -149,7 +86,7 @@ const CategoryComponent = () => {
               {/* Header */}
               <div className="mb-8">
                 <h2 className="text-[24px] leading-[32px] font-[700] text-foreground mb-2.25">
-                  Custom Apparel & Promo Products
+                  Custom T-shirts
                 </h2>
                 <p className="font-lato font-normal text-[14px] leading-[100%] mb-8 text-muted-foreground">
                   Find the perfect products for your needs
@@ -158,7 +95,7 @@ const CategoryComponent = () => {
 
               {sidebarSections.map((section) => (
                     <div key={section.title} className="space-y-2">
-                      <h3 className="font-semibold text-sm text-gray-800 mb-3">{section.title}</h3>
+                      <h3 className="font-semibold text-md text-gray-800 mb-3">{section.title}</h3>
                       <div className="space-y-1">
                         {section.items.map((item) => (
                           <div 
@@ -166,8 +103,9 @@ const CategoryComponent = () => {
                             className="py-1 cursor-pointer"
                             onClick={() => handleCategoryClick(item)}
                           >
-                            <span className="text-sm text-blue-600 hover:underline">
+                            <span className="text-sm text-[#0072BA] relative group">
                               {item}
+                              <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-[#0072BA] transition-all duration-300 group-hover:w-full"></span>
                             </span>
                           </div>
                         ))}
@@ -304,7 +242,6 @@ const CategoryComponent = () => {
           </div>
           
         </div>
-        <FaqSection/>
       </div>
     </div>
   );

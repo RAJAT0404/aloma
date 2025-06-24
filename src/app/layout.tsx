@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/ui/Header";
-import { Footer } from "@/components/ui/Footer";
 import { ReactLenis} from 'lenis/react'
 
 const lato = Lato({
@@ -34,9 +32,7 @@ export default function RootLayout({
         className={`${lato.variable} font-sans antialiased`}
       >
          <ReactLenis root />
-        <Header/>
         {children}
-        <Footer/>
       </body>
     </html>
   );

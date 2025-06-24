@@ -1,9 +1,10 @@
 import Contact from "@/components/Contact";
+import Layout from "@/components/layout";
 
 const ContactPage = () => {
   return (
-  
-       <Contact/>
+    <Layout >   <Contact/></Layout>
+    
   );
 };
 

@@ -5,10 +5,11 @@ import { TestimonialSection } from "@/components/TestimonialSection";
 import BrandsSection from "@/components/BrandsSection";
 import BrandSection2 from "@/components/BrandSection2";
 import ProductShowcase from "@/components/ProductShowcase";
+import Layout from "@/components/layout";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <Layout>
       <HeroSection />
       <BrandSection2/>
       <CategoriesSection />
@@ -16,6 +17,6 @@ export default function Home() {
       <ProductShowcase/>
       <SatisfiedCustomersSection />
       <TestimonialSection />
-    </div>
+    </Layout>
   );
 }

@@ -1,5 +1,11 @@
 import CategoryComponent from "@/components/CategoryComponent.tsx/CategoryComponent";
+import CustomerReview from "@/components/CustomerReview/CustomerReview";
+import FaqSection from "@/components/FaqSection";
+import Layout from "@/components/layout";
+import SatisfiedCustomersSection from "@/components/SatisfiedCustomersSection";
 import { notFound } from "next/navigation";
+import { Star, ChevronLeft ,ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 // Define the supported slugs
 const validSlugs = ["tshirts", "hoodies", "accessories"] as const;
@@ -27,9 +33,23 @@ const CategoryPage = async ({
   }
 
   return (
-    <div className="container mx-auto">
+    <Layout>
+        <div className="container mx-auto flex items-center text-sm text-[#0072BA] py-6">
+          <Link href="/catalog" className="relative hover:text-primary after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-primary hover:after:w-full after:transition-all after:duration-300">
+            All Products
+          </Link>
+          <ChevronRight className="h-4 w-4 mx-2" />
+          <Link href="/tshirts" className="relative hover:text-primary after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-primary hover:after:w-full after:transition-all after:duration-300">
+            T-Shirts
+          </Link>
+        </div>
       <CategoryComponent />
-    </div>
+      <SatisfiedCustomersSection/>
+      <CustomerReview/>
+      <FaqSection/>
+
+    </Layout>
+ 
   );
 };
 

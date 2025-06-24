@@ -20,7 +20,7 @@ import { ChevronRight } from "lucide-react";
 const ProductPageFilter = () => {
 
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
-  console.log(selectedCategory)
+  console.info(selectedCategory)
 
   const categoriess = [
     {
@@ -247,7 +247,7 @@ const ProductPageFilter = () => {
                     <Collapsible key={category.name} className="space-y-1">
                       <CollapsibleTrigger className="flex w-full items-center justify-between py-2 px-3 text-left text-sm font-medium hover:bg-muted rounded-md">
                         <span
-                          className="text-primary hover:underline cursor-pointer text-[18px] font-[600] leading-[24px]"
+                          className="text-primary cursor-pointer text-[18px] font-[600] leading-[24px]"
                           onClick={() => handleCategoryClick(category.name)}
                         >
                           {category.name}
@@ -260,9 +260,10 @@ const ProductPageFilter = () => {
                         <CollapsibleContent className="ml-4 space-y-1">
                           {category.subcategories?.map((sub) => (
                             <div key={sub} className="py-1">
-                                <span className="text-sm text-primary hover:underline cursor-pointer text-[16px] font-[400] leading-[20px] hover:text-[#0072BA]">
-                                {sub}
-                              </span>
+                                <span className="text-sm text-primary cursor-pointer text-[16px] font-[400] leading-[20px] hover:text-[#0072BA] relative group">
+                                  {sub}
+                                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#0072BA] transition-all duration-300 group-hover:w-full"></span>
+                                </span>
                             </div>
                           ))}
                         </CollapsibleContent>
@@ -285,27 +286,26 @@ const ProductPageFilter = () => {
                 return (
                     <Link   key={category.id} href="/tshirts">
                   <Card
-                  
-                    className="group cursor-pointer hover:shadow-lg transition-all duration-300 overflow-hidden"
+                    className="group cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
                   >
                     <CardContent className="p-0">
                       <div className="relative aspect-square overflow-hidden">
-                    
                         <Image
                           src={category.image}
                           alt={category.name}
                           fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                          priority
                         />
-                       
-                    
-                        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors duration-300" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/30 group-hover:from-black/70 group-hover:to-black/40 transition-all duration-300 ease-in-out" />
                         <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-                          <Icon className="h-8 w-8 mb-2" />
-                          <h3 className="text-xl font-semibold mb-1">
+                          <Icon className="h-8 w-8 mb-2 transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                          <h3 className="text-xl font-semibold mb-1 transition-transform duration-300 ease-in-out group-hover:scale-100">
                             {category.name}
                           </h3>
-                          <p className="text-sm opacity-90">{category.count}</p>
+                          <p className="text-sm opacity-90 transition-transform duration-300 ease-in-out group-hover:scale-100">
+                            {category.count}
+                          </p>
                         </div>
                       </div>
                     </CardContent>

@@ -1,11 +1,13 @@
 'use client'
 
+import Layout from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import {CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 
 export default function NotFound() {
   return (
+    <Layout >
     <main className="grid h-[70vh] place-items-center bg-background p-4">
       <div className="w-full max-w-full space-y-4 flex flex-col items-center justify-center">
         <CardHeader className="space-y-2 w-full max-w-full ">
@@ -23,6 +25,6 @@ export default function NotFound() {
           </Button>
         </CardFooter>
       </div>
-    </main>
+    </main></Layout>
   );
 }
