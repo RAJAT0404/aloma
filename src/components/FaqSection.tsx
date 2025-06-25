@@ -8,7 +8,7 @@ import {
 
 
 const accordianData = {
-  title: "FAQ",
+  title: "Frequently Asked Questions",
   FaqData: [
     {
       value: "item-1",
@@ -40,9 +40,9 @@ const accordianData = {
 function FaqSection() {
   const {title,FaqData } = accordianData;
   return (
-    <section className="bg-[#F1F5F9] w-full py-16 px-4 sm:px-8">
+    <section className="bg-[#f4f8fc] w-full py-16 px-4 sm:px-8">
       <div className="container mx-auto max-w-4xl w-full flex flex-col gap-8">
-        <h2 className="font-bold text-4xl sm:text-5xl text-center mb-6 text-gray-900">{title}</h2>
+        <h2 className="font-bold text-[36px]  text-center mb-0 text-gray-900">{title}</h2>
         <Accordion
           type="single"
           collapsible

@@ -514,7 +514,7 @@ const SubCategoryFilterPage = ({ slug }: { slug: string }) => {
             T-Shirts
           </Link>
           <ChevronRight className="h-4 w-4 mx-2" />
-          <span className="relative hover:text-primary after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-primary hover:after:w-full after:transition-all after:duration-300">
+           <span className="text-black">
             Short Sleeve T-Shirts
           </span>
         </div>
@@ -826,7 +826,7 @@ const SubCategoryFilterPage = ({ slug }: { slug: string }) => {
                 >
                   <CardContent className="p-0 rounded-t-[20px] overflow-hidden">
                     <div className="relative overflow-hidden">
-                      <Link href="/catalog/premium-Cotton-T-Shirt?color=01">
+                      <Link href="/catalog/gilden/premium-Cotton-T-Shirt?color=01">
                         <Image
                           src={product.image ? product.image : placeholder}
                           alt={product.name}

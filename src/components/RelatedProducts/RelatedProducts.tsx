@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import productsData from '@/lib/product.json';
+import categoryData from '@/lib/category.json';
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
@@ -13,7 +13,7 @@ const RelatedProducts = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   
   const itemsPerView = 3;
-  const maxIndex = Math.max(0, productsData?.length - itemsPerView);
+  const maxIndex = Math.max(0, categoryData?.length - itemsPerView);
 
   const nextSlide = () => {
     setCurrentIndex(prev => (prev >= maxIndex ? 0 : prev + 1));
@@ -24,11 +24,11 @@ const RelatedProducts = () => {
   };
 
   return (
-    <section className="py-16"  style={{background: 'linear-gradient(180deg, #F0F9FF 0%, #C7E3F7 100%)'}}>
+    <section className="py-16 bg-[#f4f8fc]"  >
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-2">
+          <h2 className="text-[36px] font-bold text-gray-800 mb-1">
             Related Products
           </h2>
         </div>
@@ -60,7 +60,7 @@ const RelatedProducts = () => {
               className="flex transition-transform duration-300 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)` }}
             >
-              {productsData.map((product) => (
+              {categoryData?.map((product) => (
                 <div
                   key={product.id}
                   className="w-1/3 flex-shrink-0 px-3"

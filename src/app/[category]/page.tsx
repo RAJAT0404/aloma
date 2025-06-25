@@ -39,9 +39,9 @@ const CategoryPage = async ({
             All Products
           </Link>
           <ChevronRight className="h-4 w-4 mx-2" />
-          <Link href="/tshirts" className="relative hover:text-primary after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-primary hover:after:w-full after:transition-all after:duration-300">
+          <span className="text-black">
             T-Shirts
-          </Link>
+          </span>
         </div>
       <CategoryComponent />
       <SatisfiedCustomersSection/>

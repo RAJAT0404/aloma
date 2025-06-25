@@ -67,8 +67,8 @@ const sliderData = [
 
 function CustomerReview() {
   return (
-    <section className="bg-[#F1F5F9] w-full py-10 px-5">
-      <div className="container  mx-auto px-5 ">
+    <section className="bg-[#f4f8fc] w-full py-10 px-5">
+      <div className="max-w-[1152px] mx-auto px-5">
         <Carousel>
           <CarouselContent className="flex  justify-between">
             {sliderData.map((elem, id) => {
