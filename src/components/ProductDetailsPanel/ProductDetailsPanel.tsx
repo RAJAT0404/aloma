@@ -12,6 +12,7 @@ import SezzleIcon from "../../../public/paymenticons/logo-sezzle.webp";
 import AfterpayIcon from "../../../public/paymenticons/logo-afterpay-2.webp";
 import KlarnaIcon from "../../../public/paymenticons/logo-klarna.webp";
 import Image from "next/image";
+import Link from "next/link";
 
 
 
@@ -29,22 +30,22 @@ const ProductDetailsPanel = () => {
     // Calculate price adjustments based on selections
     const priceAdjustments = useMemo(() => {
         let adjustment = 0;
-        
+
         // Front color adjustments
         const frontColorCount = parseInt(frontColor.split(' ')[0]);
         adjustment += frontColorCount * 2.5; // $2.5 per color
-        
+
         // Back color adjustments
         const backColorCount = parseInt(backColor.split(' ')[0]);
         adjustment += backColorCount * 2.5; // $2.5 per color
-        
+
         // Decoration method adjustments
         if (decoration === "Embroidery") {
             adjustment += 5;
         } else if (decoration === "Heat Press") {
             adjustment += 3;
         }
-        
+
         return adjustment;
     }, [frontColor, backColor, decoration]);
 
@@ -62,7 +63,7 @@ const ProductDetailsPanel = () => {
                     </p>
 
                     <div>
-                        <h4 className="font-medium text-xl mb-3 text-base">Available Sizes</h4>
+                        <h4 className="font-medium text-xl mb-3 ">Available Sizes</h4>
                         <ul className="space-y-2 text-[15px] leading-6">
                             <li>
                                 <strong>Adult:</strong> S - 5XL{" "}
@@ -177,14 +178,27 @@ const ProductDetailsPanel = () => {
                                         </ul>
                                     </div>
                                 </div>
-
-                                <div>
-                                    <p className="font-medium mb-1.5">Total Price:</p>
-                                    <div className="flex flex-col justify-between ">
-                                        <span className="text-2xl font-bold">${totalPrice.toFixed(2)}</span>
-                                        <span className="text-xs text-muted-foreground">for {quantity[0]} items</span>
+                                <div className="flex justify-between items-center">
+                                    <div>
+                                        <p className="font-medium mb-1.5">Total Price:</p>
+                                        <div className="flex flex-col justify-between ">
+                                            <span className="text-2xl font-bold">${totalPrice.toFixed(2)}</span>
+                                            <span className="text-xs text-muted-foreground">for {quantity[0]} items</span>
+                                        </div>
                                     </div>
+                                    <Link href="/cart">
+                                        <Button
+                                            className="relative text-[#003C64] px-4 py-2.25 text-[14px] leading-[18px] font-medium bg-white
+                                   transition-all duration-300 ease-in-out active:scale-98 
+                                        border border-[#003C64]  rounded-[8px] hover:border-[#003C64] hover:bg-[#003C64] hover:text-white my-2"
+                                            aria-label="Go to Design Lab"
+                                        >
+                                            <span className="relative z-10">Add to Cart</span>
+                                            <span className="absolute inset-0 rounded-[12px] bg-transparent hover:bg-[#003C64]/5 transition-all duration-300 ease-in-out"></span>
+                                        </Button>
+                                    </Link>
                                 </div>
+
 
                                 <Separator className="w-full" />
 

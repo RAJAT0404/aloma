@@ -8,6 +8,10 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Plus, Edit3,Heart,PlusCircle ,ChevronRight, FileText,Pencil,Trash2, Minus } from "lucide-react";
 import Image from "next/image";
+import AffirmIcon from "../../../public/paymenticons/logo-affirm.webp";
+import SezzleIcon from "../../../public/paymenticons/logo-sezzle.webp";
+import AfterpayIcon from "../../../public/paymenticons/logo-afterpay-2.webp";
+import KlarnaIcon from "../../../public/paymenticons/logo-klarna.webp";
 
 const CartSummary = () => {
   const [selectedDelivery, setSelectedDelivery] = useState("free");
@@ -20,7 +24,7 @@ const CartSummary = () => {
     size: "L-5",
     priceEach: 42.92,
     image: "/lovable-uploads/fdd8745e-0605-4f6e-a1e5-4ef7b245f061.png",
-    quantity: 5
+    quantity:'5'
   };
 
   const handleIncrease = () => {
@@ -236,16 +240,16 @@ const CartSummary = () => {
           {/* Right Side - Order Summary */}
           <div className="space-y-6">
             {/* Delivery Options */}
-            <Card className="border border-gray-200 shadow-sm rounded-xl overflow-hidden">
+            <Card className="border border-gray-200 shadow-sm rounded-xl overflow-hidden gap-0">
               <CardHeader className="border-b border-gray-200 bg-gray-50 px-6 py-4">
                 <CardTitle className="text-lg font-bold text-gray-800">Delivery Options</CardTitle>
               </CardHeader>
-              <CardContent className="p-0">
-                <RadioGroup value={selectedDelivery} onValueChange={setSelectedDelivery} className="space-y-1">
+              <CardContent className="p-0 gap-0">
+                <RadioGroup value={selectedDelivery} onValueChange={setSelectedDelivery} className="space-y-1 gap-0">
                   {deliveryOptions.map((option) => (
                     <div 
                       key={option.id} 
-                      className={`flex items-center px-6 py-4 transition-all gap-4 ${
+                      className={`flex items-center px-6 py-4 transition-all gap-6 ${
                         selectedDelivery === option.id 
                           ? "bg-blue-50 border-l-4 border-blue-500" 
                           : "hover:bg-gray-50"
@@ -257,7 +261,7 @@ const CartSummary = () => {
                         className="h-5 w-5 text-blue-600 border-2 border-gray-300"
                       />
                       <Label htmlFor={option.id} className="flex-1 cursor-pointer">
-                        <div className="flex justify-between items-start gap-4">
+                        <div className="flex justify-between items-start gap-8">
                           <div className="space-y-1">
                             <p className="font-semibold text-gray-900">{option.label}</p>
                             <p className="text-sm text-gray-500">{option.sublabel}</p>
@@ -290,13 +294,13 @@ const CartSummary = () => {
             </Card>
 
             {/* Order Summary */}
-            <Card className="border border-gray-200 rounded-lg shadow-sm">
-              <CardHeader className="border-b border-gray-200 px-6 py-4">
+            <Card className="border border-gray-200 rounded-lg shadow-sm gap-0">
+              <CardHeader className="border-b border-gray-200 px-6 py-4 gap-0">
                 <CardTitle className="text-xl font-bold text-gray-900">Order Summary</CardTitle>
               </CardHeader>
-              <CardContent className="p-6 space-y-4">
+              <CardContent className="p-4 space-y-4">
                 <div className="flex justify-between text-gray-700">
-                  <span>Subtotal ({cartItem?.quantity} items)</span>
+                  <span>Subtotal ({cartItem.quantity} items)</span>
                   <span className="font-medium">${subtotal.toFixed(2)}</span>
                 </div>
                 
@@ -324,11 +328,12 @@ const CartSummary = () => {
                     or 4 interest-free payments of <span className="font-semibold">${(total / 4).toFixed(2)}</span> with
                   </p>
                   <div className="flex justify-center items-center gap-3 mt-2">
-                    {['afterpay', 'Klarna', 'sezzle', 'Affirm'].map((service) => (
-                      <span key={service} className="text-xs font-medium bg-white px-2 py-1 rounded shadow-sm">
-                        {service}
-                      </span>
-                    ))}
+                  <div className="flex justify-center items-center gap-4 mt-2 flex-wrap">
+                            <Image src={SezzleIcon} alt="Sezzle" width={60} height={46} className="object-contain" />
+                            <Image src={AffirmIcon} alt="Affirm" width={60} height={46} className="object-contain" />
+                            <Image src={AfterpayIcon} alt="Afterpay" width={60} height={46} className="object-contain" />
+                            <Image src={KlarnaIcon} alt="Klarna" width={60} height={46} className="object-contain" />
+                        </div>
                   </div>
                 </div>
                 
@@ -342,9 +347,9 @@ const CartSummary = () => {
                 
                 <div className="space-y-3 pt-2">
                   <Button variant='blue' className="w-full">
-                    PROCEED TO CHECKOUT
-                    <ChevronRight className="w-4 h-4 ml-1" />
+                   CHECKOUT
                   </Button>
+                
                 </div>
               </CardContent>
             </Card>
