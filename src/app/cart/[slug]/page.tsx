@@ -5,7 +5,7 @@ import Layout from "@/components/layout";
 import { notFound } from "next/navigation";
 
 // Define the supported slugs
-const validSlugs = ["final"] as const;
+const validSlugs = ["checkout"] as const;
 
 // Type based on the valid slugs
 type ValidSlug = (typeof validSlugs)[number];
