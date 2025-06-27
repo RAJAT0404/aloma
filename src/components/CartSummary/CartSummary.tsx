@@ -12,6 +12,7 @@ import AffirmIcon from "../../../public/paymenticons/logo-affirm.webp";
 import SezzleIcon from "../../../public/paymenticons/logo-sezzle.webp";
 import AfterpayIcon from "../../../public/paymenticons/logo-afterpay-2.webp";
 import KlarnaIcon from "../../../public/paymenticons/logo-klarna.webp";
+import Link from "next/link";
 
 const CartSummary = () => {
   const [selectedDelivery, setSelectedDelivery] = useState("free");
@@ -346,9 +347,11 @@ const CartSummary = () => {
                 </Button>
                 
                 <div className="space-y-3 pt-2">
-                  <Button variant='blue' className="w-full">
+                    <Link href="/cart/checkout">
+                    <Button variant='blue' className="w-full">
                    CHECKOUT
                   </Button>
+                    </Link> 
                 
                 </div>
               </CardContent>
