@@ -404,10 +404,10 @@ const CheckoutForm = () => {
       </Card>
 
       {/* Pay Now Button */}
-      <div className="flex flex-col sm:flex-row justify-center sm:justify-end gap-4 mt-6">
-         <Button
+        <div className="flex flex-col sm:flex-row justify-center sm:justify-end gap-4 mt-6">
+        <Button
           variant="blue"
-          className="w-full sm:w-auto sm:min-w-[200px] py-3 text-lg rounded-md"
+          className="w-full sm:w-auto min-w-[200px] lg:min-w-[350px] py-3 text-lg rounded-md"
         >
           PAY NOW
         </Button>
