@@ -17,6 +17,21 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  CreditCard,
+  Landmark,
+  FileText,
+  CircleDollarSign,
+  ShoppingBag,
+} from "lucide-react";
+
+import { FaPaypal } from "react-icons/fa";
+import { SiKlarna } from "react-icons/si";
+import { FaGooglePay } from "react-icons/fa6";
+import { FaCcVisa } from "react-icons/fa";
+import { FaCcMastercard } from "react-icons/fa";
+import { SiAmericanexpress } from "react-icons/si";
+
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Separator } from "@/components/ui/separator";
 
@@ -24,23 +39,24 @@ const CheckoutForm = () => {
   const [selectedPayment, setSelectedPayment] = useState("card");
 
   const paymentMethods = [
-    { id: "card", name: "Card", icon: "💳" },
-    { id: "paypal", name: "PayPal", icon: "🅿️" },
-    { id: "google-pay", name: "Google Pay", icon: "🔵" },
-    { id: "afterpay", name: "Afterpay", icon: "🔶" },
-    { id: "klarna", name: "Klarna", icon: "🟣" },
-    { id: "bank", name: "Bank", icon: "🏦" },
-    { id: "affirm", name: "Affirm", icon: "🔵" },
-    { id: "zip", name: "Zip", icon: "⚡" },
-    { id: "purchase-order", name: "Purchase Order", icon: "📄" },
+    { id: "card", name: "Card", icon: <CreditCard className="w-5 h-5 text-blue-600" /> },
+    { id: "paypal", name: "PayPal", icon: <FaPaypal className="w-5 h-5 text-blue-500" /> },
+    { id: "google-pay", name: "Google Pay", icon: <FaGooglePay className="w-5 h-5 text-green-600" /> },
+    { id: "afterpay", name: "Afterpay", icon: <CircleDollarSign className="w-5 h-5 text-purple-600" /> },
+    { id: "klarna", name: "Klarna", icon: <SiKlarna  className="w-5 h-5 text-pink-500" /> },
+    { id: "bank", name: "Bank", icon: <Landmark className="w-5 h-5 text-indigo-600" /> },
+    { id: "affirm", name: "Affirm", icon: <ShoppingBag className="w-5 h-5 text-sky-600" /> },
+    { id: "zip", name: "Zip", icon: <CircleDollarSign className="w-5 h-5 text-yellow-600" /> },
+    { id: "purchase-order", name: "Purchase Order", icon: <FileText className="w-5 h-5 text-gray-600" /> },
   ];
+  
 
   return (
-    <div className="max-w-4xl px-4 sm:px-6 lg:px-8 py-8 space-y-6 min-h-screen">
+    <div className="max-w-[891px] w-full py-8 space-y-6 min-h-screen">
       {/* Contact Info */}
       <Card className="py-6 bg-white shadow-md rounded-xl border border-blue-100">
         <CardHeader>
-          <CardTitle className="text-xl font-semibold text-blue-800">
+          <CardTitle className="text-lg font-bold text-gray-800">
             Contact Info
           </CardTitle>
         </CardHeader>
@@ -117,7 +133,7 @@ const CheckoutForm = () => {
       {/* Shipping Info */}
       <Card className="py-6 bg-white shadow-md rounded-xl border border-blue-100">
         <CardHeader>
-          <CardTitle className="text-xl font-semibold text-blue-800">
+          <CardTitle className="text-lg font-bold text-gray-800">
             Shipping Info
           </CardTitle>
         </CardHeader>
@@ -176,7 +192,7 @@ const CheckoutForm = () => {
       {/* Payment Section */}
       <Card className="py-6 bg-white shadow-md rounded-xl border border-blue-100">
         <CardHeader>
-          <CardTitle className="text-xl font-semibold text-blue-800">
+          <CardTitle className="text-lg font-bold text-gray-800">
             Payment
           </CardTitle>
         </CardHeader>
@@ -232,15 +248,9 @@ const CheckoutForm = () => {
                           className="w-full bg-white border-blue-200"
                         />
                         <div className="absolute right-3 top-3 flex space-x-1">
-                          <div className="w-6 h-4 bg-blue-600 rounded text-xs text-white flex items-center justify-center">
-                            V
-                          </div>
-                          <div className="w-6 h-4 bg-red-600 rounded text-xs text-white flex items-center justify-center">
-                            M
-                          </div>
-                          <div className="w-6 h-4 bg-blue-500 rounded text-xs text-white flex items-center justify-center">
-                            A
-                          </div>
+                          <FaCcVisa className=" text-blue-600" />
+                          <FaCcMastercard />
+                          <SiAmericanexpress />
                         </div>
                       </div>
                     </div>

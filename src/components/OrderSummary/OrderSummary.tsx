@@ -24,10 +24,10 @@ const orderData = {
 
 export default function OrderSummary() {
   return (
-    <div className="flex flex-col items-center px-4 sm:px-6 lg:px-8 py-8">
+    <div className="flex flex-col items-center max-w-[450px] w-full py-8">
       <Card className="w-full max-w-md rounded-xl border border-blue-200 shadow-md hover:shadow-blue-100 transition-all bg-white py-5">
         <CardHeader className="border-b pb-4">
-          <CardTitle className="text-xl font-semibold text-blue-800">
+          <CardTitle className="text-lg font-bold text-gray-800">
             Order Summary
           </CardTitle>
         </CardHeader>

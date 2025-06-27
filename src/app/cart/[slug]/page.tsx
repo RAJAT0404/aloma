@@ -29,14 +29,13 @@ const Checkout = async ({
 
   return (
     <Layout>
-    <div className="min-h-screen mx-auto bg-background">
-      <div className="flex justify-center flex-wrap-reverse">
-
-      <CheckoutForm/>
-      <OrderSummary />
+      <div className="min-h-screen container mx-auto bg-background">
+        <div className="flex flex-col-reverse md:flex-row justify-center gap-4 md:gap-8 items-center md:items-start px-4 sm:px-6 lg:px-8 py-8">
+          <CheckoutForm/>
+          <OrderSummary />
+        </div>
       </div>
-    </div>
-  </Layout>
+    </Layout>
   );
 };
 
