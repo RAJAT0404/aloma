@@ -347,11 +347,9 @@ const CartSummary = () => {
                 </Button>
                 
                 <div className="space-y-3 pt-2">
-                    <Link href="/cart/checkout">
                     <Button variant='blue' className="w-full">
                    CHECKOUT
                   </Button>
-                    </Link> 
                 
                 </div>
               </CardContent>
