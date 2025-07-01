@@ -190,7 +190,7 @@ const ProductShowcase = () => {
         {/* CTA Button */}
         <div className="text-center">
         <Button variant="blue" size="lg">
-            <Link href="/products">View All Products</Link>
+            <Link href="/tshirts">View All Products</Link>
           </Button>
         </div>
       </div>

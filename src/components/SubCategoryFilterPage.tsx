@@ -885,7 +885,7 @@ const SubCategoryFilterPage = ({ slug }: { slug: string }) => {
                         >
                           ${product.price.toFixed(2)}
                         </div>
-                        <Button
+                        {/* <Button
                           className="relative text-[#003C64] px-4 py-2.25 text-[14px] leading-[18px] font-medium bg-white
                                transition-all duration-300 ease-in-out active:scale-98 
                                     border border-[#003C64]  rounded-[8px] hover:border-[#003C64] hover:bg-[#003C64] hover:text-white my-2"
@@ -893,7 +893,7 @@ const SubCategoryFilterPage = ({ slug }: { slug: string }) => {
                         >
                           <span className="relative z-10">Add to Cart</span>
                           <span className="absolute inset-0 rounded-[12px] bg-transparent hover:bg-[#003C64]/5 transition-all duration-300 ease-in-out"></span>
-                        </Button>
+                        </Button> */}
                       </div>
                     </div>
                   </CardContent>

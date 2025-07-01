@@ -143,7 +143,7 @@ const SatisfiedCustomersSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <p className="text-lg text-muted-foreground mb-6">
             Join our community of satisfied customers and share your story
           </p>
@@ -155,7 +155,7 @@ const SatisfiedCustomersSection = () => {
               View More Stories
             </Button>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

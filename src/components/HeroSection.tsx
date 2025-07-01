@@ -30,8 +30,8 @@ const HeroSection = () => {
                 Start Designing
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>
-                <Link href="/products">
-                  Browse Products
+                <Link href="/catalog">
+                  Browse All Products
                 </Link>
               </Button>
             </div>
