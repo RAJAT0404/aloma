@@ -1,19 +1,18 @@
 import { ReactNode } from "react";
-import Header from "@/components/ui/Header";
-import {Footer} from "@/components/ui/Footer";
+import Header from "./ui/Header";
+import {Footer } from "./ui/Footer";
 
 interface LayoutProps {
   children: ReactNode;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+export default async function Layout({children}: LayoutProps) {
+
   return (
     <>
       <Header />
-        {children}
+      {children}
       <Footer />
     </>
   );
-};
-
-export default Layout;
+}

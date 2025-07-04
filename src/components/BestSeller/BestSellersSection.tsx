@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const BestSellersSection = () => {
   // bg-gradient-to-r from-[#0072BA] via-[#0060A0] to-[#003C64]
@@ -20,10 +21,12 @@ const BestSellersSection = () => {
           </Button>
         </div>
         <div className="hidden md:block">
-          <img 
-            src="https://plus.unsplash.com/premium_photo-1690820318702-06867bb1405e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTU3fHxtZW4lMjB3ZWFyaW5nJTIwd2hpdGUlMjB0JTIwc2hpcnR8ZW58MHx8MHx8fDA%3D" 
-            alt="Best Sellers" 
-            className="w-[304px] h-[304px] object-cover rounded-[20px]"
+          <Image
+            src="https://plus.unsplash.com/premium_photo-1690820318702-06867bb1405e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTU3fHxtZW4lMjB3ZWFyaW5nJTIwd2hpdGUlMjB0JTIwc2hpcnR8ZW58MHx8MHx8fDA%3D"
+            alt="Best Sellers"
+            width={304}
+            height={304}
+            className="object-cover rounded-[20px]"
           />
         </div>
       </div>

@@ -7,6 +7,7 @@ import Adidas from "../../public/Brands/Adidas-Logo.svg"
 import Img3 from "../../public/Brands/image 3.svg"
 import Img4 from "../../public/Brands/image 4.svg"
 import Img5 from "../../public/Brands/image 5.svg"
+import Link from "next/link";
 
 
 
@@ -77,31 +78,33 @@ const BrandsSection = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
           {brands.map((brand, index) => (
-            <Card 
-              key={index} 
-              className="group cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-105 bg-background border-border"
-            >
-              <CardContent className="p-8 flex items-center justify-center h-32">
-                <Image
-                  src={brand?.logo}
-                  alt={brand.name}
-                  width={120}
-                  height={80}
-                  className={`w-full h-full ${!brand.objectCover ? 'object-contain' : 'object-contain'} filter grayscale group-hover:grayscale-0 transition-all duration-300`}
-                />
-              </CardContent>
-            </Card>
+            <Link href="/brands/nike"  key={index} >
+              <Card 
+               
+                className="group cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-105 bg-background border-border"
+              >
+                <CardContent className="p-8 flex items-center justify-center h-32">
+                  <Image
+                    src={brand?.logo}
+                    alt={brand.name}
+                    width={120}
+                    height={80}
+                    className={`w-full h-full ${!brand.objectCover ? 'object-contain' : 'object-contain'} filter grayscale group-hover:grayscale-0 transition-all duration-300`}
+                  />
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
 
-        <div className="text-center">
+        {/* <div className="text-center">
           <Button 
             size="lg" 
             variant='blue'
           >
             Shop All Brands
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

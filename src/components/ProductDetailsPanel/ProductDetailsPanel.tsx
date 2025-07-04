@@ -13,11 +13,12 @@ import AfterpayIcon from "../../../public/paymenticons/logo-afterpay-2.webp";
 import KlarnaIcon from "../../../public/paymenticons/logo-klarna.webp";
 import Image from "next/image";
 import Link from "next/link";
+import { Products } from "@/Types/products";
+
+  
 
 
-
-
-const ProductDetailsPanel = () => {
+const ProductDetailsPanel = ({ product }: { product: Products }) => {
     const [quantity, setQuantity] = useState([50]);
     const [emailQuote, setEmailQuote] = useState(false);
     const [frontColor, setFrontColor] = useState("1 Color");
@@ -59,7 +60,7 @@ const ProductDetailsPanel = () => {
                 <div className="lg:col-span-1 space-y-6 pt-5">
                     <h3 className="text-xl font-semibold">Product Description</h3>
                     <p className="text-[16px] text-muted-foreground">
-                        The Gildan Heavy Cotton T-Shirt is a durable, high-quality essential made from 100% preshrunk USA cotton, ensuring a comfortable fit that holds up through repeated wear and washing. With its midweight feel and smooth surface, this tee is perfect for screen printing, HD printing, and other customizations, making it ideal for events, branding, or everyday use. Reinforced with double-needle stitching for added durability and designed with a classic fit for all-day comfort, it&apos;s available in a wide range of colors and sizes. Need youth sizes? Check out the G5000B for the same premium quality in a kid-friendly fit.
+                        {product.description}
                     </p>
 
                     <div>

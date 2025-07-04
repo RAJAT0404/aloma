@@ -1,0 +1,64 @@
+[
+    {
+      "id": 1,
+      "name": "Sport-Tek® PosiCharge® Full-Button Jersey",
+      "slug": "sporttek/posicharge-tough-mesh-full-button-jersey",
+      "description": "Soft, comfortable cotton t-shirt perfect for everyday wear and custom printing.",
+      "category": "Short Sleeve T-Shirts",
+      "image": "/TopPicks/ButtonJersey.jpg",
+      "colors": ["White", "Black", "Navy", "Red", "Gray", "Green"],
+      "sizes": ["XS–4XL"],
+      "price": 28.77,
+      "rating": 4.8,
+      "reviews": 1245,
+      "badge": "Best Seller",
+      "minOrder": "No minimum",
+      "bgColor": "bg-gray-100"
+    },
+    {
+      "id": 2,
+      "name": "District® Women’s Perfect Tri® Midi Long Sleeve Tee",
+      "slug": "sporttek/womens-posicharge-replica-jersey",
+      "description": "Professional polo shirt with moisture-wicking fabric, ideal for corporate events.",
+      "category": "Short Sleeve T-Shirts",
+      "image": "/TopPicks/HoodedCardigan.jpg",
+      "colors": ["Navy", "White", "Black", "Red", "Gray"],
+      "sizes": ["S–2XL"],
+      "price": 24.99,
+      "rating": 4.7,
+      "reviews": 892,
+      "minOrder": "12 pieces",
+      "bgColor": "bg-green-100"
+    },
+    {
+      "id": 3,
+      "name": "District ® Perfect Weight ® Tee",
+      "slug": "district/perfect-weight-tee",
+      "description": "Cozy fleece hoodie with front pocket, perfect for casual wear and team uniforms.",
+      "category": "Short Sleeve T-Shirts",
+      "image": "/TopPicks/WhiteTshirt.jpg",
+      "colors": ["Black", "Gray", "Navy", "Red", "Green", "Purple"],
+      "sizes": ["XS-4XL"],
+      "price": 34.99,
+      "rating": 4.6,
+      "reviews": 567,
+      "minOrder": "6 pieces",
+      "bgColor": "bg-blue-100"
+    },
+    {
+      "id": 4,
+      "name": "District ® Women’s Perfect Tri ® Rocker Tank",
+      "slug": "district/womens-perfect-tri-rocker-tank",
+      "description": "Adjustable baseball cap with structured crown, great for outdoor events.",
+      "category": "Tank Tops",
+      "image": "/TopPicks/RacerbackTank.jpg",
+      "colors": ["Black", "Navy", "Red", "White", "Green"],
+      "sizes": ["XS-4XL"],
+      "price": 10.32,
+      "rating": 4.5,
+      "reviews": 324,
+      "minOrder": "No minimum",
+      "bgColor": "bg-orange-100"
+    }
+  ]
+  

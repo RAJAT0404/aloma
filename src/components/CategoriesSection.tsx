@@ -77,9 +77,9 @@ export default function CategoriesSection() {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="blue" size="lg">
-            <Link href="/catalog">View All Categories</Link>
-          </Button>
+            <Link href="/catalog">  <Button variant="blue" size="lg">
+            View All Categories
+          </Button></Link>
         </div>
       </div>
     </section>

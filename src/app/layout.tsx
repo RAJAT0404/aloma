@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
 import { ReactLenis} from 'lenis/react'
+import { store } from '../Store' 
+import { ReduxProvider } from "./Provider/ReduxProvider";
 
 const lato = Lato({
   weight: ['400', '700' , '900'],
@@ -17,13 +19,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
+
+  
   return (
-    // <html lang="en" className={lato.className}>
     <html lang="en">
       <head>
         <link rel="icon" href="/logo.svg" sizes="any" />
@@ -32,7 +37,10 @@ export default function RootLayout({
         className={`${lato.variable} font-sans antialiased`}
       >
          <ReactLenis root />
-        {children}
+         <ReduxProvider >
+         {children}
+         </ReduxProvider>
+    
       </body>
     </html>
   );

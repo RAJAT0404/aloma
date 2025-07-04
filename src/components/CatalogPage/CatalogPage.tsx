@@ -226,7 +226,7 @@ const ProductPageFilter = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
-                 <div className="container mx-auto flex items-center px-5 text-sm text-[#0072BA] py-6 pb-2">
+           <div className="container mx-auto flex items-center px-5 text-sm text-[#0072BA] py-6 pb-2">
           <Link href="/" className="relative hover:text-primary after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-primary hover:after:w-full after:transition-all after:duration-300">
             Home
           </Link>

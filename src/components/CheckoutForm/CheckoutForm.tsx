@@ -24,7 +24,6 @@ import { SiAfterpay } from "react-icons/si";
 
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Separator } from "@/components/ui/separator";
-import Link from "next/link";
 
 const CheckoutForm = () => {
   const [selectedPayment, setSelectedPayment] = useState("card");

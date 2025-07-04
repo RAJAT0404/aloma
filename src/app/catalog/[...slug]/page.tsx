@@ -6,16 +6,43 @@ import React from "react";
 import FaqSection from "@/components/FaqSection";
 import CustomerFeedbackBlock from "@/components/CustomerFeedbackBlock/CustomerFeedbackBlock";
 import ProductDetailsPanel from "@/components/ProductDetailsPanel/ProductDetailsPanel";
+import ProductsData from "@/lib/products.json";
+import { notFound } from "next/navigation";
 
-const SingleProductPage = () => {
+// Valid slugs for type safety
+const validSlugs = ProductsData.map((product) => product.slug);
+type ValidSlug = (typeof validSlugs)[number];
+
+export async function generateStaticParams() {
+  return ProductsData.map((product) => ({
+    slug: product.slug.split("/"),
+  }));
+}
+
+const SingleProductPage = async ({
+  params,
+}: {
+  params: Promise<{ slug: string[] }>;
+}) => {
+  const { slug } = await params;
+  // Join slug array to match JSON slugs
+  const productSlug = slug.join("/");
+
+  // Find product
+  const product = ProductsData.find((p) => p.slug === productSlug);
+
+  if (!product) {
+    notFound();
+  }
+
   return (
     <Layout>
-      <ProductItem />
-      <ProductDetailsPanel/>
+      <ProductItem product={product} />
+      <ProductDetailsPanel product={product} />
       <RelatedProducts />
-      <CustomerFeedbackBlock/>
-      <CustomerReview/>
-      <FaqSection/>
+      <CustomerFeedbackBlock />
+      <CustomerReview />
+      <FaqSection />
     </Layout>
   );
 };

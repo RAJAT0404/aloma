@@ -7,9 +7,11 @@ import BrandSection2 from "@/components/BrandSection2";
 import ProductShowcase from "@/components/ProductShowcase";
 import Layout from "@/components/layout";
 
-export default function Home() {
+
+export default async function Home() {
+
   return (
-    <Layout>
+    <Layout >
       <HeroSection />
       <BrandSection2/>
       <CategoriesSection />

@@ -426,72 +426,21 @@ const menuCategories = [
       },
     ],
   },
-  // {
-  //   name: "Tech",
-  //   menu: [
-  //     {
-  //       title: "EQUIPMENT",
-  //       items: [
-  //         "Flash Drives",
-  //         "Cables",
-  //         "Cords",
-  //         "USB Hubs",
-  //         "Adapters",
-  //         "Screen Cleaner",
-  //         "Webcam Covers",
-  //       ],
-  //     },
-  //     {
-  //       title: "CHARGERS",
-  //       items: [
-  //         "Power Banks",
-  //         "Car Chargers",
-  //         "Wall Chargers",
-  //         "Wireless Chargers",
-  //       ],
-  //     },
-  //     {
-  //       title: "DESKTOP",
-  //       items: [
-  //         "Mouse",
-  //         "Speakers",
-  //         "Phone Stands",
-  //         "Mouse Pads",
-  //         "Wrist Rests",
-  //       ],
-  //     },
-  //     {
-  //       title: "ACCESSORIES",
-  //       items: [
-  //         "Cell Phone Accessories",
-  //         "Phone Cases",
-  //         "Tablet Cases",
-  //         "Laptop Sleeves",
-  //         "Computer Bags",
-  //         "Headphones",
-  //         "Blue Light Blocking Glasses",
-  //       ],
-  //     },
-  //   ],
-  // },
  
 ];
 
 export default function MegaMenu({setMegaMenu }: { megaMenu: boolean, setMegaMenu: (value: boolean) => void }) {
 
-
+  const isMobile = useIsMobile();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [firstLoad, setFirstLoad] = useState(true);
 
-  const isMobile = useIsMobile();
-
-
   useEffect(() => {
-    if (firstLoad && menuCategories.length > 0) {
-      setActiveMenu(menuCategories[0].name);
+    if (firstLoad && menuCategories?.length > 0 && !isMobile) {
+      setActiveMenu(menuCategories[0]?.name);
       setFirstLoad(false);
     }
-  }, [firstLoad]);
+  }, [firstLoad, isMobile]);
 
   return (
     <>

@@ -28,7 +28,7 @@ const RelatedProducts = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-[36px] font-bold text-gray-800 mb-1">
+          <h2 className="text-3xl font-bold text-gray-800 mb-2">
             Related Products
           </h2>
         </div>

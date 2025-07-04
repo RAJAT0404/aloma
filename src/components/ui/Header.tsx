@@ -12,17 +12,19 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import Image from "next/image";
-import Logo from "../../../public/footerlogo.png";
+import Logo from "../../../public/logo.svg";
 import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import MegaMenu from "../MegaMenu/mega-menu";
 import { useRef } from "react";
+import MyAccountCard from "../Sections/HoverCards/MyAccountCard";
+import CartHoverCard from "../Sections/HoverCards/CartHoverCard";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isBannerHidden, setIsBannerHidden] = useState(false);
   const [megaMenu, setMegaMenu] = useState(false);
-  const [activeTab ,setActiveTab]=useState('')
+  const [activeTab, setActiveTab] = useState("");
 
   const menus = [
     { name: "Home", url: "/" },
@@ -32,9 +34,9 @@ const Header = () => {
       submenu: [
         { name: "T-Shirts", url: "/tshirts" },
         { name: "Hoodies & Sweatshirts", url: "/tshirts" },
-        { name: "Hats & Caps",url: "/tshirts",},
-        { name: "Promotional Products",url: "/tshirts"},
-        { name: "Accessories",url: "/tshirts"},
+        { name: "Hats & Caps", url: "/tshirts" },
+        { name: "Promotional Products", url: "/tshirts" },
+        { name: "Accessories", url: "/tshirts" },
       ],
     },
     { name: "Categories", url: "/categories", submenu: [] },
@@ -47,9 +49,7 @@ const Header = () => {
       ],
     },
     { name: "Contact", url: "/contact" },
-   
   ];
-
 
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -95,139 +95,143 @@ const Header = () => {
               <div className="flex items-center justify-between w-full md:w-auto">
                 <div className="flex items-center space-x-2 flex-shrink-0">
                   <div className="flex items-center">
-                    <Image
-                      src={Logo}
-                      alt="Alamo Tees Logo"
-                      width={250}
-                      height={60}
-                      className="w-[250px] h-[30px] object-cover"
-                      priority
-                    />
+                    <Link href="/">
+                      <Image
+                        src={Logo}
+                        alt="Alamo Tees Logo"
+                        width={250}
+                        height={60}
+                        className="w-[250px] h-[30px] object-cover"
+                        priority
+                      />
+                    </Link>
                   </div>
                 </div>
 
                 {/* Mobile Menu Button */}
 
-                <div >
-                <Sheet > 
-                  <SheetTrigger asChild className="md:hidden ">
-                    <Button variant="ghost" size="icon">
-                      <Menu className="h-5 w-5" />
-                    </Button>
-                  </SheetTrigger>
-                  <SheetContent
-                    side="left"
-                    className="w-[300px] sm:w-[400px] p-6 overflow-y-scroll"
-                  >
-                    <div className="mt-8 space-y-8">
-                      <div className="relative">
-                        <Input
-                          placeholder="Search Products"
-                          className="pl-4 pr-12 h-10 border-gray-300"
-                        />
-                        <Button
-                          size="sm"
-                          className="absolute right-1 top-1 h-8 w-8 p-0 bg-[#003C64] hover:bg-black"
-                        >
-                          <Search className="h-4 w-4" />
-                        </Button>
-                      </div>
+                <div>
+                  <Sheet>
+                    <SheetTrigger asChild className="md:hidden ">
+                      <Button variant="ghost" size="icon">
+                        <Menu className="h-5 w-5" />
+                      </Button>
+                    </SheetTrigger>
+                    <SheetContent
+                      side="left"
+                      className="w-[300px] sm:w-[400px] p-6 overflow-y-scroll"
+                    >
+                      <div className="mt-8 space-y-8">
+                        <div className="relative">
+                          <Input
+                            placeholder="Search Products"
+                            className="pl-4 pr-12 h-10 border-gray-300"
+                          />
+                          <Button
+                            size="sm"
+                            className="absolute right-1 top-1 h-8 w-8 p-0 bg-[#003C64] hover:bg-black"
+                          >
+                            <Search className="h-4 w-4" />
+                          </Button>
+                        </div>
 
-                      <nav className="flex flex-col space-y-6">
-                        {menus?.map((item) => {
-                          return item.submenu ? (
-                            <div key={item.name}>
-                              <div  className="space-y-2">
-                                {!item.name.includes("Categories") ? (
-                                  <button
-                                    onClick={() => setIsOpen(!isOpen)}
-                                    className="flex items-center justify-between w-full text-lg font-medium  text-gray-700 hover:text-[#0072BA] py-2"
-                                  >
-                                    <span>{item.name}</span>
-                                    <ChevronDown
-                                      className={`h-4 w-4 ml-2 transition-transform ${
-                                        isOpen ? "rotate-180" : ""
-                                      }`}
-                                    />
-                                  </button>
-
-                                ) : (
-                                <div>
+                        <nav className="flex flex-col space-y-6">
+                          {menus?.map((item) => {
+                            return item.submenu ? (
+                              <div key={item.name}>
+                                <div className="space-y-2">
+                                  {!item.name.includes("Categories") ? (
                                     <button
-                                    onClick={() => setMegaMenu(!megaMenu)}
-                                    className="flex items-center justify-between w-full text-lg font-medium  text-gray-700 hover:text-[#0072BA] py-2"
-                                  >
-                                    <span>{item.name}</span>
-                                    <ChevronDown
-                                      className={`h-4 w-4 ml-2 transition-transform ${
-                                        megaMenu ? "rotate-180" : ""
-                                      }`}
-                                    />
-                                  </button>
-                                       {megaMenu  &&     <MegaMenu  megaMenu={megaMenu} setMegaMenu={setMegaMenu}  />}
-                                </div>
-                                )}
-                                {isOpen && (
-                                  <div className="pl-4 space-y-2">
-                                    {item.submenu.map((subItem) => (
-                                      <a
-                                        key={subItem.name}
-                                        href={subItem.url}
-                                        className="block text-gray-700 hover:text-[#0072BA] py-1"
+                                      onClick={() => setIsOpen(!isOpen)}
+                                      className="flex items-center justify-between w-full text-lg font-medium  text-gray-700 hover:text-[#0072BA] py-2"
+                                    >
+                                      <span>{item.name}</span>
+                                      <ChevronDown
+                                        className={`h-4 w-4 ml-2 transition-transform ${
+                                          isOpen ? "rotate-180" : ""
+                                        }`}
+                                      />
+                                    </button>
+                                  ) : (
+                                    <div>
+                                      <button
+                                        onClick={() => setMegaMenu(!megaMenu)}
+                                        className="flex items-center justify-between w-full text-lg font-medium  text-gray-700 hover:text-[#0072BA] py-2"
                                       >
-                                        {subItem.name}
-                                      </a>
-                                    ))}
-                                  </div>
-                                )}
+                                        <span>{item.name}</span>
+                                        <ChevronDown
+                                          className={`h-4 w-4 ml-2 transition-transform ${
+                                            megaMenu ? "rotate-180" : ""
+                                          }`}
+                                        />
+                                      </button>
+                                      {megaMenu && (
+                                        <MegaMenu
+                                          megaMenu={megaMenu}
+                                          setMegaMenu={setMegaMenu}
+                                        />
+                                      )}
+                                    </div>
+                                  )}
+                                  {isOpen && (
+                                    <div className="pl-4 space-y-2">
+                                      {item.submenu.map((subItem) => (
+                                        <a
+                                          key={subItem.name}
+                                          href={subItem.url}
+                                          className="block text-gray-700 hover:text-[#0072BA] py-1"
+                                        >
+                                          {subItem.name}
+                                        </a>
+                                      ))}
+                                    </div>
+                                  )}
+                                </div>
                               </div>
-                      
-                            </div>
-                          ) : (
-                            <a
-                              key={item.name}
-                              href={item.url}
-                              className="text-lg font-medium text-gray-700 hover:text-[#0072BA] py-2"
-                            >
-                              {item.name}
-                            </a>
-                          );
-                        })}
-                      </nav>
+                            ) : (
+                              <a
+                                key={item.name}
+                                href={item.url}
+                                className="text-lg font-medium text-gray-700 hover:text-[#0072BA] py-2"
+                              >
+                                {item.name}
+                              </a>
+                            );
+                          })}
+                        </nav>
 
-                      <div className="pt-6 border-t border-gray-200 space-y-6">
-                        <Link
-                          href="tel:888-618-6870"
-                          className="flex items-center space-x-4 cursor-pointer"
-                        >
-                          <Phone className="h-5 w-5 text-[#003C64] pr-[5px]" />
-                          <div>
-                            <div className="text-[#003C64] font-semibold">
-                              NEED HELP?
+                        <div className="pt-6 border-t border-gray-200 space-y-6">
+                          <Link
+                            href="tel:888-618-6870"
+                            className="flex items-center space-x-4 cursor-pointer"
+                          >
+                            <Phone className="h-5 w-5 text-[#003C64] pr-[5px]" />
+                            <div>
+                              <div className="text-[#003C64] font-semibold">
+                                NEED HELP?
+                              </div>
+                              <div className="text-gray-600">888-618-6870</div>
                             </div>
-                            <div className="text-gray-600">888-618-6870</div>
-                          </div>
-                        </Link>
-                        <Link
-                          href="mailto:sales@alamotees.com"
-                          className="flex items-center space-x-4 cursor-pointer"
-                        >
-                          <Mail className="h-5 w-5 text-[#003C64] pr-[5px]" />
-                          <div>
-                            <div className="text-[#003C64] font-semibold ">
-                              EMAIL US
+                          </Link>
+                          <Link
+                            href="mailto:sales@alamotees.com"
+                            className="flex items-center space-x-4 cursor-pointer"
+                          >
+                            <Mail className="h-5 w-5 text-[#003C64] pr-[5px]" />
+                            <div>
+                              <div className="text-[#003C64] font-semibold ">
+                                EMAIL US
+                              </div>
+                              <div className="text-gray-600">
+                                sales@alamotees.com
+                              </div>
                             </div>
-                            <div className="text-gray-600">
-                              sales@alamotees.com
-                            </div>
-                          </div>
-                        </Link>
+                          </Link>
+                        </div>
                       </div>
-                    </div>
-                  </SheetContent>
-                </Sheet>
+                    </SheetContent>
+                  </Sheet>
                 </div>
-              
               </div>
 
               {/* Search Bar - Hidden on mobile */}
@@ -285,7 +289,7 @@ const Header = () => {
                       ))}
                     </div>
                   </div>
-                </div>  
+                </div>
               </div>
 
               {/* Contact Info & Actions - Hidden on mobile */}
@@ -318,26 +322,8 @@ const Header = () => {
 
                 {/* Account and Cart - Always visible but stacked on small screens */}
                 <div className="hidden md:flex items-center gap-4">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="flex w-full max-w-max items-center hover:bg-transparent  text-[#003C64] font-semibold text-sm cursor-pointer gap-1"
-                  >
-                    <User className="h-6 w-6" />
-                    <span className="hidden lg:inline ">My Account</span>
-                  </Button>
-
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="relative w-full max-w-max hover:bg-transparent  flex items-center text-[#003C64] font-semibold text-sm cursor-pointer gap-1"
-                  >
-                    <ShoppingCart className="h-5 w-5" />
-                    <span className="hidden lg:inline">Cart</span>
-                    <span className="absolute -top-[5px] -left-[10px] h-4 w-4 rounded-full bg-[#003C64] text-[8px] text-white flex items-center justify-center">
-                      0
-                    </span>
-                  </Button>
+                  <MyAccountCard />
+                  <CartHoverCard />
                 </div>
               </div>
             </div>
@@ -354,13 +340,11 @@ const Header = () => {
                     <div key={item.name} className="relative">
                       {item.name.includes("Categories") ? (
                         <Button
-
                           variant="ghost"
                           className={`text-sm font-medium text-gray-700 transition-colors flex items-center gap-1 hover:bg-transparent hover:text-[#0072BA] ${
                             megaMenu ? "text-[#0072BA]" : ""
                           }`}
-                            onMouseEnter={()=>(setMegaMenu(true))}
-                            
+                          onMouseEnter={() => setMegaMenu(true)}
                         >
                           {item.name}
                           <ChevronDown
@@ -370,7 +354,7 @@ const Header = () => {
                           />
                         </Button>
                       ) : (
-                        <div 
+                        <div
                           className="relative"
                           onMouseEnter={() => {
                             setMegaMenu(false); // Close mega menu if open
@@ -379,7 +363,7 @@ const Header = () => {
                           }}
                           onMouseLeave={() => {
                             setIsOpen(false);
-                            setActiveTab('');
+                            setActiveTab("");
                           }}
                         >
                           <Button
@@ -391,12 +375,12 @@ const Header = () => {
                             {item.name}
                             <ChevronDown
                               className={`h-4 w-4 transition-transform ${
-                                activeTab  === item.name ? "rotate-180" : ""
+                                activeTab === item.name ? "rotate-180" : ""
                               }`}
                             />
                           </Button>
 
-                          {activeTab  === item.name && (
+                          {activeTab === item.name && (
                             <div className="absolute w-64 bg-white border border-gray-100 shadow-xl z-50 rounded-lg overflow-hidden">
                               {item.submenu.map((subItem) => (
                                 <Link
@@ -412,7 +396,6 @@ const Header = () => {
                           )}
                         </div>
                       )}
-
                     </div>
                   ) : (
                     <Link

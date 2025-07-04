@@ -13,6 +13,11 @@ import SezzleIcon from "../../../public/paymenticons/logo-sezzle.webp";
 import AfterpayIcon from "../../../public/paymenticons/logo-afterpay-2.webp";
 import KlarnaIcon from "../../../public/paymenticons/logo-klarna.webp";
 import Link from "next/link";
+import { Dialog, DialogHeader } from "../ui/dialog";
+import { DialogContent, DialogTitle, DialogTrigger} from "@radix-ui/react-dialog";
+import { Input } from "../ui/input";
+import { DialogFooter } from "../ui/dialog";
+
 
 const CartSummary = () => {
   const [selectedDelivery, setSelectedDelivery] = useState("free");
@@ -64,12 +69,7 @@ const CartSummary = () => {
       sublabel: "Guaranteed 3 Business Days", 
       price: 15.02
     },
-    {
-      id: "july2",
-      label: "July 2, Wed",
-      sublabel: "Guaranteed 4 Business Days",
-      price: 14.16
-    }
+
   ];
 
   const selectedDeliveryOption = deliveryOptions.find(option => option.id === selectedDelivery);
@@ -103,10 +103,7 @@ const CartSummary = () => {
                   Remove Design
                 </Button>
               </div>
-              <Button variant="ghost" className="text-gray-500 hover:text-gray-700 w-full sm:w-auto">
-                <Heart className="w-4 h-4 mr-2" />
-                Save for Later
-              </Button>
+             
             </div>
 
             {/* Cart Item */}
@@ -173,14 +170,7 @@ const CartSummary = () => {
                         <Pencil className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                         Edit Size
                       </Button>
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        className="text-blue-600 border-blue-200 hover:bg-blue-50 text-xs sm:text-sm"
-                      >
-                        <PlusCircle className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                        Add Color
-                      </Button>
+                   
                     </div>
                   </div>
                 </div>
@@ -338,18 +328,44 @@ const CartSummary = () => {
                   </div>
                 </div>
                 
-                <Button 
-                  variant="ghost" 
-                  className="w-full text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center justify-center gap-1 border border-gray-200 py-2"
-                >
-                  <PlusCircle className="w-4 h-4" />
-                  Add Voucher or Promo Code
-                </Button>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button 
+                      variant="ghost" 
+                      className="w-full text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center justify-center gap-1 border border-gray-200 py-2"
+                    >
+                      <PlusCircle className="w-4 h-4" />
+                      Add Voucher or Promo Code
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[425px]">
+                    <DialogHeader>
+                      <DialogTitle>Add Voucher or Promo Code</DialogTitle>
+                    </DialogHeader>
+                    <div className="grid gap-4 py-4">
+                      <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="voucher" className="text-right">
+                          Code
+                        </Label>
+                        <Input
+                          id="voucher"
+                          placeholder="Enter voucher code"
+                          className="col-span-3"
+                        />
+                      </div>
+                    </div>
+                    <DialogFooter>
+                      <Button variant='blue' type="submit">Apply Code</Button>
+                    </DialogFooter>
+                  </DialogContent>
+                </Dialog>
                 
                 <div className="space-y-3 pt-2">
+                  <Link href="/cart/checkout">
                     <Button variant='blue' className="w-full">
-                   CHECKOUT
-                  </Button>
+                      CHECKOUT
+                    </Button>
+                  </Link>
                 
                 </div>
               </CardContent>

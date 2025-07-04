@@ -38,356 +38,200 @@ import BestSellersSection from "./BestSeller/BestSellersSection";
 
 const ProductsData=[
   {
-    "id": 101,
-    "name": "A White Crew-Neck Classic",
-    "description": "Clean white crew-neck short sleeve tee, perfect basics.",
-    "category": "short-sleeve-tshirts",
-    "image": "https://media.istockphoto.com/id/1278597419/photo/blank-white-polo-shirt-mockup-front-view.jpg?s=612x612&w=0&k=20&c=aADmF6oWcCMfx1gl2-LU42AWjzMb53uModdEF7XKJGE=",
-    "colors": ["White"],
-    "sizes": ["S","M","L","XL"],
-    "price": 14.99,
-    "rating": 4.7,
-    "reviews": 250,
-    "minOrder": "No minimum",
-    "bgColor": "bg-gray-100"
+    id: 101,
+    name: "Port & Company® Core Cotton Ringer Tee",
+    brand: "PortCompany",
+    description: "Clean white crew-neck short sleeve tee, perfect basics.",
+    category: "short-sleeve-tshirts",
+    image: "/TopPicks/LightBlueTshirt.jpg",
+    colors: ["White"],
+    sizes: ["S–XL"],
+    price: 14.99,
+    rating: 4.2,
+    reviews: 250,
+    minOrder: "No minimum",
+    bgColor: "bg-gray-100",
+    slug: "portcompany/core-cotton-ringer-tee",
   },
   {
-    "id": 102,
-    "name": "Black Crew-Neck Essential",
-    "description": "Black crew-neck tee laid flat — casual essential.",
-    "category": "short-sleeve-tshirts",
- "image": "https://media.istockphoto.com/id/1358422711/photo/navy%093d-hq-rendered-t-shirt-with-detailed-and-texture-color.webp?a=1&b=1&s=612x612&w=0&k=20&c=__sz02cstVXoWggJGjxbBIifzDE7xy0CKusTfTxgYdE=",
-     
-    "colors": ["Black"],
-    "sizes": ["S","M","L","XL","2XL"],
-    "price": 15.99,
-    "rating": 4.6,
-    "reviews": 180,
-    "minOrder": "6 pieces",
-    "bgColor": "bg-blue-100"
+    id: 102,
+    name: "District ® Women’s Perfect Tri ® Rocker Tank",
+    brand: "District",
+    description: "Black crew-neck tee laid flat — casual essential.",
+    category: "short-sleeve-tshirts",
+    image: "/TopPicks/RacerbackTank.jpg",
+    colors: ["Black"],
+    sizes: ["S–2XL"],
+    price: 15.99,
+    rating: 4.3,
+    reviews: 180,
+    minOrder: "6 pieces",
+    bgColor: "bg-blue-100",
+    slug: "district/womens-perfect-tri-rocker-tank",
   },
   {
-    "id": 103,
-    "name": "A Studio White Tee",
-    "description": "Bright white tee in studio lighting — premium look.",
-    "category": "short-sleeve-tshirts",
-    "image": "https://media.istockphoto.com/id/1288582636/photo/white-mens-polo-template-with-buttons-and-collar-3d-rendering-isolated-on-background-front.jpg?s=612x612&w=0&k=20&c=kKBJlKckC3krJZXJGad37GviRbckMcy17BTwaEJKMSQ=",
-   
-    "colors": ["White"],
-    "sizes": ["M","L","XL","2XL"],
-    "price": 16.49,
-    "rating": 4.8,
-    "reviews": 305,
-    "badge": "Premium",
-    "minOrder": "12 pieces",
-    "bgColor": "bg-white"
+    id: 103,
+    name: "District ® Perfect Weight ® Tee",
+    brand: "District",
+    description: "Bright white tee in studio lighting — premium look.",
+    category: "short-sleeve-tshirts",
+    image: "/TopPicks/WhiteTshirt.jpg",
+    colors: ["White"],
+    sizes: ["M–2XL"],
+    price: 16.49,
+    rating: 4.1,
+    reviews: 305,
+    badge: "Premium",
+    minOrder: "12 pieces",
+    bgColor: "bg-white",
+    slug: "district/perfect-weight-tee",
   },
   {
-    "id": 104,
-    "name": "Flat Lay Mockup Tee",
-    "description": "Black & white mockup for designs — versatile base.",
-    "category": "short-sleeve-tshirts",
-    "image": "https://images.unsplash.com/photo-1666358084687-14347fbf364c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fEZpdHRlZCUyMFQlMjBTaGlydHN8ZW58MHx8MHx8fDA%3D",
-    
-    "colors": ["Black","White"],
-    "sizes": ["S","M","L","XL"],
-    "price": 17.99,
-    "rating": 4.5,
-    "reviews": 120,
-    "minOrder": "No minimum",
-    "bgColor": "bg-gray-100"
+    id: 104,
+    name: "Sport-Tek® Women's PosiCharge® Replica Jersey",
+    brand: "SportTek",
+    description: "Black & white mockup for designs — versatile base.",
+    category: "short-sleeve-tshirts",
+    image: "/TopPicks/HoodedCardigan.jpg",
+    colors: ["Black", "White"],
+    sizes: ["S–XL"],
+    price: 17.99,
+    rating: 4.0,
+    reviews: 120,
+    minOrder: "No minimum",
+    bgColor: "bg-gray-100",
+    slug: "sporttek/womens-posicharge-replica-jersey",
   },
   {
-    "id": 105,
-    "name": "Heather Gray Essential",
-    "description": "Soft heather gray tee — neutral and comfy.",
-    "category": "short-sleeve-tshirts",
-    "image": "https://images.unsplash.com/photo-1719710844666-956ea4834e0d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fEhlYXRoZXIlMjBHcmF5JTIwRXNzZW50aWFsJTIwVCUyMHNoaXJ0fGVufDB8fDB8fHww",
-    "colors": ["Heather Gray"],
-    "sizes": ["S","M","L","XL"],
-    "price": 15.49,
-    "rating": 4.6,
-    "reviews": 210,
-    "minOrder": "No minimum",
-    "bgColor": "bg-blue-100"
+    id: 105,
+    name: "BELLA+CANVAS® Women’s Jersey Crop Tee",
+    brand: "BellaCanvas",
+    description: "Soft heather gray tee — neutral and comfy.",
+    category: "short-sleeve-tshirts",
+    image: "/TopPicks/NeckTee.jpg",
+    colors: ["Heather Gray"],
+    sizes: ["S–XL"],
+    price: 15.49,
+    rating: 4.2,
+    reviews: 210,
+    minOrder: "No minimum",
+    bgColor: "bg-blue-100",
+    slug: "bellacanvas/womens-jersey-crop-tee",
   },
   {
-    "id": 106,
-    "name": "Olive Vintage Tee",
-    "description": "Pre-washed olive tee — relaxed vintage fit.",
-    "category": "short-sleeve-tshirts",
-    "image": "https://media.istockphoto.com/id/471947494/photo/camouflage-tshirt.webp?a=1&b=1&s=612x612&w=0&k=20&c=vU1fyYP-bJj6yc5QRtmqgfdahMdYMq8wRlOw1pxwHaw=",
-      
-    "colors": ["Olive"],
-    "sizes": ["M","L","XL","2XL"],
-    "price": 19.99,
-    "rating": 4.4,
-    "reviews": 201,
-    "badge": "Trending",
-    "minOrder": "12 pieces",
-    "bgColor": "bg-orange-100"
+    id: 106,
+    name: "District® Women’s Perfect Tri® Midi Long Sleeve Tee",
+    brand: "District",
+    description: "Pre-washed olive tee — relaxed vintage fit.",
+    category: "short-sleeve-tshirts",
+    image: "/TopPicks/Huddy.jpg",
+    colors: ["Olive"],
+    sizes: ["M–2XL"],
+    price: 19.99,
+    rating: 4.3,
+    reviews: 201,
+    badge: "Trending",
+    minOrder: "12 pieces",
+    bgColor: "bg-orange-100",
+    slug: "district/womens-perfect-tri-midi-long-sleeve-tee",
   },
   {
-    "id": 107,
-    "name": "Royal Blue Essential",
-    "description": "Bright blue tee for a pop of color.",
-    "category": "short-sleeve-tshirts",
-    "image":"https://images.unsplash.com/photo-1654432007491-8c97c473a7b4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fFJveWFsJTIwQmx1ZSUyMEVzc2VudGlhbCUyMFQlMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D",
-    "colors": ["Royal Blue"],
-    "sizes": ["S","M","L","XL"],
-    "price": 16.49,
-    "rating": 4.5,
-    "reviews": 145,
-    "minOrder": "6 pieces",
-    "bgColor": "bg-gray-100"
+    id: 107,
+    name: "Sport-Tek® Tall Long Sleeve PosiCharge® Competitor™ Tee",
+    brand: "SportTek",
+    description: "Bright blue tee for a pop of color.",
+    category: "short-sleeve-tshirts",
+    image: "/TopPicks/RedShirt.jpg",
+    colors: ["Royal Blue"],
+    sizes: ["S–XL"],
+    price: 16.49,
+    rating: 4.1,
+    reviews: 145,
+    minOrder: "6 pieces",
+    bgColor: "bg-gray-100",
+    slug: "sporttek/tall-long-sleeve-posicharge-competitor-tee",
   },
   {
-    "id": 108,
-    "name": "Charcoal Slim Tee",
-    "description": "Slim fit charcoal tee — polished look.",
-    "category": "short-sleeve-tshirts",
-    "image": "https://images.unsplash.com/photo-1734834933418-97049d256943?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI5fHxZb3V0aCUyMFQlMjBTaGlydHN8ZW58MHx8MHx8fDA%3D",
-      
-    "colors": ["Charcoal"],
-    "sizes": ["S","M","L","XL","2XL"],
-    "price": 18.99,
-    "rating": 4.7,
-    "reviews": 154,
-    "minOrder": "10 pieces",
-    "bgColor": "bg-gray-100"
+    id: 108,
+    name: "Port & Company® Core Cotton Tank Top",
+    brand: "PortCompany",
+    description: "Slim fit charcoal tee — polished look.",
+    category: "short-sleeve-tshirts",
+    image: "/TopPicks/SandooBlue.jpg",
+    colors: ["Charcoal"],
+    sizes: ["S–2XL"],
+    price: 18.99,
+    rating: 4.2,
+    reviews: 154,
+    minOrder: "10 pieces",
+    bgColor: "bg-gray-100",
+    slug: "portcompany/core-cotton-tank-top",
   },
   {
-    "id": 109,
-    "name": "Sunset Orange Tee",
-    "description": "Vibrant orange tee for summer vibes.",
-    "category": "short-sleeve-tshirts",
-    "image":"https://images.unsplash.com/photo-1637905298405-a36397f549c0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U3Vuc2V0JTIwT3JhbmdlJTIwVGVlJTIwVCUyMHNoaXJ0fGVufDB8fDB8fHww",
-    "colors": ["Orange"],
-    "sizes": ["S","M","L","XL"],
-    "price": 17.99,
-    "rating": 4.5,
-    "reviews": 132,
-    "minOrder": "No minimum",
-    "bgColor": "bg-orange-100"
+    id: 109,
+    name: "District ® Women’s Perfect Weight ® V-Neck Tee",
+    brand: "District",
+    description: "Vibrant orange tee for summer vibes.",
+    category: "short-sleeve-tshirts",
+    image: "/TopPicks/Black.jpg",
+    colors: ["Orange"],
+    sizes: ["S–XL"],
+    price: 17.99,
+    rating: 4.3,
+    reviews: 132,
+    minOrder: "No minimum",
+    bgColor: "bg-orange-100",
+    slug: "district/womens-perfect-weight-v-neck-tee",
   },
   {
-    "id": 110,
-    "name": "Forest Green Tee",
-    "description": "Deep green tee perfect for outdoor activities.",
-    "category": "short-sleeve-tshirts",
-    "image":"https://images.unsplash.com/photo-1671851552775-7755ff4dee57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fEZvcmVzdCUyMEdyZWVuJTIwVCUyMHNoaXJ0fGVufDB8fDB8fHww",
-    "colors": ["Forest Green"],
-    "sizes": ["M","L","XL","2XL"],
-    "price": 16.99,
-    "rating": 4.6,
-    "reviews": 178,
-    "minOrder": "6 pieces",
-    "bgColor": "bg-green-100"
+    id: 110,
+    name: "Sport-Tek® Sleeveless PosiCharge® Competitor™ Tee",
+    brand: "SportTek",
+    description: "Deep green tee perfect for outdoor activities.",
+    category: "short-sleeve-tshirts",
+    image: "/TopPicks/Sando.jpg",
+    colors: ["Forest Green"],
+    sizes: ["M–2XL"],
+    price: 16.99,
+    rating: 4.1,
+    reviews: 178,
+    minOrder: "6 pieces",
+    bgColor: "bg-green-100",
+    slug: "sporttek/sleeveless-posicharge-competitor-tee",
   },
   {
-    "id": 111,
-    "name": "Brick Red Tee",
-    "description": "Earthy red tee — timeless and warm.",
-    "category": "short-sleeve-tshirts",
-    "image":"https://images.unsplash.com/photo-1741892600273-ba7df5a60dd8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fEJyaWNrJTIwUmVkJTIwVCUyMHNoaXJ0fGVufDB8fDB8fHww",
-    "colors": ["Brick Red"],
-    "sizes": ["S","M","L","XL"],
-    "price": 17.49,
-    "rating": 4.4,
-    "reviews": 120,
-    "minOrder": "No minimum",
-    "bgColor": "bg-red-100"
+    id: 111,
+    name: "Gildan® Ultra Cotton® 100% US Cotton Long Sleeve T-Shirt with Pocket",
+    brand: "Gildan",
+    description: "Earthy red tee — timeless and warm.",
+    category: "short-sleeve-tshirts",
+    image: "/TopPicks/GrayShirt.jpg",
+    colors: ["Brick Red"],
+    sizes: ["S–XL"],
+    price: 17.49,
+    rating: 4.2,
+    reviews: 120,
+    minOrder: "No minimum",
+    bgColor: "bg-red-100",
+    slug: "gildan/ultra-cotton-long-sleeve-t-shirt-pocket",
   },
   {
-    "id": 112,
-    "name": "Pastel Pink Tee",
-    "description": "Soft pastel pink tee — subtle and stylish.",
-    "category": "short-sleeve-tshirts",
-    "image":"https://images.unsplash.com/photo-1634116590564-2d1fd8ca81c3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8UGFzdGVsJTIwUGluayUyMFQlMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D",
-    "colors": ["Pastel Pink"],
-    "sizes": ["S","M","L","XL"],
-    "price": 16.99,
-    "rating": 4.5,
-    "reviews": 140,
-    "minOrder": "No minimum",
-    "bgColor": "bg-pink-100"
+    id: 112,
+    name: "Sport-Tek® PosiCharge® Tough Mesh Full-Button Jersey",
+    brand: "SportTek",
+    description: "Soft pastel pink tee — subtle and stylish.",
+    category: "short-sleeve-tshirts",
+    image: "/TopPicks/Buttonjersey.jpg",
+    colors: ["Pastel Pink"],
+    sizes: ["S–XL"],
+    price: 16.99,
+    rating: 4.3,
+    reviews: 140,
+    minOrder: "No minimum",
+    bgColor: "bg-pink-100",
+    slug: "sporttek/posicharge-tough-mesh-full-button-jersey",
   }
-  , {
-    "id": 301,
-    "name": "A White Beach Hoodie",
-    "description": "Lightweight white hoodie perfect for beach evenings.",
-    "category": "imported-hoodies",
-    "image": "",
-    "colors": ["White"],
-    "sizes": ["S", "M", "L", "XL"],
-    "price": 29.99,
-    "rating": 4.6,
-    "reviews": 150,
-    "minOrder": "No minimum",
-    "bgColor": "bg-blue-100"
-  },
-  {
-    "id": 302,
-    "name": "Urban White Street Hoodie",
-    "description": "Casual streetwear hoodie with a relaxed fit.",
-    "category": "imported-hoodies",
-    "image":"",
-    "colors": ["White", "Gray"],
-    "sizes": ["S", "M", "L", "XL", "2XL"],
-    "price": 32.99,
-    "rating": 4.7,
-    "reviews": 210,
-    "minOrder": "6 pieces",
-    "bgColor": "bg-gray-100"
-  },
-  {
-    "id": 303,
-    "name": "Studio White Hoodie",
-    "description": "Clean studio shot short sleeve hoodie, premium look.",
-    "category": "imported-hoodies",
-    "image": "",
-    "colors": ["White"],
-    "sizes": ["M", "L", "XL", "2XL"],
-    "price": 35.49,
-    "rating": 4.8,
-    "reviews": 300,
-    "minOrder": "12 pieces",
-    "bgColor": "bg-white"
-  },
-  {
-    "id": 304,
-    "name": "Blank Scenery Hoodie",
-    "description": "Blank hoodie filmed against scenic backdrop.",
-    "category": "imported-hoodies",
-    "image":"",
-    "colors": ["Gray"],
-    "sizes": ["S", "M", "L", "XL"],
-    "price": 27.99,
-    "rating": 4.5,
-    "reviews": 180,
-    "minOrder": "No minimum",
-    "bgColor": "bg-gray-200"
-  },
-  {
-    "id": 305,
-    "name": "Minimal White Hoodie",
-    "description": "Sleek minimal hoodie—ideal for layering.",
-    "category": "imported-hoodies",
-    "image":"",
-    "colors": ["White"],
-    "sizes": ["S", "M", "L", "XL"],
-    "price": 28.99,
-    "rating": 4.4,
-    "reviews": 140,
-    "minOrder": "No minimum",
-    "bgColor": "bg-white"
-  },
-  {
-    "id": 306,
-    "name": "Elegant Gray Hoodie",
-    "description": "Soft gray short sleeve hoodie for daily wear.",
-    "category": "imported-hoodies",
-    "image":"",
-    "colors": ["Gray"],
-    "sizes": ["S", "M", "L", "XL"],
-    "price": 30.99,
-    "rating": 4.6,
-    "reviews": 220,
-    "minOrder": "6 pieces",
-    "bgColor": "bg-gray-50"
-  },
-  {
-    "id": 307,
-    "name": "Street Black & White Hoodie",
-    "description": "Conceptual streetwear hoodie in monochrome.",
-    "category": "imported-hoodies",
-    "image":"",
-    "colors": ["Black", "White"],
-    "sizes": ["S", "M", "L", "XL", "2XL"],
-    "price": 33.49,
-    "rating": 4.7,
-    "reviews": 195,
-    "minOrder": "No minimum",
-    "bgColor": "bg-black"
-  },
-  {
-    "id": 308,
-    "name": "Blank Template Hoodie",
-    "description": "Blank hoodie laid flat—ideal for mockups.",
-    "category": "imported-hoodies",
-    "image":"",
-    "colors": ["White"],
-    "sizes": ["S", "M", "L", "XL"],
-    "price": 29.49,
-    "rating": 4.5,
-    "reviews": 160,
-    "minOrder": "No minimum",
-    "bgColor": "bg-white"
-  },
-  {
-    "id": 309,
-    "name": "Chill Street Hoodie",
-    "description": "Relaxed fit hoodie for casual street style.",
-    "category": "imported-hoodies",
-    "image":"",
-    "colors": ["White", "Light Gray"],
-    "sizes": ["S", "M", "L", "XL", "2XL"],
-    "price": 31.99,
-    "rating": 4.7,
-    "reviews": 207,
-    "minOrder": "6 pieces",
-    "bgColor": "bg-gray-100"
-  },
-  {
-    "id": 310,
-    "name": "Nighttime White Hoodie",
-    "description": "White hoodie shot at night—moody aesthetic.",
-    "category": "imported-hoodies",
-    "image":"",
-    "colors": ["White"],
-    "sizes": ["S", "M", "L", "XL"],
-    "price": 32.49,
-    "rating": 4.8,
-    "reviews": 240,
-    "minOrder": "No minimum",
-    "bgColor": "bg-gray-800"
-  },
-  {
-    "id": 311,
-    "name": "Casual White Hoodie",
-    "description": "Casual everyday white hoodie with easy fit.",
-    "category": "imported-hoodies",
-    "image":"",
-    "colors": ["White"],
-    "sizes": ["S", "M", "L", "XL"],
-    "price": 30.99,
-    "rating": 4.6,
-    "reviews": 210,
-    "minOrder": "6 pieces",
-    "bgColor": "bg-gray-50"
-  },
-  {
-    "id": 312,
-    "name": "Blended Linen Hoodie",
-    "description": "Premium linen-blend hoodie with breathable fabric.",
-    "category": "imported-hoodies",
-    "image":"",
-    "colors": ["White", "Olive"],
-    "sizes": ["S", "M", "L", "XL"],
-    "price": 37.99,
-    "rating": 4.9,
-    "reviews": 285,
-    "badge": "Premium",
-    "minOrder": "12 pieces",
-    "bgColor": "bg-green-50"
-  }
-]
-
-
-
-
-
-
+];
 
 
 const SubCategoryFilterPage = ({ slug }: { slug: string }) => {
@@ -475,6 +319,7 @@ const SubCategoryFilterPage = ({ slug }: { slug: string }) => {
     selectedSizes,
     priceRange,
     sortBy,
+    productsData
   ]);
 
   const handleCategoryChange = (category: string, checked: boolean) => {
@@ -514,7 +359,7 @@ const SubCategoryFilterPage = ({ slug }: { slug: string }) => {
             T-Shirts
           </Link>
           <ChevronRight className="h-4 w-4 mx-2" />
-           <span className="text-black">
+          <span className="text-black">
             Short Sleeve T-Shirts
           </span>
         </div>
@@ -826,13 +671,13 @@ const SubCategoryFilterPage = ({ slug }: { slug: string }) => {
                 >
                   <CardContent className="p-0 rounded-t-[20px] overflow-hidden">
                     <div className="relative overflow-hidden">
-                      <Link href="/catalog/gilden/premium-Cotton-T-Shirt?color=01">
+                      <Link href={`/catalog/${product.slug}`}>
                         <Image
                           src={product.image ? product.image : placeholder}
                           alt={product.name}
                           width={285}
                           height={220}
-                          className="w-full h-[220px] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:rounded-t-[20px] rounded-t-[20px]"
+                          className="w-full h-[220px] object-contain transition-transform duration-300 group-hover:scale-105 group-hover:rounded-t-[20px] rounded-t-[20px]"
                         />
                       </Link>
                       {product.badge && (
@@ -847,9 +692,7 @@ const SubCategoryFilterPage = ({ slug }: { slug: string }) => {
                         {product.name}
                       </h3>
 
-                      {/* <p className="text-xs text-muted-foreground line-clamp-2">
-                        {product.description}
-                      </p> */}
+                   
 
                       {/* Sizes */}
                       <div className="text-[12px] font-[700] leading-[18px] text-black mb-3">
@@ -885,15 +728,7 @@ const SubCategoryFilterPage = ({ slug }: { slug: string }) => {
                         >
                           ${product.price.toFixed(2)}
                         </div>
-                        {/* <Button
-                          className="relative text-[#003C64] px-4 py-2.25 text-[14px] leading-[18px] font-medium bg-white
-                               transition-all duration-300 ease-in-out active:scale-98 
-                                    border border-[#003C64]  rounded-[8px] hover:border-[#003C64] hover:bg-[#003C64] hover:text-white my-2"
-                          aria-label="Go to Design Lab"
-                        >
-                          <span className="relative z-10">Add to Cart</span>
-                          <span className="absolute inset-0 rounded-[12px] bg-transparent hover:bg-[#003C64]/5 transition-all duration-300 ease-in-out"></span>
-                        </Button> */}
+                     
                       </div>
                     </div>
                   </CardContent>
@@ -916,7 +751,18 @@ const SubCategoryFilterPage = ({ slug }: { slug: string }) => {
                 </Button>
               </div>
             )}
+            <div className="flex justify-center mt-10">
+              <Button
+                variant="blue"
+                className="mt-4 text-[18px] py-4 px-8"
+              >
+                View More
+              </Button>
+            </div>
+
+
           </div>
+
         </div>
       </div>
     </div>

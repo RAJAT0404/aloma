@@ -35,7 +35,7 @@ interface ReviewData {
 }
 
 const reviewData: ReviewData = {
-    productTitle: "Premium Cotton T-Shirt Customer Feedback",
+    productTitle: "Eddie Bauer Sweater Fleece Full-Zip Customer Feedback",
     overallRating: 4.5,
     totalReviews: 2,
     ratingDistribution: {
@@ -132,9 +132,9 @@ const CustomerFeedbackBlock = () => {
         <div className='bg-[#F4F8FC]'>
 
 
-            <h2 className="text-[36px] font-[700] text-center text-gray-900 mb-12">
+            <h1 className="text-[36px] font-bold text-center text-gray-900 mb-2">
                 {reviewData.productTitle}
-            </h2>
+            </h1>
             <div className="max-w-6xl mx-auto p-6 bg-white">
                 <div className=" mb-8 ">
                     <div className="flex gap-4 p-6">

@@ -1,11 +1,9 @@
-'use client'
-
 import Layout from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import {CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 
-export default function NotFound() {
+export default async function NotFound() {
   return (
     <Layout >
     <main className="grid h-[70vh] place-items-center bg-background p-4">

@@ -21,73 +21,85 @@ const SatisfiedCustomersSection = () => {
       id: 1,
       image: Social1,
       name: "Alex Johnson",
-      product: "Custom Team Jersey"
+      product: "Custom Team Jersey",
+      description: "Alex loved the quality and fit of his custom team jerseys for his basketball league"
     },
     {
       id: 2,
       image: Social2,
       name: "Sarah Wilson",
-      product: "Personalized Hoodie"
+      product: "Personalized Hoodie",
+      description: "Sarah's personalized hoodie was the perfect gift for her best friend's birthday"
     },
     {
       id: 3,
       image: Social3,
       name: "Mike Chen",
-      product: "Corporate Polo"
+      product: "Corporate Polo",
+      description: "Mike was impressed with how professional the embroidered polos looked for his team"
     },
     {
       id: 4,
       image: Social4,
       name: "Emma Davis",
-      product: "Custom T-Shirt"
+      product: "Custom T-Shirt",
+      description: "Emma's custom designed t-shirt turned out exactly how she envisioned it"
     },
     {
       id: 5,
       image: Social5,
       name: "James Rodriguez",
-      product: "Event Sweatshirt"
+      product: "Event Sweatshirt",
+      description: "James ordered sweatshirts for his company retreat and everyone loved them"
     },
     {
       id: 6,
       image: Social6,
       name: "Lisa Thompson",
-      product: "Branded Cap"
+      product: "Branded Cap",
+      description: "Lisa's branded caps were a huge hit at her small business's grand opening"
     },
     {
       id: 7,
       image: Social7,
       name: "David Kim",
-      product: "Custom Jacket"
+      product: "Custom Jacket",
+      description: "David's custom jacket with his motorcycle club logo exceeded his expectations"
     },
     {
       id: 8,
       image: Social8,
       name: "Maria Garcia",
-      product: "Team Uniform"
+      product: "Team Uniform",
+      description: "Maria's soccer team uniforms were comfortable and held up through the whole season"
     },
     {
       id: 9,
       image: Social9,
       name: "Ryan Miller",
-      product: "Custom Hoodie"
+      product: "Custom Hoodie",
+      description: "Ryan's custom hoodie design came out even better than he imagined"
     },
     {
       id: 10,
       image: Social10,
       name: "Nina Patel",
-      product: "Promotional Shirt"
+      product: "Promotional Shirt",
+      description: "Nina's promotional shirts helped boost brand awareness at the trade show"
     },
     {
       id: 11,
       image: Social11,
       name: "Tom Anderson",
-      product: "Sport Jersey"
+      product: "Sport Jersey",
+      description: "Tom's custom sport jersey was a perfect replica of his favorite player's"
     },
     {
       id: 12,
       image: Social12,
       name: "Sophie Brown",
-      product: "Custom Tote"
+      product: "Custom Tote",
+      description: "Sophie's custom tote bags were a huge hit with her boutique's customers"
     }
   ];
 
@@ -138,7 +150,7 @@ const SatisfiedCustomersSection = () => {
                    View
                   </Button>
                 </div>
-              </div>
+              </div>  
             </div>
           ))}
         </div>

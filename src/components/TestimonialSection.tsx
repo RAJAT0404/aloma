@@ -42,11 +42,11 @@ const testimonials = [
 
 export const TestimonialSection = () => {
   return (
-    <section className="py-16 lg:py-24">
+    <section className="py-12 md:py-16 lg:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">What Our Customers Say</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">What Our Customers Say</h2>
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
             Don&apos;t just take our word for it - hear from our satisfied customers
           </p>
         </div>
@@ -60,33 +60,33 @@ export const TestimonialSection = () => {
         >
           <CarouselContent>
             {testimonials.map((testimonial) => (
-              <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/2">
+              <CarouselItem key={testimonial.id} className="basis-full sm:basis-1/2 lg:basis-1/2">
                 <Card className="h-full">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <Quote className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <Quote className="h-6 w-6 sm:h-8 sm:w-8 text-primary flex-shrink-0 mt-1" />
                       <div className="flex-1">
-                        <div className="flex items-center mb-3">
+                        <div className="flex items-center mb-2 sm:mb-3">
                           {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                            <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 fill-primary text-primary" />
                           ))}
                         </div>
                         
-                        <p className="text-muted-foreground mb-4 italic">
+                        <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4 italic">
                           &ldquo;{testimonial.quote}&rdquo;
                         </p>
                         
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-2 sm:gap-3">
                           <Image
                             src={testimonial?.avatar}
                             alt={testimonial?.name}
-                            width={48}
-                            height={48}
-                            className="w-12 h-12 rounded-full object-cover"
+                            width={40}
+                            height={40}
+                            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover"
                           />
                           <div>
-                            <div className="font-semibold">{testimonial.name}</div>
-                            <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                            <div className="text-sm sm:text-base font-semibold">{testimonial.name}</div>
+                            <div className="text-xs sm:text-sm text-muted-foreground">{testimonial.role}</div>
                           </div>
                         </div>
                       </div>
@@ -96,8 +96,8 @@ export const TestimonialSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="hidden sm:flex" />
+          <CarouselNext className="hidden sm:flex" />
         </Carousel>
       </div>
     </section>
