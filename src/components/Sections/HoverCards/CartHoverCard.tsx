@@ -10,6 +10,8 @@ import back2 from '../../../../public/my-designs/back-red.jpg';
 import { Badge } from '@/components/ui/badge'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
+import { useSelector } from 'react-redux'
+import Link from 'next/link'
 
 const cartItems = [
   {
@@ -31,6 +33,7 @@ const cartItems = [
 ]
 
 const CartHoverCard = () => {
+  const isLoggedIn = useSelector((state: { auth: { isLoggedIn: boolean } }) => state.auth.isLoggedIn);
   const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
   return (
@@ -44,11 +47,11 @@ const CartHoverCard = () => {
           >
             <ShoppingCart className="h-5 w-5" />
             <Badge variant="default" className="absolute bg-[#0072BA] -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center">
-              {cartItems.length}
+              {isLoggedIn ? cartItems.length : '0'}
             </Badge>
           </Button>
         </HoverCardTrigger>
-        <HoverCardContent className="w-[400px] p-0" align="end">
+        {isLoggedIn ? <HoverCardContent className="w-[400px] p-0" align="end">
           <Card>
             <CardHeader className="flex flex-row items-center justify-between p-4 border-b">
               <CardTitle className="text-lg">Your Cart ({cartItems.length})</CardTitle>
@@ -56,7 +59,7 @@ const CartHoverCard = () => {
                 {/* <X className="h-5 w-5" /> */}
               </Button>
             </CardHeader>
-            
+
             <CardContent className="max-h-[400px] overflow-y-auto p-0">
               {cartItems.map((item) => (
                 <div key={item.id} className="p-4 border-b hover:bg-accent transition-colors">
@@ -64,7 +67,7 @@ const CartHoverCard = () => {
                     <div className="flex gap-2">
                       {item.images.map((img, index) => (
                         <div key={index} className="h-16 w-16 rounded-md overflow-hidden border relative">
-                          <Image 
+                          <Image
                             src={img}
                             alt={`${item.altText} - ${index === 0 ? 'Front' : 'Back'}`}
                             className="object-cover"
@@ -106,7 +109,38 @@ const CartHoverCard = () => {
               </p>
             </CardContent>
           </Card>
-        </HoverCardContent>
+        </HoverCardContent> :
+
+
+          <HoverCardContent
+            className="w-64 bg-white rounded-md shadow-lg border border-gray-200 p-3 sm:p-4"
+            sideOffset={5}
+            align="end"
+            avoidCollisions={true}
+          >
+            <>
+              <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 leading-normal break-words max-w-[240px]">
+                Sign in to view your account details, saved items, and past orders
+              </p>
+
+              <Link href='/sign-in'>
+                <Button
+                  variant="blue"
+                  className="w-full h-8 sm:h-9 text-xs sm:text-sm"
+                >
+                  Sign In
+                </Button>
+              </Link>
+
+              <div className="mt-1 sm:mt-2 text-[10px] sm:text-xs text-center text-gray-500 whitespace-nowrap">
+                New customer? <span className="text-[#003C64] cursor-pointer hover:underline">Start here</span>
+              </div>
+            </>
+          </HoverCardContent>
+
+
+        }
+
       </HoverCard>
     </div>
   )
