@@ -1,5 +1,4 @@
 import React from "react";
-import OrderSummary from "@/components/OrderSummary/OrderSummary";
 import Layout from "@/components/layout";
 import { notFound } from "next/navigation";
 import ProductConfig from "@/components/Sections/ProductConfig/ProductConfig";
@@ -21,7 +20,7 @@ const Checkout = async ({
   params,
 }: {
   params: Promise<{ slug: ValidSlug }>;
-}) =>{
+}) => {
   const { slug } = await params;
   if (!validSlugs.includes(slug)) {
     notFound();
@@ -29,7 +28,7 @@ const Checkout = async ({
 
   return (
     <Layout>
-          <ProductConfig/>
+      <ProductConfig />
     </Layout>
   );
 };
