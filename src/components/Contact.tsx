@@ -8,7 +8,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Globe2, Home, Printer, PrinterIcon, PrinterCheckIcon } from "lucide-react";
 import { toast } from "sonner";
 import {
   Accordion,
@@ -16,6 +16,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import FaqSection from "./FaqSection";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -99,7 +100,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-max bg-gradient-to-b from-background to-muted/20">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-12 max-w-[1400px]">
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
@@ -110,28 +111,30 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 w-full mx-auto items-start">
           {/* Contact Form */}
-          <Card className="border-none shadow-xl rounded-2xl overflow-hidden w-full">
-            <div className="bg-[#003C64] p-6">
-              <CardHeader className="p-0">
-                <CardTitle className="text-2xl text-white">Send us a Message</CardTitle>
-              </CardHeader>
-            </div>
-            <CardContent className="p-6">
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+          <div className="border-nonebg-transparent">
+            <Card className="border-none rounded-2xl shadow-2xl overflow-hidden h-full">
+              <div className="bg-[#003C64] p-4">
+                <CardHeader className="p-0">
+                  <CardTitle className="text-xl text-white text-center">Get In Touch With Alamo Tees</CardTitle>
+                </CardHeader>
+              </div>
+              <CardContent className="p-6 h-full">
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 h-full flex flex-col gap-4">
+
                     <FormField
                       control={form.control}
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Name *</FormLabel>
+                          <FormLabel>Name <span className="text-red-500 mb-2">*</span></FormLabel>
                           <FormControl>
                             <Input
                               placeholder="Your full name"
-                              className="bg-muted/20 border-muted-foreground/30 focus-visible:ring-primary"
+                              className="bg-blue-50 border border-blue-200 focus-visible:ring-[#003C64] focus-visible:ring-1 h-12"
                               {...field}
                             />
                           </FormControl>
@@ -144,12 +147,12 @@ const Contact = () => {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email *</FormLabel>
+                          <FormLabel>Email <span className="text-red-500 mb-2">*</span></FormLabel>
                           <FormControl>
                             <Input
                               type="email"
                               placeholder="your@email.com"
-                              className="bg-muted/20 border-muted-foreground/30 focus-visible:ring-primary"
+                              className="bg-blue-50 border border-blue-200 focus-visible:ring-[#003C64] focus-visible:ring-1 h-12"
                               {...field}
                             />
                           </FormControl>
@@ -157,115 +160,61 @@ const Contact = () => {
                         </FormItem>
                       )}
                     />
-                  </div>
 
-                  <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Phone (Optional)</FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="Your phone number"
-                            className="bg-muted/20 border-muted-foreground/30 focus-visible:ring-primary"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="mb-2">Phone (Optional)</FormLabel>
+                          <FormControl>
+                            <Input
+                              placeholder="Your phone number"
+                              className="bg-blue-50 border border-blue-200 focus-visible:ring-[#003C64] focus-visible:ring-1  h-12"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
 
-                  <FormField
-                    control={form.control}
-                    name="subject"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Subject *</FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="What is this regarding?"
-                            className="bg-muted/20 border-muted-foreground/30 focus-visible:ring-primary"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+                    <FormField
+                      control={form.control}
+                      name="message"
+                      render={({ field }) => (
+                        <FormItem className="flex-grow">
+                          <FormLabel>Message <span className="text-red-500 mb-2">*</span></FormLabel>
+                          <FormControl>
+                            <Textarea
+                              placeholder="Tell us more about your inquiry..."
+                              className="min-h-[120px] h-full bg-blue-50 border border-blue-200 focus-visible:ring-[#003C64] focus-visible:ring-1  h-12"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
 
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Message *</FormLabel>
-                        <FormControl>
-                          <Textarea
-                            placeholder="Tell us more about your inquiry..."
-                            className="min-h-[120px] bg-muted/20 border-muted-foreground/30 focus-visible:ring-primary"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <div className="flex justify-center">
-                    <Button
-                      type="submit"
-                      className="w-full max-w-[300px] py-6 text-lg font-medium"
-                      disabled={isSubmitting}
-                      variant="blue"
-                    >
-                      {isSubmitting ? "Sending..." : "Send Message"}
-                    </Button>
-                  </div>
-                </form>
-              </Form>
-            </CardContent>
-          </Card>
-
-          {/* Contact Details */}
-          <div className="w-full">
-            <div className="mb-6">
-              <h2 className="text-3xl font-bold text-foreground mb-4">
-                Our Contact Details
-              </h2>
-              <p className="text-muted-foreground">
-                Whether you have questions about our products or need help with an order, we&apos;re here to assist.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
-              {contactInfo.map((info, index) => (
-                <Card key={index} className="border-none shadow-sm hover:shadow-md transition-all duration-300 h-full">
-                  <CardContent className="p-4">
-                    <div className="flex items-start space-x-3">
-                      <div className="bg-[#003C64] p-2 rounded-full">
-                        <info.icon className="h-5 w-5 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-lg text-foreground mb-1">
-                          {info.title}
-                        </h3>
-                        <div className="space-y-1">
-                          {info.details.map((detail, idx) => (
-                            <p key={idx} className="text-muted-foreground text-sm">
-                              {detail}
-                            </p>
-                          ))}
-                        </div>
-                      </div>
+                    <div className="flex justify-center pt-4">
+                      <Button
+                        type="submit"
+                        className="max-w-[200px] w-full py-6 text-lg font-medium"
+                        disabled={isSubmitting}
+                        variant="blue"
+                      >
+                        {isSubmitting ? "Sending..." : "Send Message"}
+                      </Button>
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                  </form>
+                </Form>
+              </CardContent>
+            </Card>
 
-            <Card className="bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20">
+            {/* Contact Details */}
+            {/* <div className="w-full mt-10">
+            <Card className="bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20 mt-10 mb-10">
               <CardContent className="p-4 text-center">
                 <h3 className="font-semibold text-lg text-foreground mb-2">
                   Need Immediate Assistance?
@@ -273,43 +222,117 @@ const Contact = () => {
                 <p className="text-muted-foreground mb-4 text-sm">
                   Our customer service team is available during business hours to help with urgent inquiries.
                 </p>
-                <Button variant="blue" size="lg" className="w-full">
+                <Button variant="blue" size="lg" className="px-8">
                   Call Now: (555) 123-4567
                 </Button>
               </CardContent>
             </Card>
-          </div>
-        </div>
+          </div> */}
 
-        {/* FAQ Section */}
-        <div className="mt-20">
-          <h2 className="text-3xl font-bold text-center text-foreground mb-10">
-            Frequently Asked Questions
-          </h2>
-          <Accordion
-            type="single"
-            collapsible
-            className="bg-white rounded-xl shadow-lg divide-y divide-gray-100 overflow-hidden max-w-4xl mx-auto"
-          >
-            {faqData.map((item, index) => (
-              <AccordionItem
-                value={item.value}
-                key={index}
-                className="border-0 px-6 py-4 hover:bg-gray-50 transition-colors"
-              >
-                <AccordionTrigger className="text-lg sm:text-xl font-medium text-gray-800 hover:no-underline">
-                  {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-base sm:text-lg text-gray-600 pt-2 pb-4">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+
+          </div>
+
+          <div>
+
+            <Card className="border-none shadow-xl max-w-2xl rounded-2xl overflow-hidden bg-[#003C64] ">
+              <CardContent className="p-4 sm:p-6">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.306497368821!2d-98.60175452392895!3d29.56568424109452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865c66e67a340d3b%3A0xa66b1975a42ece1e!2s12814%20Cogburn%20Ave%2C%20San%20Antonio%2C%20TX%2078249%2C%20USA!5e0!3m2!1sen!2sin!4v1751969985348!5m2!1sen!2sin"
+                  width="100%"
+                  height="320"
+                  className="rounded-lg"
+                  style={{ border: '0' }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+                <div className="mt-6 space-y-4 text-white">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="mt-1 h-5 w-5" />
+                    <div>
+                      <p>12814 Cogburn Ave San Antonio, TX 78249</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="h-5 w-5" />
+                    <p>Toll Free: 888-562-3800</p>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <Printer className="h-5 w-5" />
+                    <p>Fax: 210-699-1963</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Mail className="h-5 w-5" />
+                    <p>sales@alamotees.com</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <div className="w-full mt-6">
+              <Card className="bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20 mt-8 mb-0">
+                <CardContent className="p-4 text-center">
+                  <h3 className="font-semibold text-lg text-foreground mb-2">
+                    Need Immediate Assistance?
+                  </h3>
+                  <p className="text-muted-foreground mb-4 text-sm">
+                    Our customer service team is available during business hours to help with urgent inquiries.
+                  </p>
+                  <Button variant="blue" size="lg" className="px-8">
+                    Call Now: (555) 123-4567
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+         </div>
+
+
       </div>
+      
     </div>
+
   );
 }
 
 export default Contact;
+
+
+
+
+
+
+
+
+
+
+
+//     {/* FAQ Section */}
+//     <div className="mt-20">
+//     <h2 className="text-3xl font-bold text-center text-foreground mb-10">
+//       Frequently Asked Questions
+//     </h2>
+//     <Accordion
+//       type="single"
+//       collapsible
+//       className="bg-white rounded-xl shadow-lg divide-y divide-gray-100 overflow-hidden max-w-4xl mx-auto"
+//     >
+//       {faqData.map((item, index) => (
+//         <AccordionItem
+//           value={item.value}
+//           key={index}
+//           className="border-0 px-6 py-4 hover:bg-gray-50 transition-colors"
+//         >
+//           <AccordionTrigger className="text-lg sm:text-xl font-medium text-gray-800 hover:no-underline">
+//             {item.question}
+//           </AccordionTrigger>
+//           <AccordionContent className="text-base sm:text-lg text-gray-600 pt-2 pb-4">
+//             {item.answer}
+//           </AccordionContent>
+//         </AccordionItem>
+//       ))}
+//     </Accordion>
+//   </div>
+// </div>
