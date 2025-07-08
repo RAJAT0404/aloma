@@ -121,6 +121,7 @@ const CategoryFilterPage = ({ slug }: { slug: string }) => {
     selectedSizes,
     priceRange,
     sortBy,
+    productsData
   ]);
 
   const handleCategoryChange = (category: string, checked: boolean) => {

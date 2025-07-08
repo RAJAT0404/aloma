@@ -103,10 +103,10 @@ const Contact = () => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Let's Create Together
+            Let&apos;s Create Together
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our team is ready to bring your custom apparel vision to life. Reach out and let's start the conversation.
+            Our team is ready to bring your custom apparel vision to life. Reach out and let&apos;s start the conversation.
           </p>
         </div>
 
@@ -235,7 +235,7 @@ const Contact = () => {
                 Our Contact Details
               </h2>
               <p className="text-muted-foreground">
-                Whether you have questions about our products or need help with an order, we're here to assist.
+                Whether you have questions about our products or need help with an order, we&apos;re here to assist.
               </p>
             </div>
 
