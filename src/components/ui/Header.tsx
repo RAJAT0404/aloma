@@ -326,7 +326,7 @@ const Header = () => {
         {/* Navigation Menu - Hidden on mobile */}
         <div className="hidden md:block bg-gray-50 border-b border-gray-200">
           <div className="container mx-auto px-4">
-            <div className="flex items-center justify-between py-3">
+            <div className="flex items-center justify-between">
               <nav className="flex items-center space-x-4 lg:space-x-8">
                 {menus.map((item) => {
                   return item.submenu ? (
@@ -334,7 +334,7 @@ const Header = () => {
                       {item.name.includes("Categories") ? (
                         <Button
                           variant="ghost"
-                          className={`text-sm font-medium text-gray-700 transition-colors flex items-center gap-1 hover:bg-transparent hover:text-[#0072BA] ${
+                          className={`text-sm py-3 font-medium text-gray-700 transition-colors flex items-center gap-1 hover:bg-transparent hover:text-[#0072BA] ${
                             megaMenu ? "text-[#0072BA]" : ""
                           }`}
                           onMouseEnter={() => setMegaMenu(true)}
@@ -348,7 +348,7 @@ const Header = () => {
                         </Button>
                       ) : (
                         <div
-                          className="relative"
+                          className="relative py-3"
                           onMouseEnter={() => {
                             setMegaMenu(false); // Close mega menu if open
                             setIsOpen(true);
@@ -374,12 +374,12 @@ const Header = () => {
                           </Button>
 
                           {activeTab === item.name && (
-                            <div className="absolute bg-[#000D16] w-64 bg-white border border-gray-100 shadow-xl z-50 rounded-b-lg overflow-hidden mt-2.5">
+                            <div className="absolute w-64 bg-white border border-gray-100 shadow-xl z-50 rounded-b-lg overflow-hidden mt-2.5">
                               {item.submenu.map((subItem) => (
                                 <Link
                                   key={subItem.name}
                                   href={subItem.url}
-                                  className="w-full tex-[16px] px-6 py-3 text-gray-700 hover:bg-[#0072BA]/5 hover:text-[#0072BA] transition-colors duration-200 border-b border-gray-100 last:border-b-0 flex items-center hover:text-[#0072BA] hover:underline"
+                                  className="w-full tex-[16px] px-6 py-3 text-gray-700 hover:bg-[#0072BA]/5 transition-colors duration-200 border-b border-gray-100 last:border-b-0 flex items-center hover:text-[#0072BA] hover:underline"
                                   >
                                   {/* <span className="w-2 h-2 rounded-full bg-[#0072BA] mr-3"></span> */}
                                   {subItem.name}
