@@ -6,15 +6,15 @@ import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { Plus, Edit3,Heart,PlusCircle ,ChevronRight, FileText,Pencil,Trash2, Minus } from "lucide-react";
+import { Plus, Edit3, Heart, PlusCircle, ChevronRight, FileText, Pencil, Trash2, Minus } from "lucide-react";
 import Image from "next/image";
-import AffirmIcon from "../../../public/paymenticons/logo-affirm.webp";
-import SezzleIcon from "../../../public/paymenticons/logo-sezzle.webp";
-import AfterpayIcon from "../../../public/paymenticons/logo-afterpay-2.webp";
-import KlarnaIcon from "../../../public/paymenticons/logo-klarna.webp";
+// import AffirmIcon from "../../../public/paymenticons/logo-affirm.webp";
+// import SezzleIcon from "../../../public/paymenticons/logo-sezzle.webp";
+// import AfterpayIcon from "../../../public/paymenticons/logo-afterpay-2.webp";
+// import KlarnaIcon from "../../../public/paymenticons/logo-klarna.webp";
 import Link from "next/link";
 import { Dialog, DialogHeader } from "../ui/dialog";
-import { DialogContent, DialogTitle, DialogTrigger} from "@radix-ui/react-dialog";
+import { DialogContent, DialogTitle, DialogTrigger } from "@radix-ui/react-dialog";
 import { Input } from "../ui/input";
 import { DialogFooter } from "../ui/dialog";
 
@@ -22,7 +22,8 @@ import { DialogFooter } from "../ui/dialog";
 const CartSummary = () => {
   const [selectedDelivery, setSelectedDelivery] = useState("free");
   const [quantity, setQuantity] = useState(5);
-  
+  const [showCartItem, setShowCartItem] = useState(true);
+
   const cartItem = {
     id: 1,
     name: "Compact Cotton t shirt",
@@ -30,7 +31,7 @@ const CartSummary = () => {
     size: "L-5",
     priceEach: 42.92,
     image: "/lovable-uploads/fdd8745e-0605-4f6e-a1e5-4ef7b245f061.png",
-    quantity:'5'
+    quantity: '5'
   };
 
   const handleIncrease = () => {
@@ -41,6 +42,10 @@ const CartSummary = () => {
     if (quantity > 1) {
       setQuantity(prev => prev - 1);
     }
+  };
+
+  const handleRemoveItem = () => {
+    setShowCartItem(false);
   };
 
   const deliveryOptions = [
@@ -59,17 +64,16 @@ const CartSummary = () => {
     },
     {
       id: "june30",
-      label: "June 30, Mon", 
+      label: "June 30, Mon",
       sublabel: "Guaranteed 2 Business Days",
       price: 16.73
     },
     {
       id: "july1",
       label: "July 1, Tue",
-      sublabel: "Guaranteed 3 Business Days", 
+      sublabel: "Guaranteed 3 Business Days",
       price: 15.02
     },
-
   ];
 
   const selectedDeliveryOption = deliveryOptions.find(option => option.id === selectedDelivery);
@@ -77,42 +81,37 @@ const CartSummary = () => {
   const subtotal = quantity * cartItem.priceEach;
   const total = subtotal + deliveryPrice;
 
+  if (!showCartItem) {
+    return (
+      <div className="min-h-[40vh] bg-gray-50">
+        <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold text-center py-8">Shopping Cart</h1>
+          <div className="text-center py-16">
+            <h2 className="text-xl font-medium mb-4">Your cart is empty</h2>
+            <p className="text-gray-500 mb-6">Browse our collection to find something you like</p>
+            <Link href="/">
+              <Button variant="blue">Continue Shopping</Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-gray-50">
-   
+    <div className="min-h-[70vh] bg-gray-50">
       <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-left py-8">Shopping Cart</h1>
+      <h2 className="text-3xl font-bold text-left py-8">Shopping Cart</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Side - Cart Items */}
           <div className="lg:col-span-2 space-y-6">
-            {/* Design Header */}
-            <div className="flex flex-col sm:flex-row items-center justify-between bg-gray-50 p-3 rounded-lg border border-gray-200 gap-3 sm:gap-0">
-              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full sm:w-auto">
-                <Button 
-                  variant="outline" 
-                  className="text-blue-600 hover:text-blue-700 border-blue-200 hover:bg-blue-50 w-full sm:w-auto"
-                >
-                  <Pencil className="w-4 h-4 mr-2" />
-                  Edit Design
-                </Button>
-                <Button 
-                  variant="outline" 
-                  className="text-red-600 hover:text-red-700 border-red-200 hover:bg-red-50 w-full sm:w-auto"
-                >
-                  <Trash2 className="w-4 h-4 mr-2" />
-                  Remove Design
-                </Button>
-              </div>
-             
-            </div>
-
             {/* Cart Item */}
             <Card className="border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
               <CardContent className="p-4 sm:p-6">
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                   <div className="flex-shrink-0 relative self-center sm:self-start">
                     <Image
-                      src="https://images.unsplash.com/photo-1576566588028-4147f3842f27"
+                      src="/my-designs/front.jpg"
                       alt={cartItem.name}
                       width={128}
                       height={144}
@@ -124,7 +123,7 @@ const CartSummary = () => {
                       </span>
                     </div>
                   </div>
-                  
+
                   <div className="flex-1 space-y-2 sm:space-y-3">
                     <div className="flex flex-col sm:flex-row justify-between items-start gap-2">
                       <div>
@@ -133,7 +132,7 @@ const CartSummary = () => {
                       </div>
                       <span className="font-bold text-base sm:text-lg">${subtotal.toFixed(2)}</span>
                     </div>
-                    
+
                     <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm">
                       <span className="px-2 py-1 bg-gray-100 rounded-md">{cartItem.size}</span>
                       <span className="text-gray-500 hidden sm:block">|</span>
@@ -141,11 +140,11 @@ const CartSummary = () => {
                         ${cartItem.priceEach.toFixed(2)} each
                       </span>
                     </div>
-                    
+
                     <div className="flex flex-wrap gap-2 sm:gap-4 pt-1 sm:pt-2">
                       <div className="flex items-center border border-gray-200 rounded-md">
-                        <Button 
-                          variant="ghost" 
+                        <Button
+                          variant="ghost"
                           size="sm"
                           className="text-gray-600 hover:bg-gray-100 h-8 w-8 p-0"
                           onClick={handleDecrease}
@@ -153,8 +152,8 @@ const CartSummary = () => {
                           <Minus className="w-3 h-3" />
                         </Button>
                         <span className="px-2 text-sm">{quantity}</span>
-                        <Button 
-                          variant="ghost" 
+                        <Button
+                          variant="ghost"
                           size="sm"
                           className="text-gray-600 hover:bg-gray-100 h-8 w-8 p-0"
                           onClick={handleIncrease}
@@ -162,15 +161,24 @@ const CartSummary = () => {
                           <Plus className="w-3 h-3" />
                         </Button>
                       </div>
-                      <Button 
-                        variant="outline" 
+                      <Button
+                        variant="outline"
                         size="sm"
                         className="text-blue-600 border-blue-200 hover:bg-blue-50 text-xs sm:text-sm"
                       >
                         <Pencil className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                         Edit Size
                       </Button>
-                   
+
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="text-red-600 hover:text-red-700 border-red-200 hover:bg-red-50 w-full sm:w-auto text-xs sm:text-sm"
+                        onClick={handleRemoveItem}
+                      >
+                        <Trash2 className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                        Remove Product
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -180,8 +188,8 @@ const CartSummary = () => {
             {/* Add Another Product */}
             <Card className="border-dashed border-2 border-gray-300 hover:border-blue-400 transition-colors">
               <CardContent className="p-6">
-                <Button 
-                  variant="ghost" 
+                <Button
+                  variant="ghost"
                   className="w-full justify-start text-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-colors"
                 >
                   <Plus className="w-5 h-5 mr-2" />
@@ -192,22 +200,6 @@ const CartSummary = () => {
 
             {/* Additional Options */}
             <div className="space-y-4">
-              <Card className="hover:shadow-md transition-shadow cursor-pointer">
-                <CardContent className="p-4">
-                  <div className="flex items-center gap-3">
-                    <Edit3 className="w-5 h-5 text-blue-500" />
-                    <div>
-                      <p className="font-medium text-blue-600 hover:text-blue-700 transition-colors">
-                        Add Another Design to Cart
-                      </p>
-                      <p className="text-sm text-gray-500 mt-1">
-                        Add more designs to your order (max 5 per order)
-                      </p>
-                    </div>
-                    <ChevronRight className="w-4 h-4 ml-auto text-gray-400" />
-                  </div>
-                </CardContent>
-              </Card>
 
               <Card className="hover:shadow-md transition-shadow cursor-pointer">
                 <CardContent className="p-4">
@@ -231,7 +223,7 @@ const CartSummary = () => {
           {/* Right Side - Order Summary */}
           <div className="space-y-6">
             {/* Delivery Options */}
-            <Card className="border border-gray-200 shadow-sm rounded-xl overflow-hidden gap-0">
+            {/* <Card className="border border-gray-200 shadow-sm rounded-xl overflow-hidden gap-0">
               <CardHeader className="border-b border-gray-200 bg-gray-50 px-6 py-4">
                 <CardTitle className="text-lg font-bold text-gray-800">Delivery Options</CardTitle>
               </CardHeader>
@@ -282,7 +274,7 @@ const CartSummary = () => {
                   </Button>
                 </div>
               </CardContent>
-            </Card>
+            </Card> */}
 
             {/* Order Summary */}
             <Card className="border border-gray-200 rounded-lg shadow-sm gap-0">
@@ -294,44 +286,44 @@ const CartSummary = () => {
                   <span>Subtotal ({cartItem.quantity} items)</span>
                   <span className="font-medium">${subtotal.toFixed(2)}</span>
                 </div>
-                
+
                 <div className="flex justify-between text-gray-700">
                   <span>Delivery</span>
                   <span className={deliveryPrice === 0 ? "text-green-600 font-medium" : "font-medium"}>
                     {deliveryPrice === 0 ? "FREE" : `+$${deliveryPrice.toFixed(2)}`}
                   </span>
                 </div>
-                
+
                 <div className="flex justify-between text-gray-500">
                   <span>Tax (Calculated at checkout)</span>
                   <span>—</span>
                 </div>
-                
+
                 <Separator className="my-2" />
-                
+
                 <div className="flex justify-between text-lg font-bold text-gray-900 py-2">
                   <span>Total</span>
                   <span>${total.toFixed(2)}</span>
                 </div>
-                
-                <div className="bg-blue-50 rounded-md p-3 text-center">
+
+                {/* <div className="bg-blue-50 rounded-md p-3 text-center">
                   <p className="text-sm text-gray-700">
                     or 4 interest-free payments of <span className="font-semibold">${(total / 4).toFixed(2)}</span> with
                   </p>
                   <div className="flex justify-center items-center gap-3 mt-2">
-                  <div className="flex justify-center items-center gap-4 mt-2 flex-wrap">
-                            <Image src={SezzleIcon} alt="Sezzle" width={60} height={46} className="object-contain" />
-                            <Image src={AffirmIcon} alt="Affirm" width={60} height={46} className="object-contain" />
-                            <Image src={AfterpayIcon} alt="Afterpay" width={60} height={46} className="object-contain" />
-                            <Image src={KlarnaIcon} alt="Klarna" width={60} height={46} className="object-contain" />
-                        </div>
+                    <div className="flex justify-center items-center gap-4 mt-2 flex-wrap">
+                      <Image src={SezzleIcon} alt="Sezzle" width={60} height={46} className="object-contain" />
+                      <Image src={AffirmIcon} alt="Affirm" width={60} height={46} className="object-contain" />
+                      <Image src={AfterpayIcon} alt="Afterpay" width={60} height={46} className="object-contain" />
+                      <Image src={KlarnaIcon} alt="Klarna" width={60} height={46} className="object-contain" />
+                    </div>
                   </div>
-                </div>
-                
+                </div> */}
+
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button 
-                      variant="ghost" 
+                    <Button
+                      variant="ghost"
                       className="w-full text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center justify-center gap-1 border border-gray-200 py-2"
                     >
                       <PlusCircle className="w-4 h-4" />
@@ -359,14 +351,14 @@ const CartSummary = () => {
                     </DialogFooter>
                   </DialogContent>
                 </Dialog>
-                
+
                 <div className="space-y-3 pt-2">
                   <Link href="/cart/checkout">
                     <Button variant='blue' className="w-full">
                       CHECKOUT
                     </Button>
                   </Link>
-                
+
                 </div>
               </CardContent>
             </Card>
