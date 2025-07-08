@@ -381,7 +381,7 @@ const Header = () => {
                                   href={subItem.url}
                                   className="w-full tex-[16px] px-6 py-3 text-gray-700 hover:bg-[#0072BA]/5 hover:text-[#0072BA] transition-colors duration-200 border-b border-gray-100 last:border-b-0 flex items-center hover:text-[#0072BA] hover:underline"
                                   >
-                                  <span className="w-2 h-2 rounded-full bg-[#0072BA] mr-3"></span>
+                                  {/* <span className="w-2 h-2 rounded-full bg-[#0072BA] mr-3"></span> */}
                                   {subItem.name}
                                 </Link>
                               ))}
