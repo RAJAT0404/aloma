@@ -56,7 +56,7 @@ export const TestimonialSection = () => {
             align: "start",
             loop: true,
           }}
-          className="w-full max-w-5xl mx-auto"
+          className="w-full  mx-auto"
         >
           <CarouselContent>
             {testimonials.map((testimonial) => (
@@ -68,7 +68,7 @@ export const TestimonialSection = () => {
                       <div className="flex-1">
                         <div className="flex items-center mb-2 sm:mb-3">
                           {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 fill-primary text-primary" />
+                            <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 fill-yellow-500 text-yellow-500" />
                           ))}
                         </div>
                         

@@ -13,7 +13,7 @@ const MyAccountCard = () => {
   const handleLogout = () => {
     dispatch(logout())
   }
-  
+    
 
   return (
       <HoverCard openDelay={200} closeDelay={200}>
@@ -21,17 +21,17 @@ const MyAccountCard = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="relative flex w-full max-w-max items-center hover:bg-transparent text-[#003C64] font-semibold text-sm cursor-pointer gap-1 px-2 sm:px-3"
+            className="relative py-3 flex w-full max-w-max items-center hover:bg-transparent text-[#003C64] font-semibold text-sm cursor-pointer gap-1 px-2 sm:px-3"
           >
             <User className="h-5 w-5 sm:h-6 sm:w-6" />
             <span className="hidden lg:inline whitespace-nowrap">{email ? email :'My Account'}</span>
           </Button>
         </HoverCardTrigger>
         <HoverCardContent 
-          className="w-64 bg-white rounded-md shadow-lg border border-gray-200 p-3 sm:p-4"
-          sideOffset={5}
-          align="end"
-          avoidCollisions={true}
+          className={`w-64 bg-white shadow-lg rounded-none rounded-bl-lg rounded-br-lg overflow-hidden border-gray-200 mt-2.5 ${isLoggedIn ? 'p-0' : '' }`}
+          // sideOffset={5}
+          // align="end"
+          // avoidCollisions={true}
         >
           {!isLoggedIn ? (    
             <>
@@ -53,8 +53,8 @@ const MyAccountCard = () => {
               </div>
             </>
           ) : (
-            <div className="space-y-3 flex flex-col gap-0.5">
-              <div className="px-3 py-2 text-sm text-gray-700 border-b border-gray-200">
+            <div className="flex flex-col gap-0.5 p-0">
+              <div className="px-3 py-2 bg-gray-50 text-sm text-gray-700 border-b border-gray-200">
                 {email}
               </div>
               <Link href="/my-account/my-designs">

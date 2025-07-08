@@ -40,14 +40,7 @@ const Header = () => {
       ],
     },
     { name: "Categories", url: "/categories", submenu: [] },
-    {
-      name: "Templates",
-      url: "#",
-      submenu: [
-        { name: "Promotional Products", url: "#" },
-        { name: "Accessories", url: "#" },
-      ],
-    },
+   
     { name: "Contact", url: "/contact" },
   ];
 
@@ -333,7 +326,7 @@ const Header = () => {
         {/* Navigation Menu - Hidden on mobile */}
         <div className="hidden md:block bg-gray-50 border-b border-gray-200">
           <div className="container mx-auto px-4">
-            <div className="flex items-center justify-between h-14">
+            <div className="flex items-center justify-between py-3">
               <nav className="flex items-center space-x-4 lg:space-x-8">
                 {menus.map((item) => {
                   return item.submenu ? (
@@ -381,13 +374,13 @@ const Header = () => {
                           </Button>
 
                           {activeTab === item.name && (
-                            <div className="absolute w-64 bg-white border border-gray-100 shadow-xl z-50 rounded-lg overflow-hidden">
+                            <div className="absolute bg-[#000D16] w-64 bg-white border border-gray-100 shadow-xl z-50 rounded-b-lg overflow-hidden mt-2.5">
                               {item.submenu.map((subItem) => (
                                 <Link
                                   key={subItem.name}
                                   href={subItem.url}
-                                  className="w-full px-6 py-3 text-gray-700 hover:bg-[#0072BA]/5 hover:text-[#0072BA] transition-colors duration-200 border-b border-gray-100 last:border-b-0 flex items-center"
-                                >
+                                  className="w-full tex-[16px] px-6 py-3 text-gray-700 hover:bg-[#0072BA]/5 hover:text-[#0072BA] transition-colors duration-200 border-b border-gray-100 last:border-b-0 flex items-center hover:text-[#0072BA] hover:underline"
+                                  >
                                   <span className="w-2 h-2 rounded-full bg-[#0072BA] mr-3"></span>
                                   {subItem.name}
                                 </Link>
@@ -416,7 +409,7 @@ const Header = () => {
               <Button
                 className="relative text-[#003C64] px-5 py-2 text-[14px] leading-[100%] font-medium bg-white
            transition-all duration-300 ease-in-out active:scale-98 
-           border border-[#003C64]  rounded-[12px] hover:border-[#003C64] hover:bg-[#003C64] hover:text-white my-2"
+           border border-[#003C64]  rounded-[12px] hover:border-[#003C64] hover:bg-[#003C64] hover:text-white "
                 aria-label="Go to Design Lab"
               >
                 <span className="relative z-10">DESIGN LAB</span>

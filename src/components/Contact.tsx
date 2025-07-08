@@ -10,6 +10,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { toast } from "sonner";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -20,6 +26,29 @@ const contactFormSchema = z.object({
 });
 
 type ContactFormData = z.infer<typeof contactFormSchema>;
+
+const faqData = [
+  {
+    value: "item-1",
+    question: "What's your minimum order quantity?",
+    answer: "Our minimum order is typically 12 pieces, but this can vary depending on the product and customization.",
+  },
+  {
+    value: "item-2",
+    question: "How long does production take?",
+    answer: "Standard production time is 7-14 business days after artwork approval, depending on order size.",
+  },
+  {
+    value: "item-3",
+    question: "Do you offer design services?",
+    answer: "Yes! Our design team can help create custom artwork or modify existing designs for your project.",
+  },
+  {
+    value: "item-4",
+    question: "What file formats do you accept?",
+    answer: "We accept AI, EPS, PDF, and high-resolution PNG files. Vector formats work best for screen printing.",
+  },
+];
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -38,9 +67,9 @@ const Contact = () => {
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     console.info("Contact form submitted:", data);
-    toast.success("Message sent successfully! We&apos;ll get back to you soon.");
+    toast.success("Message sent successfully! We'll get back to you soon.");
     form.reset();
     setIsSubmitting(false);
   };
@@ -69,41 +98,41 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+    <div className="min-h-max bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-4 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Let&apos;s Create Together
+            Let's Create Together
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our team is ready to bring your custom apparel vision to life. Reach out and let&apos;s start the conversation.
+            Our team is ready to bring your custom apparel vision to life. Reach out and let's start the conversation.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Elegant Contact Form */}
-          <Card className="border-none shadow-xl rounded-2xl overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto items-start">
+          {/* Contact Form */}
+          <Card className="border-none shadow-xl rounded-2xl overflow-hidden w-full">
             <div className="bg-[#003C64] p-6">
               <CardHeader className="p-0">
                 <CardTitle className="text-2xl text-white">Send us a Message</CardTitle>
               </CardHeader>
             </div>
-            <CardContent className="p-8">
+            <CardContent className="p-6">
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <FormField
                       control={form.control}
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-foreground">Name *</FormLabel>
+                          <FormLabel>Name *</FormLabel>
                           <FormControl>
-                            <Input 
-                              placeholder="Your full name" 
+                            <Input
+                              placeholder="Your full name"
                               className="bg-muted/20 border-muted-foreground/30 focus-visible:ring-primary"
-                              {...field} 
+                              {...field}
                             />
                           </FormControl>
                           <FormMessage />
@@ -115,13 +144,13 @@ const Contact = () => {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-foreground">Email *</FormLabel>
+                          <FormLabel>Email *</FormLabel>
                           <FormControl>
-                            <Input 
-                              type="email" 
-                              placeholder="your@email.com" 
+                            <Input
+                              type="email"
+                              placeholder="your@email.com"
                               className="bg-muted/20 border-muted-foreground/30 focus-visible:ring-primary"
-                              {...field} 
+                              {...field}
                             />
                           </FormControl>
                           <FormMessage />
@@ -135,12 +164,12 @@ const Contact = () => {
                     name="phone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-foreground">Phone (Optional)</FormLabel>
+                        <FormLabel>Phone (Optional)</FormLabel>
                         <FormControl>
-                          <Input 
-                            placeholder="Your phone number" 
+                          <Input
+                            placeholder="Your phone number"
                             className="bg-muted/20 border-muted-foreground/30 focus-visible:ring-primary"
-                            {...field} 
+                            {...field}
                           />
                         </FormControl>
                         <FormMessage />
@@ -153,12 +182,12 @@ const Contact = () => {
                     name="subject"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-foreground">Subject *</FormLabel>
+                        <FormLabel>Subject *</FormLabel>
                         <FormControl>
-                          <Input 
-                            placeholder="What is this regarding?" 
+                          <Input
+                            placeholder="What is this regarding?"
                             className="bg-muted/20 border-muted-foreground/30 focus-visible:ring-primary"
-                            {...field} 
+                            {...field}
                           />
                         </FormControl>
                         <FormMessage />
@@ -171,11 +200,11 @@ const Contact = () => {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-foreground">Message *</FormLabel>
+                        <FormLabel>Message *</FormLabel>
                         <FormControl>
-                          <Textarea 
+                          <Textarea
                             placeholder="Tell us more about your inquiry..."
-                            className="min-h-[150px] bg-muted/20 border-muted-foreground/30 focus-visible:ring-primary"
+                            className="min-h-[120px] bg-muted/20 border-muted-foreground/30 focus-visible:ring-primary"
                             {...field}
                           />
                         </FormControl>
@@ -184,11 +213,11 @@ const Contact = () => {
                     )}
                   />
 
-                  <Button 
-                    type="submit" 
-                    className="w-full py-6 text-lg font-medium" 
+                  <Button
+                    type="submit"
+                    className="w-full py-6 text-lg font-medium"
                     disabled={isSubmitting}
-                  variant='blue'
+                    variant="blue"
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
@@ -197,51 +226,52 @@ const Contact = () => {
             </CardContent>
           </Card>
 
-          {/* Contact Information */}
-          <div className="space-y-6">
-            <div className="mb-8">
+          {/* Contact Details */}
+          <div className="w-full">
+            <div className="mb-6">
               <h2 className="text-3xl font-bold text-foreground mb-4">
                 Our Contact Details
               </h2>
               <p className="text-muted-foreground">
-                Whether you have questions about our products or need help with an order, we&apos;re here to assist.
+                Whether you have questions about our products or need help with an order, we're here to assist.
               </p>
             </div>
 
-            {contactInfo.map((info, index) => (
-              <Card key={index} className="border-none shadow-sm hover:shadow-md transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-[#003C64] p-3 rounded-full">
-                      <info.icon className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg text-foreground mb-2">
-                        {info.title}
-                      </h3>
-                      <div className="space-y-2">
-                        {info.details.map((detail, idx) => (
-                          <p key={idx} className="text-muted-foreground">
-                            {detail}
-                          </p>
-                        ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
+              {contactInfo.map((info, index) => (
+                <Card key={index} className="border-none shadow-sm hover:shadow-md transition-all duration-300 h-full">
+                  <CardContent className="p-4">
+                    <div className="flex items-start space-x-3">
+                      <div className="bg-[#003C64] p-2 rounded-full">
+                        <info.icon className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg text-foreground mb-1">
+                          {info.title}
+                        </h3>
+                        <div className="space-y-1">
+                          {info.details.map((detail, idx) => (
+                            <p key={idx} className="text-muted-foreground text-sm">
+                              {detail}
+                            </p>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
 
-            {/* CTA Card */}
             <Card className="bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20">
-              <CardContent className="p-6 text-center">
-                <h3 className="font-semibold text-xl text-foreground mb-3">
+              <CardContent className="p-4 text-center">
+                <h3 className="font-semibold text-lg text-foreground mb-2">
                   Need Immediate Assistance?
                 </h3>
-                <p className="text-muted-foreground mb-5">
+                <p className="text-muted-foreground mb-4 text-sm">
                   Our customer service team is available during business hours to help with urgent inquiries.
                 </p>
-                <Button     variant='blue' size="lg" className="w-full">
+                <Button variant="blue" size="lg" className="w-full">
                   Call Now: (555) 123-4567
                 </Button>
               </CardContent>
@@ -251,54 +281,32 @@ const Contact = () => {
 
         {/* FAQ Section */}
         <div className="mt-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-3">
-              Common Questions
-            </h2>
-        <div className="mt-16">
-          <Card className="bg-muted/30">
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-bold text-center text-foreground mb-8">
-                Frequently Asked Questions
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">
-                    What&apos;s your minimum order quantity?
-                  </h4>
-                  <p className="text-muted-foreground">
-                    Our minimum order is typically 12 pieces, but this can vary depending on the product and customization.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">
-                    How long does production take?
-                  </h4>
-                  <p className="text-muted-foreground">
-                    Standard production time is 7-14 business days after artwork approval, depending on order size.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">
-                    Do you offer design services?
-                  </h4>
-                  <p className="text-muted-foreground">
-                    Yes! Our design team can help create custom artwork or modify existing designs for your project.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">
-                    What file formats do you accept?
-                  </h4>
-                  <p className="text-muted-foreground">
-                    We accept AI, EPS, PDF, and high-resolution PNG files. Vector formats work best for screen printing.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <h2 className="text-3xl font-bold text-center text-foreground mb-10">
+            Frequently Asked Questions
+          </h2>
+          <Accordion
+            type="single"
+            collapsible
+            className="bg-white rounded-xl shadow-lg divide-y divide-gray-100 overflow-hidden max-w-4xl mx-auto"
+          >
+            {faqData.map((item, index) => (
+              <AccordionItem
+                value={item.value}
+                key={index}
+                className="border-0 px-6 py-4 hover:bg-gray-50 transition-colors"
+              >
+                <AccordionTrigger className="text-lg sm:text-xl font-medium text-gray-800 hover:no-underline">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-base sm:text-lg text-gray-600 pt-2 pb-4">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
-      </div> </div> </div> </div>
+      </div>
+    </div>
   );
 }
 

@@ -113,11 +113,10 @@ const CartHoverCard = () => {
 
 
           <HoverCardContent
-            className="w-64 bg-white rounded-md shadow-lg border border-gray-200 p-3 sm:p-4"
-            sideOffset={5}
-            align="end"
-            avoidCollisions={true}
+            className={`w-64 bg-white shadow-lg rounded-none rounded-bl-lg rounded-br-lg overflow-hidden border-gray-200 mt-2.5 ${isLoggedIn ? 'p-0' : ''}`}
+
           >
+
             <>
               <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 leading-normal break-words max-w-[240px]">
                 Sign in to view your account details, saved items, and past orders
@@ -136,6 +135,7 @@ const CartHoverCard = () => {
                 New customer? <span className="text-[#003C64] cursor-pointer hover:underline">Start here</span>
               </div>
             </>
+
           </HoverCardContent>
 
 
