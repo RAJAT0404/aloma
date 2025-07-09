@@ -1,8 +1,9 @@
 import CustomerReview from "@/components/CustomerReview/CustomerReview";
 import FaqSection from "@/components/FaqSection";
 import Layout from "@/components/layout";
-import BrandSection from "@/components/Sections/Brands/BrandSection";
 import { notFound } from "next/navigation";
+import SatisfiedCustomersSection from "@/components/SatisfiedCustomersSection";
+import BrandCatalog from "@/components/Sections/Brands/BrandCatalog";
 
 // Define the supported slugs
 const validSlugs = ["nike" ] as const;
@@ -29,9 +30,10 @@ const BrandPage = async ({
 
   return (
    <Layout>
-    <BrandSection slug={brand}/>
-      <CustomerReview/>
-      <FaqSection/>
+      <BrandCatalog />
+      <SatisfiedCustomersSection />
+      <CustomerReview />
+      <FaqSection />
    </Layout>
   );
 };

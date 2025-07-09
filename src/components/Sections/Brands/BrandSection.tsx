@@ -35,7 +35,7 @@ import {
 } from "@/components/ui/drawer";
 import NikeCustomGear from "@/components/Sections/NikeCustom/NikeCustom";
 
-const BrandSection = ({ slug }: { slug: string }) => {
+const BrandSection = ({ slug, subProduct }: { slug: string , subProduct:string;}) => {
 
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -169,7 +169,7 @@ const BrandSection = ({ slug }: { slug: string }) => {
               {/* Header */}
               <div className="mb-8">
           <h2 className="text-[28px] leading-[32px] font-[700] text-foreground mb-5 capitalize">
-            {slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' ')}
+            {slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' ')}{" "}{subProduct}
           </h2>
                 <p className="font-lato font-normal text-[14px] leading-[100%] mb-8 text-muted-foreground">
                   Find the perfect products for your needs

@@ -113,7 +113,6 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 w-full mx-auto items-start">
           {/* Contact Form */}
-
           <div className="border-nonebg-transparent">
             <Card className="border-none rounded-2xl shadow-2xl overflow-hidden h-full">
               <div className="bg-[#003C64] p-4">
@@ -124,7 +123,6 @@ const Contact = () => {
               <CardContent className="p-6 h-full">
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 h-full flex flex-col gap-4">
-
                     <FormField
                       control={form.control}
                       name="name"
@@ -211,27 +209,7 @@ const Contact = () => {
                 </Form>
               </CardContent>
             </Card>
-
-            {/* Contact Details */}
-            {/* <div className="w-full mt-10">
-            <Card className="bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20 mt-10 mb-10">
-              <CardContent className="p-4 text-center">
-                <h3 className="font-semibold text-lg text-foreground mb-2">
-                  Need Immediate Assistance?
-                </h3>
-                <p className="text-muted-foreground mb-4 text-sm">
-                  Our customer service team is available during business hours to help with urgent inquiries.
-                </p>
-                <Button variant="blue" size="lg" className="px-8">
-                  Call Now: (555) 123-4567
-                </Button>
-              </CardContent>
-            </Card>
-          </div> */}
-
-
           </div>
-
           <div>
 
             <Card className="border-none shadow-xl max-w-2xl rounded-2xl overflow-hidden bg-[#003C64] ">
@@ -286,12 +264,8 @@ const Contact = () => {
               </Card>
             </div>
           </div>
-
-         </div>
-
-
+        </div>
       </div>
-      
     </div>
 
   );
@@ -299,40 +273,3 @@ const Contact = () => {
 
 export default Contact;
 
-
-
-
-
-
-
-
-
-
-
-//     {/* FAQ Section */}
-//     <div className="mt-20">
-//     <h2 className="text-3xl font-bold text-center text-foreground mb-10">
-//       Frequently Asked Questions
-//     </h2>
-//     <Accordion
-//       type="single"
-//       collapsible
-//       className="bg-white rounded-xl shadow-lg divide-y divide-gray-100 overflow-hidden max-w-4xl mx-auto"
-//     >
-//       {faqData.map((item, index) => (
-//         <AccordionItem
-//           value={item.value}
-//           key={index}
-//           className="border-0 px-6 py-4 hover:bg-gray-50 transition-colors"
-//         >
-//           <AccordionTrigger className="text-lg sm:text-xl font-medium text-gray-800 hover:no-underline">
-//             {item.question}
-//           </AccordionTrigger>
-//           <AccordionContent className="text-base sm:text-lg text-gray-600 pt-2 pb-4">
-//             {item.answer}
-//           </AccordionContent>
-//         </AccordionItem>
-//       ))}
-//     </Accordion>
-//   </div>
-// </div>
