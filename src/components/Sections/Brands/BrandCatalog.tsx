@@ -9,10 +9,9 @@ import {
 } from "@/components/ui/collapsible";
 import Link from "next/link";
 import Image from "next/image";
-import BestSellersSection from "@/components/BestSeller/BestSellersSection";
 
 import { Shirt, HardHat, Watch, Briefcase ,Dumbbell ,Ambulance  , Volleyball , Tent , Layers2 ,TextCursorInput} from "lucide-react";
-import Tshirt from "../../../../public/nike/nike-cotton-poly-tee-front-side.jpg";
+import Tshirt from "../../../../public/nike/nike-ls-tee-front.jpg";
 import { ChevronRight } from "lucide-react";
 import NikeCustomGear from "@/components/Sections/NikeCustom/NikeCustom"
 
@@ -249,10 +248,10 @@ const BrandCatalog = () => {
                           src={category.image}
                           alt={category.name}
                           fill
-                          className="object-fil transition-transform duration-300 ease-in-out group-hover:scale-105"
+                          className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                           priority
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/30 group-hover:from-black/70 group-hover:to-black/40 transition-all duration-300 ease-in-out" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent group-hover:from-black/80 group-hover:via-black/50 group-hover:to-transparent transition-all duration-700 ease-in-out" />
                         <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
                           <Icon className="h-8 w-8 mb-2 transition-transform duration-300 ease-in-out group-hover:scale-110" />
                           <h3 className="text-xl font-semibold mb-1 transition-transform duration-300 ease-in-out group-hover:scale-100">

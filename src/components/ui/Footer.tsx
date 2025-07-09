@@ -8,7 +8,7 @@ import Image from "next/image";
 export const Footer = () => {
   return (
     <footer className="bg-muted/50 border-t">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 pb-6">
         {/* Newsletter Section */}
         <div className="bg-gradient-to-r from-[#003C64] to-[#0072BA] rounded-2xl p-8 mb-12">
           <div className="text-center text-primary-foreground">
@@ -33,12 +33,12 @@ export const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             {/* <h3 className="text-xl font-bold">Aloma Tees</h3> */}
-            
+
             <Image src={Logo} width={200} height={150} alt="Alamo Tees Logo" className="h-10 w-auto mb-4" />
 
 
             <p className="text-muted-foreground">
-              Premium quality apparel and accessories for the modern lifestyle. 
+              Premium quality apparel and accessories for the modern lifestyle.
               Express yourself with our curated collection.
             </p>
             <div className="flex space-x-4">
