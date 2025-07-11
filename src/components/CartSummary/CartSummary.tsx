@@ -3,15 +3,10 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { Plus, Edit3, Heart, PlusCircle, ChevronRight, FileText, Pencil, Trash2, Minus } from "lucide-react";
+import { Plus,PlusCircle, ChevronRight, FileText, Pencil, Trash2, Minus } from "lucide-react";
 import Image from "next/image";
-// import AffirmIcon from "../../../public/paymenticons/logo-affirm.webp";
-// import SezzleIcon from "../../../public/paymenticons/logo-sezzle.webp";
-// import AfterpayIcon from "../../../public/paymenticons/logo-afterpay-2.webp";
-// import KlarnaIcon from "../../../public/paymenticons/logo-klarna.webp";
 import Link from "next/link";
 import { Dialog, DialogHeader } from "../ui/dialog";
 import { DialogContent, DialogTitle, DialogTrigger } from "@radix-ui/react-dialog";
@@ -161,14 +156,16 @@ const CartSummary = () => {
                           <Plus className="w-3 h-3" />
                         </Button>
                       </div>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="text-blue-600 border-blue-200 hover:bg-blue-50 text-xs sm:text-sm"
-                      >
-                        <Pencil className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                        Edit Size
-                      </Button>
+                      <Link href="/cart/edit-size">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="text-blue-600 border-blue-200 hover:bg-blue-50 text-xs sm:text-sm"
+                        >
+                          <Pencil className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                          Edit Size
+                        </Button>
+                      </Link>
 
                       <Button
                         size="sm"
@@ -188,13 +185,15 @@ const CartSummary = () => {
             {/* Add Another Product */}
             <Card className="border-dashed border-2 border-gray-300 hover:border-blue-400 transition-colors">
               <CardContent className="p-6">
-                <Button
-                  variant="ghost"
-                  className="w-full justify-start text-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-colors"
-                >
-                  <Plus className="w-5 h-5 mr-2" />
-                  <span className="font-medium">Add Another Product</span>
-                </Button>
+                <Link href="/">
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start text-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-colors"
+                  >
+                    <Plus className="w-5 h-5 mr-2" />
+                    <span className="font-medium">Continue Shopping</span>
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
 

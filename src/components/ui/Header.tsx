@@ -167,12 +167,12 @@ const Header = () => {
                                     </div>
                                   )}
                                   {isOpen && (
-                                    <div className="pl-4 space-y-2">
+                                    <div className="pl-0 space-y-1">
                                       {item.submenu.map((subItem) => (
                                         <a
                                           key={subItem.name}
                                           href={subItem.url}
-                                          className="block text-gray-700 hover:text-[#0072BA] py-1"
+                                          className="block text-gray-700 hover:text-[#0072BA] py-1 text-sm sm:text-base tex-[16px] px-6  py-2 text-[#003C64] hover:bg-[#003C64] hover:text-white"
                                         >
                                           {subItem.name}
                                         </a>
@@ -374,12 +374,12 @@ const Header = () => {
                           </Button>
 
                           {activeTab === item.name && (
-                            <div className="absolute w-64 bg-white border border-gray-100 shadow-xl z-50 rounded-b-lg overflow-hidden mt-2.5">
+                              <div className="absolute bg-[#000D16] w-64 bg-white border border-gray-100 shadow-xl z-50 rounded-b-lg overflow-hidden mt">
                               {item.submenu.map((subItem) => (
                                 <Link
                                   key={subItem.name}
                                   href={subItem.url}
-                                  className="w-full tex-[16px] px-6 py-3 text-gray-700 hover:bg-[#0072BA]/5 transition-colors duration-200 border-b border-gray-100 last:border-b-0 flex items-center hover:text-[#0072BA] hover:underline"
+                                className="w-full text-sm sm:text-base tex-[16px] px-6 py-3 text-[#003C64] hover:bg-[#003C64] hover:text-white transition-colors duration-200 border-b border-gray-100 last:border-b-0 flex items-center "
                                   >
                                   {/* <span className="w-2 h-2 rounded-full bg-[#0072BA] mr-3"></span> */}
                                   {subItem.name}

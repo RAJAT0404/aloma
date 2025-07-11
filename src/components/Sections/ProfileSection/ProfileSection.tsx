@@ -26,11 +26,20 @@ const ProfileSection: React.FC<ProfileSectionProps> = () => {
   const [isPasswordOpen, setIsPasswordOpen] = useState(false);
   const [isDeactivateOpen, setIsDeactivateOpen] = useState(false);
   
+  const formatNameFromEmail = (email: string) => {
+    const username = email.split('@')[0];
+    return username
+      .split(/[._]/)
+      .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+      .join(' ');
+  };
+  
   const [formData, setFormData] = useState({
-    name: 'John Doe',
+    name: email ? formatNameFromEmail(email) : '',
     email: email,
     phone: '+1 (555) 123-4567',
   });
+  
   
   const [passwordData, setPasswordData] = useState({
     currentPassword: '',
@@ -268,7 +277,7 @@ const ProfileSection: React.FC<ProfileSectionProps> = () => {
                         <ToggleLeft className="w-6 h-6 text-gray-400" />
                       )}
                     </div>
-                    <div 
+                    {/* <div 
                       className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-200 cursor-pointer hover:bg-gray-50"
                       onClick={() => toggleNotification('push')}
                     >
@@ -281,11 +290,11 @@ const ProfileSection: React.FC<ProfileSectionProps> = () => {
                       ) : (
                         <ToggleLeft className="w-6 h-6 text-gray-400" />
                       )}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 
-                <div className="pt-6 border-t border-gray-200">
+                {/* <div className="pt-6 border-t border-gray-200">
                   <h3 className="font-medium text-lg mb-4">Security & Privacy</h3>
                   <p className="text-gray-600 mb-6">
                     Your credentials are securely stored and encrypted with industry-standard protocols. 
@@ -301,7 +310,7 @@ const ProfileSection: React.FC<ProfileSectionProps> = () => {
                       Terms of Service
                     </a>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="pt-6 border-t border-gray-200">
                   <Dialog open={isDeactivateOpen} onOpenChange={setIsDeactivateOpen}>

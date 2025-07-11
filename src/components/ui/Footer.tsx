@@ -4,6 +4,7 @@ import { Separator } from "@/components/ui/separator";
 import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
 import Logo from "../../../public/logo.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
@@ -124,22 +125,28 @@ export const Footer = () => {
         <Separator className="my-8" />
 
         {/* Bottom Footer */}
-        <div className="flex flex-col sm:flex-row justify-end items-center gap-4 relative">
-          <p className="text-sm text-muted-foreground lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-muted-foreground">
             © 2025 Aloma Tees. All rights reserved.
           </p>
+
+          <Link href="https://www.rwit.io/">
+            <p className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Website designed by RW INFOTECH
+            </p>
+          </Link>
           <div className="flex gap-6">
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            </Link>
+            <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Terms of Service
-            </a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            </Link>
+            <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Cookie Policy
-            </a>
+            </Link>
           </div>
-        </div>
+        </div>   
       </div>
     </footer>
   );

@@ -63,6 +63,7 @@ const CartHoverCard = () => {
             <CardContent className="max-h-[400px] overflow-y-auto p-0">
               {cartItems.map((item) => (
                 <div key={item.id} className="p-4 border-b hover:bg-accent transition-colors">
+                      <Link href="/cart">
                   <div className="flex gap-4">
                     <div className="flex gap-2">
                       {item.images.map((img, index) => (
@@ -92,6 +93,7 @@ const CartHoverCard = () => {
                       </div>
                     </div>
                   </div>
+                </Link>
                 </div>
               ))}
             </CardContent>

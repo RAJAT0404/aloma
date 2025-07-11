@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -16,23 +16,38 @@ const Login = () => {
     const dispatch = useDispatch();
     const router = useRouter();
 
+    useEffect(() => {
+        if (error) {
+            const timer = setTimeout(() => {
+                setError("");
+            }, 1500); // Increased timeout for better visibility
+            return () => clearTimeout(timer);
+        }
+    }, [error]);
+
+    const validateEmail = (email: string) => {
+        const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return re.test(String(email).toLowerCase());
+    };
+
     const handleSubmit = (e: React.FormEvent) => {
-      e.preventDefault();
-      if (!email) {
-          setError("Please enter an email address");
-          return; 
-      }
-  
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-          setError("Please enter a valid email address");
-          return;
-      }
-  
-      setError("");
-      dispatch(login({ email })); // ✅ Pass email to Redux
-      router.push("/my-account/profile");
-  };
+        e.preventDefault();
+        const trimmedEmail = email.trim();
+        
+        if (!trimmedEmail) {
+            setError("Please enter an email address");
+            return;
+        }
+
+        if (!validateEmail(trimmedEmail)) {
+            setError("Please enter a valid email address (e.g., user@example.com)");
+            return;
+        }
+
+        setError("");
+        dispatch(login({ email: trimmedEmail }));
+        router.push("/my-account/my-designs");
+    };
 
     return (
         <div className="bg-gray-50 flex items-center justify-center py-16 sm:py-20 px-4 sm:px-8">
@@ -60,9 +75,10 @@ const Login = () => {
                             </p>
                         </CardHeader>
                         
-                        <CardContent className="space-y-4 sm:space-y-6">
-                            <form onSubmit={handleSubmit}>
-                                <div className="space-y-3 sm:space-y-4">
+                        <CardContent className="space-y-4 sm:space-y-6 p-0">
+                            <form onSubmit={handleSubmit} >
+                                <div className="space-y-3 sm:space-y-4 relative">
+                                    {error && <p className="text-red-500 text-sm absolute -top-7 left-1">{error}</p>}
                                     <Input
                                         type="email"
                                         placeholder="Please enter your email address..."
@@ -70,7 +86,6 @@ const Login = () => {
                                         onChange={(e) => setEmail(e.target.value)}
                                         className="h-12 sm:h-14 text-sm sm:text-base md:text-lg px-4 hover:border-[#0072BA] focus:border-[#0072BA] focus-visible:ring-[#0072BA]"
                                     />
-                                    {error && <p className="text-red-500 text-sm">{error}</p>}
                                 </div>
                                 
                                 <Button 
@@ -82,12 +97,12 @@ const Login = () => {
                                 </Button>
                             </form>
                             
-                            <p className="text-xs sm:text-sm text-gray-500 text-center mt-0 sm:mt-0">
+                            {/* <p className="text-xs sm:text-sm text-gray-500 text-center mt-0 sm:mt-0">
                                 Your email is safe and secure. Read our{" "}
                                 <Link href="#" className="text-blue-500 hover:underline">
                                     Privacy Policy
                                 </Link>
-                            </p>
+                            </p> */}
                         </CardContent>
                     </Card>
                 </div>
