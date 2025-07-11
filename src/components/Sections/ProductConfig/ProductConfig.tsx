@@ -8,7 +8,7 @@ import { Separator } from '@/components/ui/separator'
 import Image from 'next/image'
 import { Input } from '@/components/ui/input'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-import { AlertCircle } from 'lucide-react'
+import { AlertCircle, ChevronRight } from 'lucide-react'
 import {
   Dialog,
   DialogContent,
@@ -16,6 +16,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import Link from 'next/link'
 
 const ProductConfig = () => {
     const [quantities, setQuantities] = useState<Record<string, number>>({
@@ -45,7 +46,16 @@ const ProductConfig = () => {
 
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-
+  <div className="container mx-auto flex items-center text-sm text-[#0072BA] py-2 pb-6">
+          <Link href="/" className="relative hover:text-primary after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-primary hover:after:w-full after:transition-all after:duration-300">
+            Home
+          </Link>
+          <ChevronRight className="h-4 w-4 mx-2" />
+          <Link href="/cart" className="relative hover:text-primary after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-primary hover:after:w-full after:transition-all after:duration-300">
+            Cart
+          </Link>
+        
+        </div>
             <div className="flex flex-col gap-4 mb-6">
                 <h2 className="text-2xl font-bold text-gray-900 tracking-tight">Customize Your Order</h2>
                 <p className="text-gray-600">Select quantities for each available size</p>
