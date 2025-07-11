@@ -60,7 +60,7 @@ export const TestimonialSection = () => {
         >
           <CarouselContent>
             {testimonials.map((testimonial) => (
-              <CarouselItem key={testimonial.id} className="basis-full sm:basis-1/2 lg:basis-1/2">
+              <CarouselItem key={testimonial.id} className="basis-full sm:basis-1/2 lg:basis-1/3">
                 <Card className="h-full">
                   <CardContent className="p-4 sm:p-6">
                     <div className="flex items-start gap-3 sm:gap-4">

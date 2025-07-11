@@ -145,10 +145,10 @@ const SatisfiedCustomersSection = () => {
                 <div className="text-white">
                   {/* <p className="font-semibold text-sm mb-1">{customer.name}</p>
                   <p className="text-xs text-white/80 mb-3">{customer.product}</p> */}
-                  <Button variant="secondary" size="sm" className="w-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border-white/30">
+                  {/* <Button variant="secondary" size="sm" className="w-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border-white/30">
                     <Eye className="h-4 w-4 mr-2" />
                    View
-                  </Button>
+                  </Button> */}
                 </div>
               </div>  
             </div>

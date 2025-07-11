@@ -103,7 +103,7 @@ const ProfileSection: React.FC<ProfileSectionProps> = () => {
           <div className="flex flex-col gap-8">
             {/* User Profile Section */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 px-4 py-8 col-span-1 text-center sm:text-left">
-              <div className="flex flex-col items-center gap-6 mb-8 sm:flex-row sm:gap-8">
+              <div className="flex flex-col items-center gap-6 mb-8 sm:gap-8 sm:justify-center">
                 <div className="relative">
                   <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br from-[#003C64] to-[#0072BA] flex items-center justify-center text-4xl sm:text-5xl font-bold text-white shadow-lg">
                     {getInitialsFromEmail(email)}
@@ -112,19 +112,19 @@ const ProfileSection: React.FC<ProfileSectionProps> = () => {
                     <CameraIcon className="w-4 h-4 sm:w-5 sm:h-5 text-[#0072BA]" />
                   </button>
                 </div>
-                <div className="text-center sm:text-left space-y-1">
+                <div className="text-center space-y-1">
                   <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">{email ? extractNameFromEmail(email) : ''}</h2>
-                  <div className="flex items-center justify-center sm:justify-start gap-2 text-sm sm:text-base text-gray-600">
+                  <div className="flex items-center justify-center gap-2 text-sm sm:text-base text-gray-600">
                     <MailIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     <p>{formData.email}</p>
                   </div>
-                  <div className="flex items-center justify-center sm:justify-start gap-2 text-sm sm:text-base text-gray-500">
+                  <div className="flex items-center justify-center gap-2 text-sm sm:text-base text-gray-500">
                     <PhoneIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     <p>{formData.phone}</p>
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+              <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
                 <Dialog open={isEditOpen} onOpenChange={setIsEditOpen}>
                   <DialogTrigger asChild>
                     <Button variant="outline" className="w-full sm:w-auto h-11 sm:h-12 px-4 sm:px-8 text-sm sm:text-base">
@@ -312,7 +312,7 @@ const ProfileSection: React.FC<ProfileSectionProps> = () => {
                   </div>
                 </div> */}
 
-                <div className="pt-6 border-t border-gray-200">
+                <div className="pt-6 border-t border-gray-200 flex justify-center">
                   <Dialog open={isDeactivateOpen} onOpenChange={setIsDeactivateOpen}>
                     <DialogTrigger asChild>
                       <Button variant="destructive" className="h-11 px-6 text-base">

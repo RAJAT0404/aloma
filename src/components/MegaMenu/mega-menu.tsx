@@ -494,7 +494,7 @@ export default function MegaMenu({setMegaMenu }: { megaMenu: boolean, setMegaMen
                           {section.items.map((item, idx) => (
                             <li
                               key={idx}
-                              className="mt-4 text-[14px] lg:text-[16px] leading-[20px] text-[#000D16] hover:text-blue-600 hover:underline cursor-pointer"
+                              className="mt-4 text-[14px] lg:text-[16px] leading-[20px] text-[#000D16] hover:text-[#0072BA] hover:underline cursor-pointer"
                             >
                               <Link
                                 href={"/"}

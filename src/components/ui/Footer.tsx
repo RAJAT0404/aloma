@@ -9,7 +9,7 @@ import Link from "next/link";
 export const Footer = () => {
   return (
     <footer className="bg-muted/50 border-t">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 pb-6">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 pb-4">
         {/* Newsletter Section */}
         <div className="bg-gradient-to-r from-[#003C64] to-[#0072BA] rounded-2xl p-8 mb-12">
           <div className="text-center text-primary-foreground">
@@ -122,7 +122,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <Separator className="my-8" />
+        <Separator className="my-4" />
 
         {/* Bottom Footer */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
@@ -131,7 +131,7 @@ export const Footer = () => {
           </p>
 
           <Link href="https://www.rwit.io/">
-            <p className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <p className="text-sm text-muted-foreground hover:text-foreground  transition-colors border-b-2 border-transparent hover:border-foreground">
               Website designed by RW INFOTECH
             </p>
           </Link>

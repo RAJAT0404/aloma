@@ -374,12 +374,12 @@ const Header = () => {
                           </Button>
 
                           {activeTab === item.name && (
-                              <div className="absolute bg-[#000D16] w-64 bg-white border border-gray-100 shadow-xl z-50 rounded-b-lg overflow-hidden mt">
+                              <div className="absolute bg-[#000D16] w-64 bg-white border border-gray-100 shadow-xl z-50 rounded-b-lg overflow-hidden mt-2.5">
                               {item.submenu.map((subItem) => (
                                 <Link
                                   key={subItem.name}
                                   href={subItem.url}
-                                className="w-full text-sm sm:text-base tex-[16px] px-6 py-3 text-[#003C64] hover:bg-[#003C64] hover:text-white transition-colors duration-200 border-b border-gray-100 last:border-b-0 flex items-center "
+                                className="w-full text-sm sm:text-base tex-[16px] px-6 py-3 text-[#000D16] hover:bg-[#003C64] hover:text-white transition-colors duration-200  last:border-b-0 flex items-center "
                                   >
                                   {/* <span className="w-2 h-2 rounded-full bg-[#0072BA] mr-3"></span> */}
                                   {subItem.name}
